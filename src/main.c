@@ -1,8 +1,6 @@
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
 #include "esp_log.h"
 #include "nvs_flash.h"
-#include "client.h"
+#include "lib/client.h"
 
 #define TAG "MAIN"
 
@@ -15,14 +13,12 @@ void app_main(void)
     }
     ESP_ERROR_CHECK(err);
 
-    ESP_LOGI(TAG, "Starting BLE Mesh Client...");
+    //ESP_LOGI(TAG, "Starting BLE Mesh Client...");
 
-    ESP_ERROR_CHECK(ble_mesh_client_init());
+    //ESP_ERROR_CHECK(ble_mesh_client_init());
 
     while (1) {
         ble_mesh_client_send(1);
-        vTaskDelay(pdMS_TO_TICKS(5000));
         ble_mesh_client_send(0);
-        vTaskDelay(pdMS_TO_TICKS(5000));
     }
 }
