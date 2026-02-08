@@ -20,6 +20,13 @@ static esp_ble_mesh_cfg_srv_t config_server = {
 };
 
 static esp_ble_mesh_client_t onoff_client;
+static esp_ble_mesh_client_t level_client;
+static esp_ble_mesh_client_t def_trans_time_client;
+static esp_ble_mesh_client_t power_onoff_client;
+static esp_ble_mesh_client_t power_level_client;
+static esp_ble_mesh_client_t battery_client;
+static esp_ble_mesh_client_t location_client;
+static esp_ble_mesh_client_t property_client;
 static esp_ble_mesh_client_t config_client;
 static esp_ble_mesh_model_pub_t pub;
 
@@ -27,6 +34,13 @@ static esp_ble_mesh_model_t client_models[] = {
     ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
     ESP_BLE_MESH_MODEL_CFG_CLI(&config_client),
     ESP_BLE_MESH_MODEL_GEN_ONOFF_CLI(&pub, &onoff_client),
+    ESP_BLE_MESH_MODEL_GEN_LEVEL_CLI(&pub, &level_client),
+    ESP_BLE_MESH_MODEL_GEN_DEF_TRANS_TIME_CLI(&pub, &def_trans_time_client),
+    ESP_BLE_MESH_MODEL_GEN_POWER_ONOFF_CLI(&pub, &power_onoff_client),
+    ESP_BLE_MESH_MODEL_GEN_POWER_LEVEL_CLI(&pub, &power_level_client),
+    ESP_BLE_MESH_MODEL_GEN_BATTERY_CLI(&pub, &battery_client),
+    ESP_BLE_MESH_MODEL_GEN_LOCATION_CLI(&pub, &location_client),
+    ESP_BLE_MESH_MODEL_GEN_PROPERTY_CLI(&pub, &property_client),
 };
 
 static esp_ble_mesh_elem_t elements[] = {
@@ -149,7 +163,7 @@ void ble_mesh_client_send(uint8_t val, uint16_t addr)
     }
     
     common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET_UNACK;
-    common.model = &client_models[2];  // Generic OnOff Client is now at index 2
+    common.model = &client_models[2];  // Generic OnOff Client
     common.ctx.net_idx = 0x0000;
     common.ctx.app_idx = 0x0000;
     common.ctx.addr = addr;
@@ -165,6 +179,224 @@ void ble_mesh_client_send(uint8_t val, uint16_t addr)
         ESP_LOGE(TAG, "Failed to send onoff set (err %d)", err);
     } else {
         ESP_LOGI(TAG, "Sent onoff %d to addr 0x%04x", val, addr);
+    }
+}
+
+void ble_mesh_client_send_level(int16_t level, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_set_state_t set_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_LEVEL_SET_UNACK;
+    common.model = &client_models[3];  // Generic Level Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    set_state.level_set.op_en = false;
+    set_state.level_set.level = level;
+    set_state.level_set.tid = 0;
+    
+    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send level set (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent level %d to addr 0x%04x", level, addr);
+    }
+}
+
+void ble_mesh_client_send_default_transition_time(uint8_t transition_time, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_set_state_t set_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_DEF_TRANS_TIME_SET_UNACK;
+    common.model = &client_models[4];  // Generic Default Transition Time Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    set_state.def_trans_time_set.trans_time = transition_time;
+    
+    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send default transition time set (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent default transition time %d to addr 0x%04x", transition_time, addr);
+    }
+}
+
+void ble_mesh_client_send_power_onoff(uint8_t onoff, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_set_state_t set_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_POWER_ONOFF_SET_UNACK;
+    common.model = &client_models[5];  // Generic Power OnOff Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    set_state.power_onoff_set.onoff = onoff;
+    
+    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send power onoff set (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent power onoff %d to addr 0x%04x", onoff, addr);
+    }
+}
+
+void ble_mesh_client_send_power_level(uint16_t power, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_set_state_t set_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_POWER_LEVEL_SET_UNACK;
+    common.model = &client_models[6];  // Generic Power Level Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    set_state.power_level_set.op_en = false;
+    set_state.power_level_set.power = power;
+    set_state.power_level_set.tid = 0;
+    
+    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send power level set (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent power level %d to addr 0x%04x", power, addr);
+    }
+}
+
+void ble_mesh_client_send_battery(uint8_t battery_level, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_get_state_t get_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    // Battery model is typically read-only, so we send a GET request
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_BATTERY_GET;
+    common.model = &client_models[7];  // Generic Battery Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    err = esp_ble_mesh_generic_client_get_state(&common, &get_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send battery get (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent battery get to addr 0x%04x", addr);
+    }
+}
+
+void ble_mesh_client_send_location(uint32_t latitude, uint32_t longitude, int16_t altitude, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_set_state_t set_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_LOCATION_GLOBAL_SET_UNACK;
+    common.model = &client_models[8];  // Generic Location Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    set_state.location_global_set.global_latitude = latitude;
+    set_state.location_global_set.global_longitude = longitude;
+    set_state.location_global_set.global_altitude = altitude;
+    
+    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send location global set (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent location (lat=%lu, lon=%lu, alt=%d) to addr 0x%04x", 
+                 latitude, longitude, altitude, addr);
+    }
+}
+
+void ble_mesh_client_send_property(uint16_t property_id, uint8_t *property_value, 
+                                    uint16_t property_value_len, uint16_t addr)
+{
+    esp_ble_mesh_generic_client_set_state_t set_state = {0};
+    esp_ble_mesh_client_common_param_t common = {0};
+    esp_err_t err;
+    
+    if (!is_provisioned) {
+        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
+        return;
+    }
+    
+    if (property_value_len > 379) {  // Max property value length
+        ESP_LOGE(TAG, "Property value too long (max 379 bytes)");
+        return;
+    }
+    
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_USER_PROPERTY_SET_UNACK;
+    common.model = &client_models[9];  // Generic Property Client
+    common.ctx.net_idx = 0x0000;
+    common.ctx.app_idx = 0x0000;
+    common.ctx.addr = addr;
+    common.ctx.send_ttl = 3;
+    common.msg_timeout = 0;
+    
+    set_state.user_property_set.property_id = property_id;
+    set_state.user_property_set.property_value = property_value;
+    set_state.user_property_set.property_value_len = property_value_len;
+    
+    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to send user property set (err %d)", err);
+    } else {
+        ESP_LOGI(TAG, "Sent user property 0x%04x (len=%d) to addr 0x%04x", 
+                 property_id, property_value_len, addr);
     }
 }
 
