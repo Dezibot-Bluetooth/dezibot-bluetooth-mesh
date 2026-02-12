@@ -22,7 +22,6 @@ static esp_ble_mesh_cfg_srv_t config_server = {
 static esp_ble_mesh_client_t onoff_client;
 static esp_ble_mesh_client_t level_client;
 static esp_ble_mesh_client_t def_trans_time_client;
-static esp_ble_mesh_client_t power_onoff_client;
 static esp_ble_mesh_client_t power_level_client;
 static esp_ble_mesh_client_t battery_client;
 static esp_ble_mesh_client_t location_client;
@@ -36,7 +35,6 @@ static esp_ble_mesh_model_t client_models[] = {
     ESP_BLE_MESH_MODEL_GEN_ONOFF_CLI(&pub, &onoff_client),
     ESP_BLE_MESH_MODEL_GEN_LEVEL_CLI(&pub, &level_client),
     ESP_BLE_MESH_MODEL_GEN_DEF_TRANS_TIME_CLI(&pub, &def_trans_time_client),
-    ESP_BLE_MESH_MODEL_GEN_POWER_ONOFF_CLI(&pub, &power_onoff_client),
     ESP_BLE_MESH_MODEL_GEN_POWER_LEVEL_CLI(&pub, &power_level_client),
     ESP_BLE_MESH_MODEL_GEN_BATTERY_CLI(&pub, &battery_client),
     ESP_BLE_MESH_MODEL_GEN_LOCATION_CLI(&pub, &location_client),
@@ -98,11 +96,8 @@ static void mesh_prov_cb(esp_ble_mesh_prov_cb_event_t event,
 }
 
 static void mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event,
-                                  esp_ble_mesh_cfg_client_cb_param_t *param)
+                                   esp_ble_mesh_cfg_client_cb_param_t *param)
 {
-    esp_ble_mesh_client_common_param_t common = {0};
-    esp_err_t err;
-
     switch (event) {
         case ESP_BLE_MESH_CFG_CLIENT_GET_STATE_EVT:
             ESP_LOGI(TAG, "Config client get state event");
@@ -242,35 +237,6 @@ void ble_mesh_client_send_default_transition_time(uint8_t transition_time, uint1
     }
 }
 
-void ble_mesh_client_send_power_onoff(uint8_t onoff, uint16_t addr)
-{
-    esp_ble_mesh_generic_client_set_state_t set_state = {0};
-    esp_ble_mesh_client_common_param_t common = {0};
-    esp_err_t err;
-    
-    if (!is_provisioned) {
-        ESP_LOGW(TAG, "Device not provisioned yet, cannot send messages");
-        return;
-    }
-    
-    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_POWER_ONOFF_SET_UNACK;
-    common.model = &client_models[5];  // Generic Power OnOff Client
-    common.ctx.net_idx = 0x0000;
-    common.ctx.app_idx = 0x0000;
-    common.ctx.addr = addr;
-    common.ctx.send_ttl = 3;
-    common.msg_timeout = 0;
-    
-    set_state.power_onoff_set.onoff = onoff;
-    
-    err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
-    if (err != ESP_OK) {
-        ESP_LOGE(TAG, "Failed to send power onoff set (err %d)", err);
-    } else {
-        ESP_LOGI(TAG, "Sent power onoff %d to addr 0x%04x", onoff, addr);
-    }
-}
-
 void ble_mesh_client_send_power_level(uint16_t power, uint16_t addr)
 {
     esp_ble_mesh_generic_client_set_state_t set_state = {0};
@@ -283,7 +249,7 @@ void ble_mesh_client_send_power_level(uint16_t power, uint16_t addr)
     }
     
     common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_POWER_LEVEL_SET_UNACK;
-    common.model = &client_models[6];  // Generic Power Level Client
+    common.model = &client_models[5];  // Generic Power Level Client
     common.ctx.net_idx = 0x0000;
     common.ctx.app_idx = 0x0000;
     common.ctx.addr = addr;
@@ -315,7 +281,7 @@ void ble_mesh_client_send_battery(uint8_t battery_level, uint16_t addr)
     
     // Battery model is typically read-only, so we send a GET request
     common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_BATTERY_GET;
-    common.model = &client_models[7];  // Generic Battery Client
+    common.model = &client_models[6];  // Generic Battery Client
     common.ctx.net_idx = 0x0000;
     common.ctx.app_idx = 0x0000;
     common.ctx.addr = addr;
@@ -341,17 +307,17 @@ void ble_mesh_client_send_location(uint32_t latitude, uint32_t longitude, int16_
         return;
     }
     
-    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_LOCATION_GLOBAL_SET_UNACK;
-    common.model = &client_models[8];  // Generic Location Client
+    common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_LOC_GLOBAL_SET_UNACK;
+    common.model = &client_models[7];  // Generic Location Client
     common.ctx.net_idx = 0x0000;
     common.ctx.app_idx = 0x0000;
     common.ctx.addr = addr;
     common.ctx.send_ttl = 3;
     common.msg_timeout = 0;
     
-    set_state.location_global_set.global_latitude = latitude;
-    set_state.location_global_set.global_longitude = longitude;
-    set_state.location_global_set.global_altitude = altitude;
+    set_state.loc_global_set.global_latitude = latitude;
+    set_state.loc_global_set.global_longitude = longitude;
+    set_state.loc_global_set.global_altitude = altitude;
     
     err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
     if (err != ESP_OK) {
@@ -380,7 +346,7 @@ void ble_mesh_client_send_property(uint16_t property_id, uint8_t *property_value
     }
     
     common.opcode = ESP_BLE_MESH_MODEL_OP_GEN_USER_PROPERTY_SET_UNACK;
-    common.model = &client_models[9];  // Generic Property Client
+    common.model = &client_models[8];  // Generic Property Client
     common.ctx.net_idx = 0x0000;
     common.ctx.app_idx = 0x0000;
     common.ctx.addr = addr;
@@ -389,8 +355,7 @@ void ble_mesh_client_send_property(uint16_t property_id, uint8_t *property_value
     
     set_state.user_property_set.property_id = property_id;
     set_state.user_property_set.property_value = property_value;
-    set_state.user_property_set.property_value_len = property_value_len;
-    
+
     err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "Failed to send user property set (err %d)", err);
