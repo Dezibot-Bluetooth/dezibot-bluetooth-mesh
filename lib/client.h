@@ -14,9 +14,6 @@ void ble_mesh_client_send_level(int16_t level, uint16_t addr);
 // Generic Default Transition Time Client
 void ble_mesh_client_send_default_transition_time(uint8_t transition_time, uint16_t addr);
 
-// Generic Power OnOff Client
-void ble_mesh_client_send_power_onoff(uint8_t onoff, uint16_t addr);
-
 // Generic Power Level Client
 void ble_mesh_client_send_power_level(uint16_t power, uint16_t addr);
 
