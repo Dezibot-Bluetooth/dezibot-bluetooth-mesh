@@ -70,7 +70,7 @@ bool DeziBotMesh::beginClient() {
 
 void DeziBotMesh::sendOnOff(bool onoff, uint16_t addr) {
     if (_mode == MODE_NODE) {
-        ble_mesh_node_send_onoff(onoff ? 1 : 0, addr);
+        // TODO
     } else if (_mode == MODE_CLIENT_ONLY) {
         ble_mesh_client_send(onoff ? 1 : 0, addr);
     } else {
