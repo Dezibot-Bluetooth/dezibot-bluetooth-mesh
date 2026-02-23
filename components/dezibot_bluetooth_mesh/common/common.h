@@ -17,6 +17,11 @@
 #ifndef DEZIBOT_BLUETOOTH_MESH_COMMON_H
 #define DEZIBOT_BLUETOOTH_MESH_COMMON_H
 
+/**
+ * @file common.h
+ * @brief Common includes and types for the BLE Mesh modules.
+ */
+
 // STD APIs
 #include <stdio.h>
 #include <string.h>
