@@ -354,7 +354,7 @@ void ble_mesh_client_send_property(uint16_t property_id, uint8_t *property_value
     common.msg_timeout = 0;
     
     set_state.user_property_set.property_id = property_id;
-    set_state.user_property_set.property_value = property_value;
+    set_state.user_property_set.property_value->data = property_value;
 
     err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
     if (err != ESP_OK) {
