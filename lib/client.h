@@ -24,7 +24,7 @@ void ble_mesh_client_send_battery(uint8_t battery_level, uint16_t addr);
 void ble_mesh_client_send_location(uint32_t latitude, uint32_t longitude, int16_t altitude, uint16_t addr);
 
 // Generic Property Client
-void ble_mesh_client_send_property(uint16_t property_id, uint8_t *property_value, 
+void ble_mesh_client_send_property(uint16_t property_id, uint8_t *property_value,
                                     uint16_t property_value_len, uint16_t addr);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_CLIENT_H

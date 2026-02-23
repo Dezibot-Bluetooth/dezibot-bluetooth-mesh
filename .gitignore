@@ -2,3 +2,7 @@
 .idea
 build
 sdkconfig.esp32s3usbotg.old
+
+# Documentation build output
+documentation/doxygen/
+documentation/*.pdf

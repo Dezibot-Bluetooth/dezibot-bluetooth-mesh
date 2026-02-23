@@ -1,3 +1,19 @@
+/**
+ * @file common.h
+ * @brief Common header file for DeziBot Bluetooth Mesh library
+ * 
+ * This header provides centralized access to all required APIs for the
+ * Bluetooth Mesh implementation. It includes standard C libraries, ESP-IDF
+ * core APIs, FreeRTOS primitives, NimBLE stack headers, and BLE Mesh APIs.
+ * 
+ * Design Pattern: Central Include Pattern
+ * This reduces code duplication and ensures consistent API access across
+ * all modules. Modules only need to include this single header.
+ * 
+ * @author DeziBot Project
+ * @date 2026
+ */
+
 #ifndef DEZIBOT_BLUETOOTH_MESH_COMMON_H
 #define DEZIBOT_BLUETOOTH_MESH_COMMON_H
 
