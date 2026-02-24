@@ -279,7 +279,7 @@ dependencies:
       type: service
     version: 1.0.20~3
   espressif/mdns:
-    component_hash: 29e47564b1a7ee778135e17fbbf2a2773f71c97ebabfe626c8eda7c958a7ad16
+    component_hash: 043f989435fd88f771c70507bfde854380c259a8fec8c0d60bcfd8714f16960e
     dependencies:
     - name: idf
       require: private
@@ -287,7 +287,7 @@ dependencies:
     source:
       registry_url: https://components.espressif.com/
       type: service
-    version: 1.9.1
+    version: 1.10.0
   espressif/network_provisioning:
     component_hash: ef2e10182fd1861e68b821491916327c25416ca7ae70e5a6e43313dbc71fe993
     dependencies:
@@ -346,6 +346,6 @@ direct_dependencies:
 - espressif/rmaker_common
 - idf
 - joltwallet/littlefs
-manifest_hash: 44e7b0dfdb2ddbb5303c55cf21bf4c6df534dc1d9aa8fdef790c5067badbb777
+manifest_hash: 20bceb7022d4be97c6adc17f7f40e7c8f22548a1b05fd9e56792cbacc71f30ce
 target: esp32s3
 version: 2.0.0

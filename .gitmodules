@@ -12,7 +12,7 @@
 
 [submodule "arduino_libraries/async_tcp"]
 	path = arduino_libraries/async_tcp
-	url = https://github.com/dvarrel/AsyncTCP.git
+	url = https://github.com/me-no-dev/AsyncTCP.git
 
 [submodule "arduino_libraries/dezibot"]
 	path = arduino_libraries/dezibot
