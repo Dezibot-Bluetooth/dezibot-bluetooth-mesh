@@ -4,3 +4,10 @@ idf_component_register(
         INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/arduino_libraries/dezibot/src/"
         REQUIRES arduino adafruit_neopixel painlessMesh async_tcp veml6040
 )
+
+target_compile_options(${COMPONENT_LIB} PRIVATE
+        -Wno-error=format
+        -Wno-error=parentheses
+        -Wno-error=int-in-bool-context
+        -Wno-error=char-subscripts
+)
