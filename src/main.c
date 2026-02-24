@@ -2,8 +2,8 @@
 #include "nvs_flash.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "client.h"
-#include "bluetooth.h"
+#include "client/client.h"
+#include "common/bluetooth.h"
 
 #define TAG "MAIN"
 

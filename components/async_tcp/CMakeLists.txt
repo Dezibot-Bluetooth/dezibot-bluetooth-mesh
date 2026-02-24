@@ -1,6 +1,6 @@
-file(GLOB_RECURSE LIB_SRCS "${CMAKE_SOURCE_DIR}/arduino_libraries/async_tcp/src/*.cpp")
+file(GLOB_RECURSE LIB_SRCS "${CMAKE_SOURCE_DIR}/arduino_components/async_tcp/src/*.cpp")
 idf_component_register(
         SRCS ${LIB_SRCS}
-        INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/arduino_libraries/async_tcp/src/"
+        INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/arduino_components/async_tcp/src/"
         REQUIRES arduino
 )
