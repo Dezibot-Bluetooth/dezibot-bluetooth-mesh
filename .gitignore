@@ -8,5 +8,3 @@ cmake-build-idf
 # Documentation build output
 documentation/doxygen/
 documentation/*.pdf
-
-/components/painlessMesh/
