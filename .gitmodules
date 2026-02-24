@@ -1,0 +1,31 @@
+[submodule "components/arduino"]
+	path = components/arduino
+	url = https://github.com/espressif/arduino-esp32.git
+
+[submodule "arduino_libraries/adafruit_neopixel"]
+	path = arduino_libraries/adafruit_neopixel
+	url = https://github.com/adafruit/Adafruit_NeoPixel.git
+
+[submodule "arduino_libraries/arduino_json"]
+	path = arduino_libraries/arduino_json
+	url = https://github.com/bblanchon/ArduinoJson.git
+
+[submodule "arduino_libraries/async_tcp"]
+	path = arduino_libraries/async_tcp
+	url = https://github.com/dvarrel/AsyncTCP.git
+
+[submodule "arduino_libraries/dezibot"]
+	path = arduino_libraries/dezibot
+	url = https://github.com/dezibot/dezibot.git
+
+[submodule "arduino_libraries/painlessMesh"]
+	path = arduino_libraries/painlessMesh
+	url = https://gitlab.com/painlessMesh/painlessMesh.git
+
+[submodule "arduino_libraries/task_scheduler"]
+	path = arduino_libraries/task_scheduler
+	url = https://github.com/arkhipenko/TaskScheduler.git
+
+[submodule "arduino_libraries/veml6040"]
+	path = arduino_libraries/veml6040
+	url = https://github.com/thewknd/VEML6040.git
