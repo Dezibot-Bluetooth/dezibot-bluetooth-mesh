@@ -3,3 +3,4 @@
 build
 sdkconfig.esp32s3usbotg.old
 /.github/
+cmake-build-idf
