@@ -7,6 +7,10 @@ void mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event, esp_ble_mes
 
 void mesh_generic_client_cb(esp_ble_mesh_generic_client_cb_event_t event, esp_ble_mesh_generic_client_cb_param_t *param);
 
+void mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event, esp_ble_mesh_cfg_client_cb_param_t *param);
+
+void mesh_generic_client_cb(esp_ble_mesh_generic_client_cb_event_t event, esp_ble_mesh_generic_client_cb_param_t *param);
+
 void ble_mesh_client_set_composition(esp_ble_mesh_comp_t *comp);
 
 esp_err_t ble_mesh_client_init(void);
