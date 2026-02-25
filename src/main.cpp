@@ -1,5 +1,5 @@
 /**
- * @file ClientOnly.cpp
+* @file ClientOnly.cpp
  * @brief Example: Client-only node (sends commands)
  *
  * This example demonstrates a DeziBot configured as a client-only node
@@ -13,6 +13,13 @@
 #include <esp_log.h>
 
 static const char *TAG = "main";
+
+// Prevent Arduino's initArduino() from releasing BT controller memory.
+// Without this, esp_bt_controller_mem_release() runs before setup(),
+// and the later nimble_port_init() crashes on freed memory.
+extern "C" bool btInUse() {
+  return true;
+}
 
 const std::uint16_t TARGET_ALL = 0xFFFF;
 
@@ -47,10 +54,7 @@ void loop() {
         lastShakeTime = millis();
         commandState = !commandState;
 
-        // Send OnOff command to all nodes
-        Serial.print("Sending OnOff(");
-        Serial.print(commandState ? "ON" : "OFF");
-        Serial.println(") to all nodes");
+        ESP_LOGI(TAG, "Sending OnOff(%s) to all nodes", commandState ? "ON" : "OFF");
         dezimesh.sendOnOff(commandState, TARGET_ALL);
     }
     delay(10);
