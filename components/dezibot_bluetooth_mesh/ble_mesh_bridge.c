@@ -1,5 +1,4 @@
 #include "ble_mesh_bridge.h"
-
 #include "common/common.h"
 #include "common/init.h"
 #include "common/bluetooth.h"
