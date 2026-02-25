@@ -8,8 +8,7 @@
  * @date 2026
  */
 
-#include "../init.h"
-
+#include "init.h"
 #include "common.h"
 #include "bluetooth.h"
 

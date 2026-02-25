@@ -77,10 +77,9 @@ typedef struct esp_ble_mesh_key {
  * 
  * @note This function should be called after bluetooth_init()
  * @note The provisioner runs automatically once initialized
- * @note Currently declared static - needs to be made public for external use
  * 
  * @see bluetooth_init()
  */
-static esp_err_t ble_mesh_init(void);
+esp_err_t ble_mesh_init(void);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_PROVISIONER_H

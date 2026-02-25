@@ -1,0 +1,2 @@
+#!/bin/sh
+idf.py -B cmake-build-idf fullclean reconfigure
