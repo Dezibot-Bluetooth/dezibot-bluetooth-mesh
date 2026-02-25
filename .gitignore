@@ -3,7 +3,8 @@
 .github
 .cache
 build
-sdkconfig.esp32s3usbotg.old
+sdkconfig.old
+
 cmake-build-idf
 managed_components
 
