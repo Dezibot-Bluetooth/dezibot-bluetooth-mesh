@@ -11,6 +11,7 @@
 #include <Dezibot.h>
 #include <DeziBotMesh.h>
 #include <esp_log.h>
+#include "client_composition.h"
 
 static const char *TAG = "main";
 
@@ -34,6 +35,9 @@ void setup() {
         while (1) { delay(1000); }
     }
     ESP_LOGI(TAG, "Mesh stack initialized");
+
+    client_composition_init();
+    ESP_LOGI(TAG, "Set client composition");
 
     if (!dezimesh.beginClient()) {
         ESP_LOGE(TAG, "Mesh client init failed");
