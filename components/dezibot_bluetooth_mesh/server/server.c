@@ -1,4 +1,4 @@
-#include "server.h"
+#include "../../../lib/server.h"
 #include "bluetooth.h"
 #include "common.h"
 
