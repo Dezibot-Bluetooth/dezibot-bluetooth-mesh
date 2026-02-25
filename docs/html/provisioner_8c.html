@@ -109,7 +109,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:acd19037d9e007bd25d5df76bcf17d0d0" id="r_acd19037d9e007bd25d5df76bcf17d0d0"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd19037d9e007bd25d5df76bcf17d0d0">ble_mesh_init</a> (void)</td></tr>
-<tr class="memdesc:acd19037d9e007bd25d5df76bcf17d0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh as provisioner.  <br /></td></tr>
+<tr class="memdesc:acd19037d9e007bd25d5df76bcf17d0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh in provisioner role.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="aecc495dad9dcf4e16c86634006659738" name="aecc495dad9dcf4e16c86634006659738"></a>
@@ -253,30 +253,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the BLE Mesh stack in provisioner mode. The provisioner will automatically discover and provision devices with matching UUIDs.</p>
-<p>Initialization steps:</p><ol type="1">
-<li>Configure provisioning keys (network and application)</li>
-<li>Register provisioning and configuration callbacks</li>
-<li>Initialize BLE Mesh stack with provisioner composition</li>
-<li>Set UUID matching filter (0xdd, 0xdd prefix)</li>
-<li>Enable provisioning on ADV and GATT bearers</li>
-<li>Add local application key</li>
-</ol>
-<p>Configuration:</p><ul>
-<li>Provisioner address: 0x0001</li>
-<li>Start address for nodes: 0x0005</li>
-<li>Application key: All bytes set to 0x12</li>
-<li>UUID filter: Devices starting with 0xdd 0xdd</li>
-</ul>
-<dl class="section return"><dt>Returns</dt><dd><ul>
-<li>ESP_OK: Provisioner initialized successfully</li>
-<li>Error codes from BLE Mesh initialization functions</li>
-</ul>
-</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This function should be called after <a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> </dd>
-<dd>
-The provisioner runs automatically once initialized</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> </dd></dl>
+<p>Initialize BLE Mesh as provisioner.</p>
+<p>Configures keys, registers callbacks, initializes the mesh stack and enables provisioning. Also installs a UUID match filter used to decide which devices to automatically provision.</p>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh APIs. </dd></dl>
 
 </div>
 </div>

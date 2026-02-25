@@ -177,6 +177,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Destroy the mesh wrapper object.</p>
+<p>Cleanup is handled by the underlying ESP-IDF components. </p>
 
 </div>
 </div>
@@ -195,8 +197,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initialize the node in client-only mode.</p>
 <p>This initializes a node that can only send commands to other nodes. Useful for remote controls or sensor nodes that only publish data.</p>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure</dd></dl>
+<p>Requires <a class="el" href="#ae0dd6a93b4adda2dac388f3b73a76ca2" title="Initialize Bluetooth and pre-requisites.">init()</a> to have been called successfully.</p>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
 
 </div>
 </div>
@@ -214,9 +219,11 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Retrieve the device UUID used by the mesh stack.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uuid</td><td>Buffer to store UUID (must be 16 bytes) </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">uuid</td><td>Buffer to store UUID (must be 16 bytes)</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">uuid</td><td>Output buffer (16 bytes) </td></tr>
   </table>
   </dd>
 </dl>
@@ -237,9 +244,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initialize core prerequisites (NVS + Bluetooth).</p>
 <p>Call this once before begin(). Initializes NVS flash and Bluetooth stack.</p>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
-<p>err = <a class="el" href="ble__mesh__bridge_8c.html#ae0f89a901fba87f4b5aa4dce83cb6238">mesh_bridge_bluetooth_init()</a>; if (err != ESP_OK) { ESP_LOGE("DeziBotMesh", "bluetooth_init failed: %d", err); return false; }</p>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure</dd></dl>
+<p>Safe to call multiple times.</p>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
+<p>err = <a class="el" href="ble__mesh__bridge_8c.html#ae0f89a901fba87f4b5aa4dce83cb6238" title="Wrapper for bluetooth_init().">mesh_bridge_bluetooth_init()</a>; if (err != ESP_OK) { ESP_LOGE("DeziBotMesh", "bluetooth_init failed: %d", err); return false; }</p>
 
 </div>
 </div>
@@ -261,10 +271,19 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Send a Generic OnOff command.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">onoff</td><td>true=ON, false=OFF </td></tr>
-    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Uses the active mode to determine whether sending is supported.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">onoff</td><td>true for On, false for Off </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>

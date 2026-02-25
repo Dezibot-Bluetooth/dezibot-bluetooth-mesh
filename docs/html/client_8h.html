@@ -96,13 +96,21 @@ $(function(){initNavTree('client_8h.html','',''); });
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a000984d14109a79f000c1996d1b02336" id="r_a000984d14109a79f000c1996d1b02336"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000984d14109a79f000c1996d1b02336">ble_mesh_client_init</a> (void)</td></tr>
+<tr class="memdesc:a000984d14109a79f000c1996d1b02336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh client node.  <br /></td></tr>
 <tr class="memitem:a9e3f5a594e8d5ef4bfd613e4149221b6" id="r_a9e3f5a594e8d5ef4bfd613e4149221b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e3f5a594e8d5ef4bfd613e4149221b6">ble_mesh_client_send</a> (uint8_t val, uint16_t addr)</td></tr>
+<tr class="memdesc:a9e3f5a594e8d5ef4bfd613e4149221b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff Set Unacknowledged.  <br /></td></tr>
 <tr class="memitem:a8b1e4dcd45cd5ad4d03f0428c77d7811" id="r_a8b1e4dcd45cd5ad4d03f0428c77d7811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b1e4dcd45cd5ad4d03f0428c77d7811">ble_mesh_client_send_level</a> (int16_t level, uint16_t addr)</td></tr>
+<tr class="memdesc:a8b1e4dcd45cd5ad4d03f0428c77d7811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Level Set Unacknowledged.  <br /></td></tr>
 <tr class="memitem:aa92a2a608bda9b1a95a950e9a478fe07" id="r_aa92a2a608bda9b1a95a950e9a478fe07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92a2a608bda9b1a95a950e9a478fe07">ble_mesh_client_send_default_transition_time</a> (uint8_t transition_time, uint16_t addr)</td></tr>
+<tr class="memdesc:aa92a2a608bda9b1a95a950e9a478fe07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default transition time on a target.  <br /></td></tr>
 <tr class="memitem:ad9abb937d224b2e5a0bd77cf1976e782" id="r_ad9abb937d224b2e5a0bd77cf1976e782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9abb937d224b2e5a0bd77cf1976e782">ble_mesh_client_send_power_level</a> (uint16_t power, uint16_t addr)</td></tr>
+<tr class="memdesc:ad9abb937d224b2e5a0bd77cf1976e782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Level Set Unacknowledged.  <br /></td></tr>
 <tr class="memitem:abd8f83b7dcb9a5461f34a4a30666132f" id="r_abd8f83b7dcb9a5461f34a4a30666132f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd8f83b7dcb9a5461f34a4a30666132f">ble_mesh_client_send_battery</a> (uint8_t battery_level, uint16_t addr)</td></tr>
+<tr class="memdesc:abd8f83b7dcb9a5461f34a4a30666132f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request Generic Battery state.  <br /></td></tr>
 <tr class="memitem:a0c98556e4db0ff6a95eeff8c82fc9e84" id="r_a0c98556e4db0ff6a95eeff8c82fc9e84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c98556e4db0ff6a95eeff8c82fc9e84">ble_mesh_client_send_location</a> (uint32_t latitude, uint32_t longitude, int16_t altitude, uint16_t addr)</td></tr>
+<tr class="memdesc:a0c98556e4db0ff6a95eeff8c82fc9e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Location Global Set Unacknowledged.  <br /></td></tr>
 <tr class="memitem:a701a06ddc32e9c390340d925c3bb3c35" id="r_a701a06ddc32e9c390340d925c3bb3c35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a701a06ddc32e9c390340d925c3bb3c35">ble_mesh_client_send_property</a> (uint16_t property_id, uint8_t *property_value, uint16_t property_value_len, uint16_t addr)</td></tr>
+<tr class="memdesc:a701a06ddc32e9c390340d925c3bb3c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic User Property Set Unacknowledged.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a000984d14109a79f000c1996d1b02336" name="a000984d14109a79f000c1996d1b02336"></a>
@@ -119,6 +127,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sets up provisioning for a mesh node that contains a set of Generic Client models (OnOff, Level, etc.) and enables provisioning over ADV and GATT.</p>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh stack.</dd></dl>
+<p>Initialize the BLE Mesh client node.</p>
+<p>Registers provisioning/config/generic callbacks, initializes the mesh stack with the local composition, and enables provisioning over ADV and GATT.</p>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh APIs. </dd></dl>
 
 </div>
 </div>
@@ -140,6 +153,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>0 for Off, non-zero for On </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Sends an OnOff value to a destination node. Requires that the device has completed provisioning.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>OnOff value (0 = Off, non-zero = On) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -161,6 +189,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Note: Battery is typically read-only; this issues a GET.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">battery_level</td><td>Unused (reserved for future use) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Request Generic Battery state.</p>
+<p>The battery model is typically read-only, so this issues a GET request.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">battery_level</td><td>Unused </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -182,6 +227,21 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">transition_time</td><td>Encoded transition time per Mesh Model spec </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set the default transition time on a target.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">transition_time</td><td>Encoded transition time value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -203,6 +263,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Signed level value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Signed level value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -234,6 +303,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>Encoded latitude </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>Encoded longitude </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Altitude in meters (or spec encoding) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>Encoded latitude value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>Encoded longitude value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Encoded altitude value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -255,6 +337,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Power level value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Power level value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -286,6 +377,19 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property identifier </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property_value in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property identifier </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property_value in bytes </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

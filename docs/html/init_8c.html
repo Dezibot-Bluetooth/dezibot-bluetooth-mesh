@@ -106,6 +106,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a06b71133291c1461570dac7dede138b3" id="r_a06b71133291c1461570dac7dede138b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06b71133291c1461570dac7dede138b3">btInUse</a> (void)</td></tr>
+<tr class="memdesc:a06b71133291c1461570dac7dede138b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate to Arduino core that Bluetooth is used.  <br /></td></tr>
 <tr class="memitem:a0cb996b4d1a992c504d8ef55b432edb5" id="r_a0cb996b4d1a992c504d8ef55b432edb5"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cb996b4d1a992c504d8ef55b432edb5">pre_init</a> (void)</td></tr>
 <tr class="memdesc:a0cb996b4d1a992c504d8ef55b432edb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform pre-application initialization.  <br /></td></tr>
 </table>
@@ -144,6 +145,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Arduino-ESP32 calls this hook to decide whether it can release BT controller memory during startup.</p>
+<dl class="section return"><dt>Returns</dt><dd>true (Bluetooth is in use) </dd></dl>
 
 </div>
 </div>
