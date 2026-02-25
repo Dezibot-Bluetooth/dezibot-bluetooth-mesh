@@ -25,6 +25,7 @@
 [submodule "arduino_components/veml6040"]
 	path = arduino_components/veml6040
 	url = https://github.com/thewknd/VEML6040.git
+
 [submodule "components/arduino"]
 	path = components/arduino
 	url = https://github.com/espressif/arduino-esp32.git
