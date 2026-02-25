@@ -50,7 +50,7 @@ void setup() {
 }
 
 void loop() {
-    if (dezibot.motion.detection.isShaken() && (millis() - lastShakeTime > SHAKE_DEBOUNCE_MS)) {
+    if (dezibot.motion.detection.isShaken(100, xAxis|yAxis|zAxis) && (millis() - lastShakeTime > SHAKE_DEBOUNCE_MS)) {
         lastShakeTime = millis();
         commandState = !commandState;
 
