@@ -1,6 +1,6 @@
 /**
- * @file ClientOnly.cpp
- * @brief Example: Client-only node (sends commands)
+* @file ServerOnly.cpp
+ * @brief Example: Server-only node (receives commands)
  *
  * This example demonstrates a DeziBot configured as a server-only node.
  * The server uses a simple OnOff server that can receive commands from other nodes.
@@ -18,7 +18,7 @@ static const char *TAG = "main";
 // Without this, esp_bt_controller_mem_release() runs before setup(),
 // and the later nimble_port_init() crashes on freed memory.
 extern "C" bool btInUse() {
-  return true;
+    return true;
 }
 
 Dezibot dezibot = Dezibot();
@@ -31,15 +31,15 @@ static void onMeshServerEvent(const mesh_server_evt_t *evt)
     }
 
     switch (evt->type) {
-        case MESH_EVT_ONOFF_GET:
-            ESP_LOGI(TAG, "[srv evt] ONOFF_GET");
-            break;
-        case MESH_EVT_ONOFF_SET:
-            ESP_LOGI(TAG, "[srv evt] ONOFF_SET: onoff=%u", evt->onoff_set.onoff);
-            break;
-        default:
-            ESP_LOGI(TAG, "[srv evt] type=%d", (int)evt->type);
-            break;
+    case MESH_EVT_ONOFF_GET:
+        ESP_LOGI(TAG, "[srv evt] ONOFF_GET");
+        break;
+    case MESH_EVT_ONOFF_SET:
+        ESP_LOGI(TAG, "[srv evt] ONOFF_SET: onoff=%u", evt->onoff_set.onoff);
+        break;
+    default:
+        ESP_LOGI(TAG, "[srv evt] type=%d", (int)evt->type);
+        break;
     }
 }
 
