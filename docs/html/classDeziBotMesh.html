@@ -115,6 +115,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae0dd6a93b4adda2dac388f3b73a76ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Bluetooth and pre-requisites.  <br /></td></tr>
 <tr class="memitem:a86ea112c6c3fab8382753284296886d5" id="r_a86ea112c6c3fab8382753284296886d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ea112c6c3fab8382753284296886d5">beginClient</a> ()</td></tr>
 <tr class="memdesc:a86ea112c6c3fab8382753284296886d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as client-only (send commands)  <br /></td></tr>
+<tr class="memitem:ab4becc3cb51dd4153542f30fed7e66ca" id="r_ab4becc3cb51dd4153542f30fed7e66ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4becc3cb51dd4153542f30fed7e66ca">beginServer</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
+<tr class="memdesc:ab4becc3cb51dd4153542f30fed7e66ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as server-only (receive commands and store data)  <br /></td></tr>
 <tr class="memitem:a6f0fcb05579585196bbd13b8f343b42d" id="r_a6f0fcb05579585196bbd13b8f343b42d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f0fcb05579585196bbd13b8f343b42d">sendOnOff</a> (bool onoff, uint16_t addr)</td></tr>
 <tr class="memdesc:a6f0fcb05579585196bbd13b8f343b42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff command to another node.  <br /></td></tr>
 <tr class="memitem:af3c4a5f78e295684dafdf23e8dde5a62" id="r_af3c4a5f78e295684dafdf23e8dde5a62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3c4a5f78e295684dafdf23e8dde5a62">getDeviceUUID</a> (uint8_t *uuid)</td></tr>
@@ -177,8 +179,6 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Destroy the mesh wrapper object.</p>
-<p>Cleanup is handled by the underlying ESP-IDF components. </p>
 
 </div>
 </div>
@@ -197,11 +197,27 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialize the node in client-only mode.</p>
 <p>This initializes a node that can only send commands to other nodes. Useful for remote controls or sensor nodes that only publish data.</p>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure</dd></dl>
-<p>Requires <a class="el" href="#ae0dd6a93b4adda2dac388f3b73a76ca2" title="Initialize Bluetooth and pre-requisites.">init()</a> to have been called successfully.</p>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
+
+</div>
+</div>
+<a id="ab4becc3cb51dd4153542f30fed7e66ca" name="ab4becc3cb51dd4153542f30fed7e66ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4becc3cb51dd4153542f30fed7e66ca">&#9670;&#160;</a></span>beginServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DeziBotMesh::beginServer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>serverCallback</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This initializes a node that can only receives commands and stores data.</p>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
 
 </div>
 </div>
@@ -219,11 +235,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Retrieve the device UUID used by the mesh stack.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir"></td><td class="paramname">uuid</td><td>Buffer to store UUID (must be 16 bytes)</td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">uuid</td><td>Output buffer (16 bytes) </td></tr>
+    <tr><td class="paramname">uuid</td><td>Buffer to store UUID (must be 16 bytes) </td></tr>
   </table>
   </dd>
 </dl>
@@ -244,12 +258,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initialize core prerequisites (NVS + Bluetooth).</p>
 <p>Call this once before begin(). Initializes NVS flash and Bluetooth stack.</p>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure</dd></dl>
-<p>Safe to call multiple times.</p>
-<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure. </dd></dl>
-<p>err = <a class="el" href="ble__mesh__bridge_8c.html#ae0f89a901fba87f4b5aa4dce83cb6238" title="Wrapper for bluetooth_init().">mesh_bridge_bluetooth_init()</a>; if (err != ESP_OK) { ESP_LOGE("DeziBotMesh", "bluetooth_init failed: %d", err); return false; }</p>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
 
 </div>
 </div>
@@ -271,28 +281,18 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Send a Generic OnOff command.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">onoff</td><td>true=ON, false=OFF </td></tr>
-    <tr><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Uses the active mode to determine whether sending is supported.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">onoff</td><td>true for On, false for Off </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>components/dezibot_bluetooth_mesh/<a class="el" href="DeziBotMesh_8h.html">DeziBotMesh.h</a></li>
-<li>components/dezibot_bluetooth_mesh/<a class="el" href="DeziBotMesh_8cpp.html">DeziBotMesh.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

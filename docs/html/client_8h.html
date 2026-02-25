@@ -91,6 +91,9 @@ $(function(){initNavTree('client_8h.html','',''); });
   <div class="headertitle"><div class="title">client.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>BLE Mesh client API.  
+</p>
 <div class="textblock"><code>#include &quot;<a class="el" href="common_8h.html">../common/common.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
@@ -128,10 +131,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Sets up provisioning for a mesh node that contains a set of Generic Client models (OnOff, Level, etc.) and enables provisioning over ADV and GATT.</p>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh stack.</dd></dl>
-<p>Initialize the BLE Mesh client node.</p>
-<p>Registers provisioning/config/generic callbacks, initializes the mesh stack with the local composition, and enables provisioning over ADV and GATT.</p>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh APIs. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh stack. </dd></dl>
 
 </div>
 </div>
@@ -156,15 +156,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>0 for Off, non-zero for On </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Sends an OnOff value to a destination node. Requires that the device has completed provisioning.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>OnOff value (0 = Off, non-zero = On) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
@@ -193,16 +185,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">battery_level</td><td>Unused (reserved for future use) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Request Generic Battery state.</p>
-<p>The battery model is typically read-only, so this issues a GET request.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">battery_level</td><td>Unused </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
@@ -230,15 +213,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">transition_time</td><td>Encoded transition time per Mesh Model spec </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Set the default transition time on a target.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">transition_time</td><td>Encoded transition time value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
@@ -266,9 +241,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Signed level value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Signed level value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,11 +281,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>Encoded latitude </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>Encoded longitude </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Altitude in meters (or spec encoding) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>Encoded latitude value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>Encoded longitude value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Encoded altitude value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
@@ -340,9 +309,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Power level value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Power level value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>
@@ -382,11 +349,7 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property identifier </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value bytes </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property_value in bytes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property identifier </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value bytes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property_value in bytes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Destination unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
   </table>
   </dd>
 </dl>

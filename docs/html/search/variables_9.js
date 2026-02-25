@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['onoff_5fclient_0',['onoff_client',['../client_8c.html#a21180bbaa0d1d03a040a98bb4d613091',1,'client.c']]],
-  ['own_5faddr_5ftype_1',['own_addr_type',['../bluetooth_8c.html#acb10ebe924ae5f8ca981db2b32212404',1,'bluetooth.c']]]
+  ['net_5fidx_0',['net_idx',['../structesp__ble__mesh__key.html#a4fdf8cbdb2dbc96bd5896eea0e0010f1',1,'esp_ble_mesh_key']]]
 ];

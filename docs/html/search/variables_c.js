@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unicast_0',['unicast',['../structesp__ble__mesh__node__info__t.html#a596007a70445e1ab0b5b19b09e5b91cb',1,'esp_ble_mesh_node_info_t']]],
-  ['uuid_1',['uuid',['../structesp__ble__mesh__node__info__t.html#ab56a56482becd4f386d7872f83cfd8cf',1,'esp_ble_mesh_node_info_t']]]
+  ['range_5fmax_0',['range_max',['../structmesh__server__evt__t.html#a233425c5a8edf89c0f336841330ad1cf',1,'mesh_server_evt_t']]],
+  ['range_5fmin_1',['range_min',['../structmesh__server__evt__t.html#ae42c57ba310b914b1f7321ba78fb4518',1,'mesh_server_evt_t']]]
 ];

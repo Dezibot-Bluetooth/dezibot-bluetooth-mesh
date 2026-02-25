@@ -136,23 +136,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>The caller must provide a buffer of at least 16 bytes </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Function logs error and returns if dev_uuid is NULL</dd></dl>
-<p>Creates a 16-byte UUID with the device's Bluetooth MAC address embedded at bytes 2-7. This provides a deterministic unique identifier that remains constant across reboots.</p>
-<p>UUID Structure:</p><ul>
-<li>Bytes 0-1: Uninitialized (may contain garbage)</li>
-<li>Bytes 2-7: Bluetooth MAC address</li>
-<li>Bytes 8-15: Uninitialized (may contain garbage)</li>
-</ul>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">dev_uuid</td><td>Pointer to 16-byte buffer for UUID output</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section note"><dt>Note</dt><dd>Logs error and returns if dev_uuid is NULL </dd>
-<dd>
-MAC address must be retrieved first via mesh_on_sync()</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>mesh_on_sync() </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Function logs error and returns if dev_uuid is NULL </dd></dl>
 
 </div>
 </div>
@@ -187,36 +171,7 @@ MAC address must be retrieved first via mesh_on_sync()</dd></dl>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>This function must be called before any mesh operations </dd>
 <dd>
-Blocks until Bluetooth host is synchronized</dd></dl>
-<p>Initializes the NimBLE Bluetooth stack and waits for synchronization. This function blocks until the stack is ready for mesh operations.</p>
-<p>Initialization sequence:</p><ol type="1">
-<li>Create binary semaphore for synchronization</li>
-<li>Initialize NimBLE port</li>
-<li>Configure host callbacks:<ul>
-<li>reset_cb: mesh_on_reset()</li>
-<li>sync_cb: mesh_on_sync()</li>
-<li>store_status_cb: ble_store_util_status_rr()</li>
-</ul>
-</li>
-<li>Initialize BLE storage configuration</li>
-<li>Create and start host task via nimble_port_freertos_init()</li>
-<li>Wait for sync callback (blocks on semaphore)</li>
-</ol>
-<p>Synchronization Pattern: The function creates a binary semaphore, starts the BLE host task, and blocks on the semaphore. When the host is ready, mesh_on_sync() gives the semaphore, allowing this function to return.</p>
-<dl class="section return"><dt>Returns</dt><dd><ul>
-<li>ESP_OK: Bluetooth initialized and synchronized</li>
-<li>ESP_FAIL: Failed to create semaphore</li>
-<li>Other: Error from nimble_port_init()</li>
-</ul>
-</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>This function blocks until Bluetooth is ready </dd>
-<dd>
-Must be called before any mesh operations </dd>
-<dd>
-Stores Bluetooth MAC address for UUID generation</dd></dl>
-<dl class="section see"><dt>See also</dt><dd>mesh_on_sync() </dd>
-<dd>
-<a class="el" href="bluetooth_8c.html#a4c7465dc3b7f31add02610dcd8647477" title="Generate device UUID from Bluetooth MAC address.">ble_mesh_get_dev_uuid()</a> </dd></dl>
+Blocks until Bluetooth host is synchronized </dd></dl>
 
 </div>
 </div>

@@ -1,8 +1,25 @@
 var searchData=
 [
-  ['cid_5fesp_0',['CID_ESP',['../provisioner_8c.html#abde255c5abc3ab0c35adf9e0eedaa714',1,'provisioner.c']]],
-  ['client_2ec_1',['client.c',['../client_8c.html',1,'']]],
-  ['client_2eh_2',['client.h',['../client_8h.html',1,'']]],
-  ['common_2eh_3',['common.h',['../common_8h.html',1,'']]],
-  ['comp_5fdata_5fpage_5f0_4',['COMP_DATA_PAGE_0',['../provisioner_8c.html#abb85539213797ec4976b1d9f2e621047',1,'provisioner.c']]]
+  ['battery_0',['battery',['../structmesh__server__t.html#a471dc1d56b1e7b0ab7b151ed27db32eb',1,'mesh_server_t']]],
+  ['beginclient_1',['beginClient',['../classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5',1,'DeziBotMesh']]],
+  ['beginserver_2',['beginServer',['../classDeziBotMesh.html#ab4becc3cb51dd4153542f30fed7e66ca',1,'DeziBotMesh']]],
+  ['ble_5fmesh_5fbridge_20h_3',['C/C++ Boundary: &lt;span class=&quot;tt&quot;&gt;ble_mesh_bridge.h&lt;/span&gt;',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md4',1,'']]],
+  ['ble_5fmesh_5fbridge_2eh_4',['ble_mesh_bridge.h',['../ble__mesh__bridge_8h.html',1,'']]],
+  ['ble_5fmesh_5fclient_5finit_5',['ble_mesh_client_init',['../client_8h.html#a000984d14109a79f000c1996d1b02336',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_6',['ble_mesh_client_send',['../client_8h.html#a9e3f5a594e8d5ef4bfd613e4149221b6',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_5fbattery_7',['ble_mesh_client_send_battery',['../client_8h.html#abd8f83b7dcb9a5461f34a4a30666132f',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_5fdefault_5ftransition_5ftime_8',['ble_mesh_client_send_default_transition_time',['../client_8h.html#aa92a2a608bda9b1a95a950e9a478fe07',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_5flevel_9',['ble_mesh_client_send_level',['../client_8h.html#a8b1e4dcd45cd5ad4d03f0428c77d7811',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_5flocation_10',['ble_mesh_client_send_location',['../client_8h.html#a0c98556e4db0ff6a95eeff8c82fc9e84',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_5fpower_5flevel_11',['ble_mesh_client_send_power_level',['../client_8h.html#ad9abb937d224b2e5a0bd77cf1976e782',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5fsend_5fproperty_12',['ble_mesh_client_send_property',['../client_8h.html#a701a06ddc32e9c390340d925c3bb3c35',1,'client.h']]],
+  ['ble_5fmesh_5fget_5fdev_5fuuid_13',['ble_mesh_get_dev_uuid',['../bluetooth_8h.html#a4c7465dc3b7f31add02610dcd8647477',1,'bluetooth.h']]],
+  ['ble_5fmesh_5finit_14',['ble_mesh_init',['../provisioner_8h.html#acd19037d9e007bd25d5df76bcf17d0d0',1,'provisioner.h']]],
+  ['ble_5fmesh_5fserver_5finit_15',['ble_mesh_server_init',['../server_8h.html#aa5d6b91c558ea48d06a68c3819920eb0',1,'server.h']]],
+  ['ble_5fmesh_5fserver_5fset_5fcomposition_16',['ble_mesh_server_set_composition',['../server_8h.html#a26f7cc0667946230bb800334687f9fb5',1,'server.h']]],
+  ['bluetooth_20mesh_17',['Dezibot Bluetooth Mesh',['../index.html',1,'']]],
+  ['bluetooth_20mesh_20component_18',['Dezibot Bluetooth Mesh Component',['../md_components_2dezibot__bluetooth__mesh_2README.html',1,'']]],
+  ['bluetooth_2eh_19',['bluetooth.h',['../bluetooth_8h.html',1,'']]],
+  ['bluetooth_5finit_20',['bluetooth_init',['../bluetooth_8h.html#a2bae8dcbee489037789f228234a3072d',1,'bluetooth.h']]],
+  ['boundary_3a_20ble_5fmesh_5fbridge_20h_21',['C/C++ Boundary: &lt;span class=&quot;tt&quot;&gt;ble_mesh_bridge.h&lt;/span&gt;',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md4',1,'']]]
 ];

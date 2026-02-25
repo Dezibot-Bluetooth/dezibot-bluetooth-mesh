@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['of_20the_20art_0',['Contribution / State of the art',['../md_README.html#autotoc_md1',1,'']]]
+  ['installation_0',['Installation',['../index.html#autotoc_md6',1,'']]],
+  ['it_20contains_1',['What It Contains',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md1',1,'']]]
 ];

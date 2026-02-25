@@ -25,6 +25,16 @@
 var NAVTREE =
 [
   [ "Dezibot Bluetooth Mesh", "index.html", [
+    [ "Installation", "index.html#autotoc_md6", null ],
+    [ "Scripts", "index.html#autotoc_md7", null ],
+    [ "Run An Example", "index.html#autotoc_md8", null ],
+    [ "Dezibot Bluetooth Mesh Component", "md_components_2dezibot__bluetooth__mesh_2README.html", [
+      [ "What It Contains", "md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md1", null ],
+      [ "Wrapper APIs", "md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md2", [
+        [ "Arduino C++: <span class=\"tt\">DeziBotMesh</span>", "md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md3", null ],
+        [ "C/C++ Boundary: <span class=\"tt\">ble_mesh_bridge.h</span>", "md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md4", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -43,7 +53,8 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ]
       ] ]
     ] ]
   ] ]
@@ -51,7 +62,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"DeziBotMesh_8cpp.html"
+"DeziBotMesh_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

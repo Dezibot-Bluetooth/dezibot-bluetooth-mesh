@@ -8,6 +8,7 @@ var classDeziBotMesh =
     [ "DeziBotMesh", "classDeziBotMesh.html#a79f242b6e2017b66e32c70a9df61187c", null ],
     [ "~DeziBotMesh", "classDeziBotMesh.html#a5b850d3b02ccac1e392d5b5a6e247972", null ],
     [ "beginClient", "classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5", null ],
+    [ "beginServer", "classDeziBotMesh.html#ab4becc3cb51dd4153542f30fed7e66ca", null ],
     [ "getDeviceUUID", "classDeziBotMesh.html#af3c4a5f78e295684dafdf23e8dde5a62", null ],
     [ "init", "classDeziBotMesh.html#ae0dd6a93b4adda2dac388f3b73a76ca2", null ],
     [ "sendOnOff", "classDeziBotMesh.html#a6f0fcb05579585196bbd13b8f343b42d", null ]

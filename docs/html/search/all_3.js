@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['dezibotmesh_0',['DeziBotMesh',['../classDeziBotMesh.html',1,'DeziBotMesh'],['../classDeziBotMesh.html#a79f242b6e2017b66e32c70a9df61187c',1,'DeziBotMesh::DeziBotMesh()']]],
-  ['dezibotmesh_20arduino_20library_1',['DeziBotMesh Arduino Library',['..//home/scholz/uni/24-INM/25-emb/dezibot-bluetooth-mesh/components/dezibot_bluetooth_mesh/README.md#autotoc_md0',1,'']]],
-  ['dezibotmesh_2ecpp_2',['DeziBotMesh.cpp',['../DeziBotMesh_8cpp.html',1,'']]],
-  ['dezibotmesh_2eh_3',['DeziBotMesh.h',['../DeziBotMesh_8h.html',1,'']]],
-  ['dezimesh_4',['DeziMesh',['../DeziBotMesh_8cpp.html#aed7ec58b984bffef6a7750a042a460c5',1,'DeziMesh:&#160;DeziBotMesh.cpp'],['../DeziBotMesh_8h.html#aed7ec58b984bffef6a7750a042a460c5',1,'DeziMesh:&#160;DeziBotMesh.cpp']]]
+  ['c_20_3a_20dezibotmesh_0',['Arduino C++: &lt;span class=&quot;tt&quot;&gt;DeziBotMesh&lt;/span&gt;',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md3',1,'']]],
+  ['c_20boundary_3a_20ble_5fmesh_5fbridge_20h_1',['C/C++ Boundary: &lt;span class=&quot;tt&quot;&gt;ble_mesh_bridge.h&lt;/span&gt;',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md4',1,'']]],
+  ['c_20c_20boundary_3a_20ble_5fmesh_5fbridge_20h_2',['C/C++ Boundary: &lt;span class=&quot;tt&quot;&gt;ble_mesh_bridge.h&lt;/span&gt;',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md4',1,'']]],
+  ['cb_3',['cb',['../structmesh__server__t.html#a1053c764bc8c06c96bf51802090ad27f',1,'mesh_server_t']]],
+  ['client_2eh_4',['client.h',['../client_8h.html',1,'']]],
+  ['client_5fproperties_5',['client_properties',['../structmesh__server__t.html#a51433e7a10dfe141a678c4b64d6e8ece',1,'mesh_server_t']]],
+  ['common_2eh_6',['common.h',['../common_8h.html',1,'']]],
+  ['component_7',['Dezibot Bluetooth Mesh Component',['../md_components_2dezibot__bluetooth__mesh_2README.html',1,'']]],
+  ['contains_8',['What It Contains',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md1',1,'']]]
 ];

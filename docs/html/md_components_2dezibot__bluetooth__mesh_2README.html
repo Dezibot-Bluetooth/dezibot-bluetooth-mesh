@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dezibot Bluetooth Mesh: dezibot_bluetooth_mesh Component</title>
+<title>Dezibot Bluetooth Mesh: Dezibot Bluetooth Mesh Component</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -88,12 +88,12 @@ $(function(){initNavTree('md_components_2dezibot__bluetooth__mesh_2README.html',
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">dezibot_bluetooth_mesh Component </div></div>
+  <div class="headertitle"><div class="title">Dezibot Bluetooth Mesh Component </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md4"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
 <p>ESP-IDF component that implements the DeziBot Bluetooth Mesh (BLE Mesh) stack and exposes an Arduino-style C++ wrapper.</p>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 What It Contains</h1>
 <ul>
 <li>Core mesh logic split into submodules:<ul>
@@ -109,22 +109,14 @@ What It Contains</h1>
 </li>
 <li>Support headers used by the wrapper:<ul>
 <li>C/C++ boundary header to call C implementation from C++: <span class="tt"><a class="el" href="ble__mesh__bridge_8h.html" title="C ABI bridge for DeziBot Bluetooth Mesh.">components/dezibot_bluetooth_mesh/ble_mesh_bridge.h</a></span></li>
-<li>Server event types: <span class="tt"><a class="el" href="server__events_8h.html" title="Event types and payloads emitted by the server models.">components/dezibot_bluetooth_mesh/server/server_events.h</a></span></li>
 </ul>
 </li>
 </ul>
-<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
 Wrapper APIs</h1>
-<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
 Arduino C++: <span class="tt">DeziBotMesh</span></h2>
 <p>Main class: <span class="tt"><a class="el" href="classDeziBotMesh.html" title="Main DeziBot Bluetooth Mesh class.">DeziBotMesh</a></span> (header: <span class="tt"><a class="el" href="DeziBotMesh_8h.html" title="Arduino wrapper for DeziBot Bluetooth Mesh library.">DeziBotMesh.h</a></span>)</p>
-<ul>
-<li><span class="tt">bool init()</span></li>
-<li><span class="tt">bool beginClient()</span></li>
-<li><span class="tt">bool beginServer(mesh_server_evt_cb_t cb)</span></li>
-<li><span class="tt">void sendOnOff(bool onoff, uint16_t addr)</span></li>
-<li><span class="tt">void getDeviceUUID(uint8_t *uuid)</span></li>
-</ul>
 <p>Minimal client example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="DeziBotMesh_8h.html">DeziBotMesh.h</a>&gt;</span></div>
 <div class="line"> </div>
@@ -172,17 +164,9 @@ Arduino C++: <span class="tt">DeziBotMesh</span></h2>
 <div class="ttc" id="aserver__events_8h_html_a482ececa68964d0e988d45a6caacd88ea099995ef681695e8951a9faa83d4a2b9"><div class="ttname"><a href="server__events_8h.html#a482ececa68964d0e988d45a6caacd88ea099995ef681695e8951a9faa83d4a2b9">MESH_EVT_ONOFF_SET</a></div><div class="ttdeci">@ MESH_EVT_ONOFF_SET</div><div class="ttdef"><b>Definition</b> server_events.h:16</div></div>
 <div class="ttc" id="astructmesh__server__evt__t_html"><div class="ttname"><a href="structmesh__server__evt__t.html">mesh_server_evt_t</a></div><div class="ttdoc">Server event payload.</div><div class="ttdef"><b>Definition</b> server_events.h:52</div></div>
 <div class="ttc" id="astructmesh__server__evt__t_html_a6c8a60566164096e853224a8a6ceb6ce"><div class="ttname"><a href="structmesh__server__evt__t.html#a6c8a60566164096e853224a8a6ceb6ce">mesh_server_evt_t::type</a></div><div class="ttdeci">mesh_server_evt_type_t type</div><div class="ttdef"><b>Definition</b> server_events.h:53</div></div>
-</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
 C/C++ Boundary: <span class="tt">ble_mesh_bridge.h</span></h2>
-<p><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html" title="C ABI bridge for DeziBot Bluetooth Mesh.">ble_mesh_bridge.h</a></span> is used to make the C implementation callable from the C++ wrapper (i.e. provide a stable C ABI and <span class="tt">extern "C"</span> linkage where needed).</p>
-<p>It is primarily an internal detail used by <span class="tt"><a class="el" href="classDeziBotMesh.html" title="Main DeziBot Bluetooth Mesh class.">DeziBotMesh</a></span> (implementation in <span class="tt">components/dezibot_bluetooth_mesh/DeziBotMesh.cpp</span>) to invoke the underlying C functions.</p>
-<p>Relevant entry points (called by the wrapper):</p><ul>
-<li><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html#ac1ee35b8e8f425223e74142cfea7d63e" title="Perform pre-initialization for the mesh stack.">mesh_bridge_pre_init()</a></span></li>
-<li><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html#ae0f89a901fba87f4b5aa4dce83cb6238" title="Initialize the Bluetooth host stack.">mesh_bridge_bluetooth_init()</a></span></li>
-<li><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html#ad2b037c217bb1e363b61257bff086470" title="Get the device UUID used for provisioning.">mesh_bridge_get_device_uuid(uint8_t *uuid)</a></span></li>
-<li><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html#a376eb7c6c5eef71f458f95026ec8b524">mesh_bridge_client_init()</a></span> / <span class="tt"><a class="el" href="ble__mesh__bridge_8h.html#a78b6506c85164a64fddc962845e365d3" title="Send a Generic OnOff message to a target address.">mesh_bridge_client_send(uint8_t val, uint16_t addr)</a></span></li>
-<li><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html#a6e41c2730dd4b603d198342902fb7de6" title="Initialize the BLE Mesh server models.">mesh_bridge_server_init(mesh_server_evt_cb_t cb)</a></span> </li>
-</ul>
+<p><span class="tt"><a class="el" href="ble__mesh__bridge_8h.html" title="C ABI bridge for DeziBot Bluetooth Mesh.">ble_mesh_bridge.h</a></span> is used to make the C implementation callable from the C++ wrapper. It is primarily an internal detail used by <span class="tt"><a class="el" href="classDeziBotMesh.html" title="Main DeziBot Bluetooth Mesh class.">DeziBotMesh</a></span> to invoke the underlying C functions. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

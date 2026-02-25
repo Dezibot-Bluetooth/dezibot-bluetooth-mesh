@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dezibot Bluetooth Mesh: Main Page</title>
+<title>Dezibot Bluetooth Mesh: Dezibot Bluetooth Mesh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,10 +87,53 @@ $(function(){initNavTree('index.html','',''); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Dezibot Bluetooth Mesh Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Dezibot Bluetooth Mesh </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_README"></a></p>
+<p>ESP32 Bluetooth Mesh (BLE Mesh) project for DeziBot devices.</p>
+<p>This repository contains:</p><ul>
+<li>An ESP-IDF application (<span class="tt">src/</span>) built with the Arduino component.</li>
+<li>The <span class="tt">dezibot_bluetooth_mesh</span> component (<span class="tt">components/dezibot_bluetooth_mesh/</span>) providing the mesh stack wrapper APIs.</li>
+<li>Ready-to-copy examples (<span class="tt">examples/</span>) that you can drop into <span class="tt">src/</span>.</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Installation</h1>
+<p>Prerequisites: </p><div class="fragment"><div class="line">mkdir ~/esp</div>
+<div class="line">cd ~/esp</div>
+<div class="line">git clone -b v5.5.1 --recursive https://github.com/espressif/esp-idf.git</div>
+<div class="line">cd ~/esp/esp-idf</div>
+<div class="line">./install.sh</div>
+<div class="line"> </div>
+<div class="line"># in the terminal where you need the esp-idf</div>
+<div class="line">. $HOME/esp/esp-idf/export.sh</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Scripts</h1>
+<p>Before you run any scripts or <span class="tt">idf.py</span> commands, set up the environment using:</p>
+<div class="fragment"><div class="line">. $HOME/esp/esp-idf/export.sh</div>
+</div><!-- fragment --><p>Helper scripts live in <span class="tt">scripts/</span> and use a dedicated build directory (<span class="tt">cmake-build-idf/</span>).</p>
+<div class="fragment"><div class="line">./scripts/clean  # fullclean + reconfigure</div>
+<div class="line">./scripts/build  # build</div>
+<div class="line">./scripts/flash  # flash + monitor</div>
+</div><!-- fragment --><p>Notes:</p><ul>
+<li>If you need to specify a serial port, run <span class="tt">idf.py</span> directly: <span class="tt">idf.py -B cmake-build-idf -p /dev/ttyUSB0 flash monitor</span></li>
+<li>To generate API docs, run: <span class="tt">doxygen</span><ul>
+<li>to view the generated docs, open <span class="tt">docs/html/index.html</span> in a web browser</li>
+</ul>
+</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Run An Example</h1>
+<p>Examples are stored in <span class="tt">examples/</span>. To run one, copy its files into <span class="tt">src/</span> and build/flash.</p>
+<p>Client-only example: </p><div class="fragment"><div class="line">cp examples/ClientOnly/ClientOnly.cpp src/main.cpp</div>
+<div class="line">./scripts/build</div>
+<div class="line">./scripts/flash</div>
+</div><!-- fragment --><p>Server-only example: </p><div class="fragment"><div class="line">cp examples/ServerOnly/ServerOnly.cpp src/main.cpp</div>
+<div class="line">cp examples/ServerOnly/server_composition.* src/</div>
+<div class="line">./scripts/build</div>
+<div class="line">./scripts/flash</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

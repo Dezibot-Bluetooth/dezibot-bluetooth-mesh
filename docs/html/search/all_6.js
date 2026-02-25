@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['init_0',['init',['../classDeziBotMesh.html#ae0dd6a93b4adda2dac388f3b73a76ca2',1,'DeziBotMesh']]],
-  ['init_2ec_1',['init.c',['../init_8c.html',1,'']]],
-  ['init_2eh_2',['init.h',['../init_8h.html',1,'']]]
+  ['floor_5fnumber_0',['floor_number',['../structmesh__server__evt__t.html#af0c672a24a7a4733c562d2a1494cae9a',1,'mesh_server_evt_t']]]
 ];

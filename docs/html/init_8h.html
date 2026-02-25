@@ -132,36 +132,13 @@ Functions</h2></td></tr>
 </ul>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>ESP_OK: All initialization successful</li>
-<li>Error codes from <a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> on Bluetooth failures</li>
+<li>Error codes from <a class="el" href="bluetooth_8h.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> on Bluetooth failures</li>
 </ul>
 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Call this before any mesh or application operations </dd>
 <dd>
 Fatal errors will halt execution</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a></dd></dl>
-<p>Initializes core system components in the correct order:</p><ol type="1">
-<li>NVS (Non-Volatile Storage) flash</li>
-<li>Bluetooth stack</li>
-</ol>
-<p>NVS Error Handling:</p><ul>
-<li>ESP_ERR_NVS_NO_FREE_PAGES: Flash is full, erase and reinitialize</li>
-<li>Other NVS errors: Halt execution via ESP_ERROR_CHECK</li>
-</ul>
-<p>Bluetooth Errors:</p><ul>
-<li>Logged and returned to caller for handling</li>
-<li>Application can decide whether to continue or halt</li>
-</ul>
-<dl class="section return"><dt>Returns</dt><dd><ul>
-<li>ESP_OK: All initialization successful</li>
-<li>Error codes from <a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> on failure</li>
-</ul>
-</dd></dl>
-<dl class="section note"><dt>Note</dt><dd>NVS must be initialized before Bluetooth (stores bonding info) </dd>
-<dd>
-Fatal NVS errors halt execution </dd>
-<dd>
-Bluetooth errors are returned for application handling</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bluetooth_8h.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dezimesh_0',['DeziMesh',['../DeziBotMesh_8cpp.html#aed7ec58b984bffef6a7750a042a460c5',1,'DeziMesh:&#160;DeziBotMesh.cpp'],['../DeziBotMesh_8h.html#aed7ec58b984bffef6a7750a042a460c5',1,'DeziMesh:&#160;DeziBotMesh.cpp']]]
+  ['battery_0',['battery',['../structmesh__server__t.html#a471dc1d56b1e7b0ab7b151ed27db32eb',1,'mesh_server_t']]]
 ];

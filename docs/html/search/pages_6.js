@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mesh_0',['Dezibot Bluetooth Mesh',['../md_README.html',1,'']]],
-  ['modules_20in_20lib_1',['Modules in lib/',['../md_README.html#autotoc_md3',1,'']]]
+  ['h_0',['C/C++ Boundary: &lt;span class=&quot;tt&quot;&gt;ble_mesh_bridge.h&lt;/span&gt;',['../md_components_2dezibot__bluetooth__mesh_2README.html#autotoc_md4',1,'']]]
 ];
