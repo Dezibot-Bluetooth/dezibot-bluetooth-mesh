@@ -47,7 +47,10 @@ void loop() {
         lastShakeTime = millis();
         commandState = !commandState;
 
-        ESP_LOGI(TAG, "Sending OnOff(%s) to all nodes", commandState ? "ON" : "OFF");
+        // Send OnOff command to all nodes
+        Serial.print("Sending OnOff(");
+        Serial.print(commandState ? "ON" : "OFF");
+        Serial.println(") to all nodes");
         dezimesh.sendOnOff(commandState, TARGET_ALL);
     }
     delay(10);
