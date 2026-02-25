@@ -1,4 +1,4 @@
-#include "../provisioner.h"
+#include "provisioner.h"
 #include "../common/common.h"
 
 #define TAG                 "PROVISIONER"
@@ -465,7 +465,7 @@ static void ble_mesh_config_client_cb(
     }
 }
 
-static esp_err_t ble_mesh_init(void)
+esp_err_t ble_mesh_init(void)
 {
     uint8_t match[2] = {0xdd, 0xdd};
     esp_err_t error = ESP_OK;

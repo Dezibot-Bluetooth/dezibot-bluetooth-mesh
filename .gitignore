@@ -1,6 +1,7 @@
 .pio
 .idea
 .github
+.cache
 build
 sdkconfig.esp32s3usbotg.old
 cmake-build-idf

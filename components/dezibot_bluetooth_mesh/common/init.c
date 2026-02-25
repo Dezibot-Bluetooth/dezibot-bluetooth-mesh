@@ -8,12 +8,21 @@
  * @date 2026
  */
 
-#include "../init.h"
-
+#include "init.h"
 #include "common.h"
 #include "bluetooth.h"
 
+#include <stdbool.h>
+
 #define TAG "INIT"  /**< Logging tag for this module */
+
+// Arduino-ESP32's initArduino() will release BT controller memory unless
+// btInUse() returns true. This project uses ESP-IDF NimBLE directly, so we
+// must prevent that early memory release.
+bool btInUse(void)
+{
+    return true;
+}
 
 /**
  * @brief Perform pre-application initialization

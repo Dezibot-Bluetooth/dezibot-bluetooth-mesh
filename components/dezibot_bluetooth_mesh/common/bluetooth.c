@@ -9,7 +9,7 @@
  * @date 2026
  */
 
-#include "../bluetooth.h"
+#include "bluetooth.h"
 
 #define TAG "BLUETOOTH"  /**< Logging tag for this module */
 
