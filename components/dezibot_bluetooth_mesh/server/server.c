@@ -10,39 +10,55 @@ static uint8_t dev_uuid[16];
 static bool is_provisioned = false;
 static uint16_t node_addr = 0;
 
-static esp_ble_mesh_cfg_srv_t config_server = {
-    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .relay = ESP_BLE_MESH_RELAY_DISABLED,
-    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .beacon = ESP_BLE_MESH_BEACON_ENABLED,
-    .gatt_proxy = ESP_BLE_MESH_GATT_PROXY_ENABLED,
-    .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
-    .default_ttl = 7
-};
+// static esp_ble_mesh_cfg_srv_t config_server = {
+//     .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
+//     .relay = ESP_BLE_MESH_RELAY_DISABLED,
+//     .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
+//     .beacon = ESP_BLE_MESH_BEACON_ENABLED,
+//     .gatt_proxy = ESP_BLE_MESH_GATT_PROXY_ENABLED,
+//     .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
+//     .default_ttl = 7
+// };
+//
+// static esp_ble_mesh_gen_onoff_srv_t onoff_server;
+// static esp_ble_mesh_model_pub_t pub;
+//
+// static esp_ble_mesh_model_t server_models[] = {
+//     ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
+//     ESP_BLE_MESH_MODEL_GEN_ONOFF_SRV(&pub, &onoff_server),
+// };
+//
+// static esp_ble_mesh_elem_t elements[] = {
+//     ESP_BLE_MESH_ELEMENT(0, server_models, ESP_BLE_MESH_MODEL_NONE),
+// };
+//
+// static esp_ble_mesh_comp_t composition = {
+//     .cid = ESP_BLE_MESH_CID_NVAL,
+//     .element_count = ARRAY_SIZE(elements),
+//     .elements = elements,
+// };
 
-static esp_ble_mesh_gen_onoff_srv_t onoff_server;
-static esp_ble_mesh_model_pub_t pub;
-
-static esp_ble_mesh_model_t server_models[] = {
-    ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
-    ESP_BLE_MESH_MODEL_GEN_ONOFF_SRV(&pub, &onoff_server),
-};
-
-static esp_ble_mesh_elem_t elements[] = {
-    ESP_BLE_MESH_ELEMENT(0, server_models, ESP_BLE_MESH_MODEL_NONE),
-};
-
-static esp_ble_mesh_comp_t composition = {
-    .cid = ESP_BLE_MESH_CID_NVAL,
-    .element_count = ARRAY_SIZE(elements),
-    .elements = elements,
-};
+static esp_ble_mesh_comp_t *composition = NULL;
 
 static esp_ble_mesh_prov_t prov = {
     .uuid = dev_uuid,
     .output_size = 0,
-    .output_actions = 0,
+    .output_actions = 0
 };
+
+void ble_mesh_server_set_composition(esp_ble_mesh_comp_t *comp)
+{
+    composition = comp;
+    ESP_LOGI(TAG, "Composition set: element_count=%u", composition->element_count);
+    for (uint8_t i = 0; i < composition->element_count; i++)
+    {
+        esp_ble_mesh_model_t *mod = composition->elements[i].sig_models;
+        for (uint8_t j = 0; j < composition->elements[i].sig_model_count; j++)
+        {
+            ESP_LOGI(TAG, "Model %u: id=0x%04x", j, mod[j].model_id);
+        }
+    }
+}
 
 static void handle_gen_onoff_msg(esp_ble_mesh_model_t *model,
                                          esp_ble_mesh_msg_ctx_t *ctx,
@@ -1079,8 +1095,13 @@ esp_err_t ble_mesh_server_init(mesh_server_evt_cb_t cb)
 {
     ESP_LOGI(TAG, "Initializing...");
 
-    for (int i = 0; i < composition.element_count; ++i) {
-        esp_ble_mesh_elem_t *elem = &composition.elements[i];
+    if (composition->element_count == 0) {
+        ESP_LOGE(TAG, "Composition data is empty. Please define at least one element with models.");
+        return ESP_ERR_INVALID_STATE;
+    }
+
+    for (int i = 0; i < composition->element_count; ++i) {
+        esp_ble_mesh_elem_t *elem = &composition->elements[i];
         if (!elem || !elem->sig_models) {
             continue;
         }
@@ -1119,7 +1140,7 @@ esp_err_t ble_mesh_server_init(mesh_server_evt_cb_t cb)
         return err;
     }
 
-    err = esp_ble_mesh_init(&prov, &composition);
+    err = esp_ble_mesh_init(&prov, composition);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "BLE Mesh init failed (err %d)", err);
         return err;
