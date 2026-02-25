@@ -14,13 +14,6 @@
 
 static const char *TAG = "main";
 
-// Prevent Arduino's initArduino() from releasing BT controller memory.
-// Without this, esp_bt_controller_mem_release() runs before setup(),
-// and the later nimble_port_init() crashes on freed memory.
-extern "C" bool btInUse() {
-    return true;
-}
-
 Dezibot dezibot = Dezibot();
 DeziBotMesh dezimesh = DeziBotMesh();
 
