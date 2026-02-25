@@ -95,8 +95,7 @@ static void mesh_prov_cb(esp_ble_mesh_prov_cb_event_t event,
     }
 }
 
-static void mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event,
-                                   esp_ble_mesh_cfg_client_cb_param_t *param)
+void mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event, esp_ble_mesh_cfg_client_cb_param_t *param)
 {
     switch (event) {
         case ESP_BLE_MESH_CFG_CLIENT_GET_STATE_EVT:
@@ -125,8 +124,7 @@ static void mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t event,
     }
 }
 
-static void mesh_generic_client_cb(esp_ble_mesh_generic_client_cb_event_t event,
-                                   esp_ble_mesh_generic_client_cb_param_t *param)
+void mesh_generic_client_cb(esp_ble_mesh_generic_client_cb_event_t event, esp_ble_mesh_generic_client_cb_param_t *param)
 {
     switch (event) {
         case ESP_BLE_MESH_GENERIC_CLIENT_GET_STATE_EVT:
