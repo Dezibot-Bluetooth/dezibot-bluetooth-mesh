@@ -1,5 +1,5 @@
 /**
-* @file ServerOnly.cpp
+ * @file ServerOnly.cpp
  * @brief Example: Server-only node (receives commands)
  *
  * This example demonstrates a DeziBot configured as a server-only node.
@@ -24,15 +24,15 @@ static void onMeshServerEvent(const mesh_server_evt_t *evt)
     }
 
     switch (evt->type) {
-    case MESH_EVT_ONOFF_GET:
-        ESP_LOGI(TAG, "[srv evt] ONOFF_GET");
-        break;
-    case MESH_EVT_ONOFF_SET:
-        ESP_LOGI(TAG, "[srv evt] ONOFF_SET: onoff=%u", evt->onoff_set.onoff);
-        break;
-    default:
-        ESP_LOGI(TAG, "[srv evt] type=%d", (int)evt->type);
-        break;
+        case MESH_EVT_ONOFF_GET:
+            ESP_LOGI(TAG, "[srv evt] ONOFF_GET");
+            break;
+        case MESH_EVT_ONOFF_SET:
+            ESP_LOGI(TAG, "[srv evt] ONOFF_SET: onoff=%u", evt->onoff_set.onoff);
+            break;
+        default:
+            ESP_LOGI(TAG, "[srv evt] type=%d", (int)evt->type);
+            break;
     }
 }
 

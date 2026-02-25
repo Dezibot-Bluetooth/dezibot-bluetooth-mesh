@@ -39,7 +39,6 @@ void setup() {
         ESP_LOGE(TAG, "Mesh client init failed");
         while (1) { delay(1000); }
     }
-    ESP_LOGI(TAG, "Mesh client ready - shake to send OnOff");
 }
 
 void loop() {

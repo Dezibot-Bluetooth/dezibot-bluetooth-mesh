@@ -10,6 +10,7 @@
 #define DEZIBOT_MESH_ARDUINO_H
 
 #include <stdint.h>
+#include <server/server_events.h>
 
 /**
  * @brief Main DeziBot Bluetooth Mesh class
@@ -56,6 +57,15 @@ public:
      * @return true on success, false on failure
      */
     bool beginClient();
+
+    /**
+     * @brief Initialize mesh node as server-only (receive commands and store data)
+     *
+     * This initializes a node that can only receives commands and stores data.
+     *
+     * @return true on success, false on failure
+     */
+    bool beginServer(mesh_server_evt_cb_t serverCallback);
 
     /**
      * @brief Send Generic OnOff command to another node
