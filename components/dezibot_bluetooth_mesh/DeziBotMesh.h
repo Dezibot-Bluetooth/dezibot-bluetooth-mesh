@@ -69,16 +69,6 @@ public:
     bool beginServer(mesh_server_evt_cb_t serverCallback);
 
     /**
-     * @brief Send Generic OnOff Set Unacknowledged to another node
-     *
-     * Convenience wrapper for the most common client command.
-     *
-     * @param onoff true=ON, false=OFF
-     * @param addr Target unicast or group address
-     */
-    void sendOnOff(bool onoff, uint16_t addr);
-
-    /**
      * @brief Get Generic OnOff state from another node
      *
      * Sends a Generic OnOff Get to the target address.

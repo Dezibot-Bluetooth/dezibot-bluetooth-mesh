@@ -51,7 +51,7 @@ void loop() {
         commandState = !commandState;
 
         ESP_LOGI(TAG, "Sending OnOff(%s) to all nodes", commandState ? "ON" : "OFF");
-        dezimesh.sendOnOff(commandState, TARGET_ALL);
+        dezimesh.setOnOff(commandState, TARGET_ALL);
     }
     delay(10);
 }
