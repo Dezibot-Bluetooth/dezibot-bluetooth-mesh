@@ -69,6 +69,16 @@ public:
     bool beginServer(mesh_server_evt_cb_t serverCallback);
 
     /**
+     * @brief Initialize mesh node as with clients and servers
+     *
+     * This initializes a node which can both send commands and receive commands.
+     * This is the most common mode for general-purpose nodes.
+     *
+     * @return true on success, false on failure
+     */
+    bool beginNode(mesh_server_evt_cb_t serverCallback);
+
+    /**
      * @brief Get Generic OnOff state from another node
      *
      * Sends a Generic OnOff Get to the target address.
