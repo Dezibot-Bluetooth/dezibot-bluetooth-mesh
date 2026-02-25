@@ -1,3 +1,11 @@
+/**
+ * @file ble_mesh_bridge.h
+ * @brief C ABI bridge for DeziBot Bluetooth Mesh.
+ *
+ * Provides a small, C-linkage wrapper around the underlying library so the mesh
+ * stack can be initialized and used from C or other language bindings.
+ */
+
 #ifndef DEZIBOT_MESH_C_WRAPPER_H
 #define DEZIBOT_MESH_C_WRAPPER_H
 
@@ -30,15 +38,19 @@ esp_err_t mesh_bridge_pre_init();
 esp_err_t mesh_bridge_bluetooth_init();
 
 /**
- * @brief Initialize the BLE Mesh client models.
+ * @brief Get the device UUID used for provisioning.
  *
- * @return
- *   - ESP_OK on success
- *   - ESP_FAIL / other esp_err_t on failure
+ * @param[out] uuid Output buffer (16 bytes)
  */
 void mesh_bridge_get_device_uuid(uint8_t *uuid);
 
-// client/client
+/**
+* @brief Initialize the BLE Mesh client models.
+*
+* @return
+*   - ESP_OK on success
+*   - ESP_FAIL / other esp_err_t on failure
+*/
 esp_err_t mesh_bridge_client_init(char *device_name);
 
 esp_err_t mesh_bridge_client_get_onoff(uint16_t addr, uint8_t elem_index);
@@ -107,9 +119,13 @@ esp_err_t mesh_bridge_client_set_manu_property(uint16_t property_id, uint8_t adm
 esp_err_t mesh_bridge_client_get_client_properties(uint16_t property_id, uint16_t addr, uint8_t elem_index);
 
 /**
- * @brief Get the device UUID used for provisioning.
+ * @brief Initialize the BLE Mesh server models.
  *
- * @param[out] uuid Output buffer (16 bytes)
+ * @param[in] cb Application callback for incoming server events.
+ *
+ * @return
+ *   - ESP_OK on success
+ *   - ESP_FAIL / other esp_err_t on failure
  */
 esp_err_t mesh_bridge_server_init(char *device_name, mesh_server_evt_cb_t cb);
 

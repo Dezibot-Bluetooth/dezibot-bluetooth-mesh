@@ -1,9 +1,22 @@
+/**
+ * @file server.h
+ * @brief BLE Mesh server API.
+ */
+
 #ifndef DEZIBOT_BLUETOOTH_MESH_SERVER_H
 #define DEZIBOT_BLUETOOTH_MESH_SERVER_H
 
 #include "common/common.h"
 #include "server/server_events.h"
 
+/**
+ * @brief Override the default composition data.
+ *
+ * Call this before @ref ble_mesh_server_init if you want to provide a custom
+ * element/model composition.
+ *
+ * @param[in] comp Composition data to use.
+ */
 void ble_mesh_server_set_composition(esp_ble_mesh_comp_t *comp);
 
 void mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_event_t event, esp_ble_mesh_generic_server_cb_param_t *param);

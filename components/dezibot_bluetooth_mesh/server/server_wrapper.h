@@ -1,10 +1,19 @@
+/**
+ * @file server_wrapper.h
+ * @brief Internal server glue (model state + event dispatch).
+ */
+
 #ifndef DEZIBOT_BLUETOOTH_MESH_SERVER_WRAPPER_H
 #define DEZIBOT_BLUETOOTH_MESH_SERVER_WRAPPER_H
 
+#include "server_events.h"
 #include "esp_ble_mesh_defs.h"
 #include "esp_ble_mesh_generic_model_api.h"
 
-typedef struct{
+/**
+ * @brief Container for a server model instance and its state.
+ */
+typedef struct {
     esp_ble_mesh_model_t *model;
 
     union {
@@ -28,6 +37,12 @@ typedef struct{
     mesh_server_evt_cb_t cb;
 } mesh_server_t;
 
+/**
+ * @brief Dispatch an event to the application's callback.
+ *
+ * @param[in] srv Server instance.
+ * @param[in] evt Event to dispatch.
+ */
 void mesh_server_evt_dispatch(mesh_server_t *srv, const mesh_server_evt_t *evt);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_SERVER_WRAPPER_H

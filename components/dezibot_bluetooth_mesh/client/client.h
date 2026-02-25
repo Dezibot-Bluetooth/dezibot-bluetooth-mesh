@@ -1,3 +1,8 @@
+/**
+ * @file client.h
+ * @brief BLE Mesh client API.
+ */
+
 #ifndef DEZIBOT_BLUETOOTH_MESH_CLIENT_H
 #define DEZIBOT_BLUETOOTH_MESH_CLIENT_H
 

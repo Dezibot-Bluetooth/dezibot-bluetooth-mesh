@@ -1,8 +1,16 @@
+/**
+ * @file server_events.h
+ * @brief Event types and payloads emitted by the server models.
+ */
+
 #ifndef DEZIBOT_BLUETOOTH_MESH_SERVER_EVENTS_H
 #define DEZIBOT_BLUETOOTH_MESH_SERVER_EVENTS_H
 
 #include <stdint.h>
 
+/**
+ * @brief Server event type.
+ */
 typedef enum {
     MESH_EVT_ONOFF_GET,
     MESH_EVT_ONOFF_SET,
@@ -38,6 +46,9 @@ typedef enum {
     MESH_EVT_USER_PROPERTY_SET,
 } mesh_server_evt_type_t;
 
+/**
+ * @brief Server event payload.
+ */
 typedef struct {
     mesh_server_evt_type_t type;
 
@@ -89,6 +100,9 @@ typedef struct {
     };
 } mesh_server_evt_t;
 
+/**
+ * @brief Server event callback signature.
+ */
 typedef void (*mesh_server_evt_cb_t)(const mesh_server_evt_t *evt);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_SERVER_EVENTS_H

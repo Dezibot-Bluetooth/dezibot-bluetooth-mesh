@@ -991,7 +991,9 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = components/dezibot_bluetooth_mesh/
+INPUT                  = components/dezibot_bluetooth_mesh/ \
+                         components/dezibot_bluetooth_mesh/README.md \
+                         README.md
 
 # This tag can be used to specify the character encoding of the source files
 # that Doxygen parses. Internally Doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1031,18 +1033,7 @@ INPUT_FILE_ENCODING    =
 # provided as Doxygen C comment), *.py, *.pyw, *.f90, *.f95, *.f03, *.f08,
 # *.f18, *.f, *.for, *.vhd, *.vhdl, *.ucf, *.qsf and *.ice.
 
-FILE_PATTERNS          = *.h \
-                         *.hh \
-                         *.hxx \
-                         *.hpp \
-                         *.c \
-                         *.cc \
-                         *.cxx \
-                         *.cpp \
-                         *.ipp \
-                         *.inl \
-                         *.md \
-                         *.markdown
+FILE_PATTERNS          = *.h
 
 # The RECURSIVE tag can be used to specify whether or not subdirectories should
 # be searched for input files as well.
@@ -1168,7 +1159,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the Doxygen output.
 
-USE_MDFILE_AS_MAINPAGE =
+USE_MDFILE_AS_MAINPAGE = README.md
 
 # If the IMPLICIT_DIR_DOCS tag is set to YES, any README.md file found in sub-
 # directories of the project's root, is used as the documentation for that sub-
@@ -1177,7 +1168,7 @@ USE_MDFILE_AS_MAINPAGE =
 # command in order to be used as directory documentation.
 # The default value is: YES.
 
-IMPLICIT_DIR_DOCS      = YES
+IMPLICIT_DIR_DOCS      = NO
 
 # The Fortran standard specifies that for fixed formatted Fortran code all
 # characters from position 72 are to be considered as comment. A common
