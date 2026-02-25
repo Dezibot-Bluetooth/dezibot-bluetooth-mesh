@@ -25,6 +25,9 @@ void mesh_bridge_client_send(uint8_t val, uint16_t addr);
 // server/server
 esp_err_t mesh_bridge_server_init(mesh_server_evt_cb_t cb);
 
+// node/node
+esp_err_t mesh_bridge_node_init(mesh_server_evt_cb_t cb);
+
 #ifdef __cplusplus
 }
 #endif
