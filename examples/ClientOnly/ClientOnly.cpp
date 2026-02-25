@@ -11,6 +11,7 @@
 #include <Dezibot.h>
 #include <DeziBotMesh.h>
 #include <esp_log.h>
+#include "client_composition.h"
 
 static const char *TAG = "main";
 
@@ -35,6 +36,9 @@ void setup() {
     }
     ESP_LOGI(TAG, "Mesh stack initialized");
 
+    client_composition_init();
+    ESP_LOGI(TAG, "Set client composition");
+
     if (!dezimesh.beginClient()) {
         ESP_LOGE(TAG, "Mesh client init failed");
         while (1) { delay(1000); }
@@ -47,7 +51,7 @@ void loop() {
         commandState = !commandState;
 
         ESP_LOGI(TAG, "Sending OnOff(%s) to all nodes", commandState ? "ON" : "OFF");
-        dezimesh.sendOnOff(commandState, TARGET_ALL);
+        dezimesh.setOnOff(commandState, TARGET_ALL);
     }
     delay(10);
 }

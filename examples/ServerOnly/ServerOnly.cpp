@@ -29,6 +29,11 @@ static void onMeshServerEvent(const mesh_server_evt_t *evt)
             break;
         case MESH_EVT_ONOFF_SET:
             ESP_LOGI(TAG, "[srv evt] ONOFF_SET: onoff=%u", evt->onoff_set.onoff);
+            if (evt->onoff_set.onoff) {
+                dezibot.multiColorLight.setTopLeds(0xFF0000);
+            } else {
+                dezibot.multiColorLight.turnOffLed();
+            }
             break;
         default:
             ESP_LOGI(TAG, "[srv evt] type=%d", (int)evt->type);

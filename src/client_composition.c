@@ -1,6 +1,6 @@
-#include "server_composition.h"
+#include "client_composition.h"
 #include "common/common.h"
-#include "server/server.h"
+#include "client/client.h"
 
 static esp_ble_mesh_cfg_srv_t config_server = {
     .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
@@ -12,25 +12,27 @@ static esp_ble_mesh_cfg_srv_t config_server = {
     .default_ttl = 7
 };
 
-static esp_ble_mesh_gen_onoff_srv_t onoff_server;
+static esp_ble_mesh_client_t onoff_client;
+static esp_ble_mesh_client_t config_client;
 static esp_ble_mesh_model_pub_t pub;
 
-static esp_ble_mesh_model_t server_models[] = {
+static esp_ble_mesh_model_t client_models[] = {
     ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
-    ESP_BLE_MESH_MODEL_GEN_ONOFF_SRV(&pub, &onoff_server),
+    ESP_BLE_MESH_MODEL_CFG_CLI(&config_client),
+    ESP_BLE_MESH_MODEL_GEN_ONOFF_CLI(&pub, &onoff_client),
 };
 
 static esp_ble_mesh_elem_t elements[] = {
-    ESP_BLE_MESH_ELEMENT(0, server_models, ESP_BLE_MESH_MODEL_NONE),
+    ESP_BLE_MESH_ELEMENT(0, client_models, ESP_BLE_MESH_MODEL_NONE),
 };
 
 static esp_ble_mesh_comp_t composition = {
     .cid = ESP_BLE_MESH_CID_NVAL,
-    .element_count = ARRAY_SIZE(elements),
     .elements = elements,
+    .element_count = ARRAY_SIZE(elements),
 };
 
-void server_composition_init(void)
+void client_composition_init(void)
 {
-    ble_mesh_server_set_composition(&composition);
+    ble_mesh_client_set_composition(&composition);
 }
