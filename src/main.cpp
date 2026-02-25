@@ -1,5 +1,5 @@
 /**
-* @file ClientOnly.cpp
+ * @file ClientOnly.cpp
  * @brief Example: Client-only node (sends commands)
  *
  * This example demonstrates a DeziBot configured as a server-only node.
