@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['client_0',['Client',['../md_README.html#autotoc_md5',1,'']]],
-  ['contribution_20state_20of_20the_20art_1',['Contribution / State of the art',['../md_README.html#autotoc_md1',1,'']]]
+  ['library_0',['DeziBotMesh Arduino Library',['..//home/scholz/uni/24-INM/25-emb/dezibot-bluetooth-mesh/components/dezibot_bluetooth_mesh/README.md#autotoc_md0',1,'']]]
 ];

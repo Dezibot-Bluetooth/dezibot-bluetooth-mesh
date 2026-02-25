@@ -25,24 +25,15 @@
 var NAVTREE =
 [
   [ "Dezibot Bluetooth Mesh", "index.html", [
-    [ "Dezibot Bluetooth Mesh", "md_README.html", [
-      [ "Contribution / State of the art", "md_README.html#autotoc_md1", null ],
-      [ "Project structure", "md_README.html#autotoc_md2", null ],
-      [ "Modules in lib/", "md_README.html#autotoc_md3", [
-        [ "Bluetooth", "md_README.html#autotoc_md4", null ],
-        [ "Client", "md_README.html#autotoc_md5", null ],
-        [ "Provisioner", "md_README.html#autotoc_md6", null ]
-      ] ],
-      [ "Build", "md_README.html#autotoc_md7", null ],
-      [ "Versions used", "md_README.html#autotoc_md8", null ],
-      [ "Doxygen", "md_README.html#autotoc_md9", null ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -50,7 +41,9 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
-        [ "Typedefs", "globals_type.html", null ]
+        [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -58,7 +51,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"DeziBotMesh_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

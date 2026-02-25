@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['net_5fidx_0',['net_idx',['../structesp__ble__mesh__key.html#a4fdf8cbdb2dbc96bd5896eea0e0010f1',1,'esp_ble_mesh_key']]]
+  ['elem_5fnum_0',['elem_num',['../structesp__ble__mesh__node__info__t.html#ab7ace276c2abaa34cf09ade28bcfce2b',1,'esp_ble_mesh_node_info_t']]]
 ];

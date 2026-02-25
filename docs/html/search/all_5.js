@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['in_20lib_0',['Modules in lib/',['../md_README.html#autotoc_md3',1,'']]],
-  ['init_2eh_1',['init.h',['../init_8h.html',1,'']]]
+  ['getdeviceuuid_0',['getDeviceUUID',['../classDeziBotMesh.html#af3c4a5f78e295684dafdf23e8dde5a62',1,'DeziBotMesh']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dezibot Bluetooth Mesh: lib/provisioner.c File Reference</title>
+<title>Dezibot Bluetooth Mesh: components/dezibot_bluetooth_mesh/provisioner/provisioner.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,11 +91,8 @@ $(function(){initNavTree('provisioner_8c.html','',''); });
   <div class="headertitle"><div class="title">provisioner.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>BLE Mesh provisioner role implementation.  
-</p>
 <div class="textblock"><code>#include &quot;<a class="el" href="provisioner_8h.html">provisioner.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common_8h.html">common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="common_8h.html">../common/common.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -111,45 +108,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:abfce9fe7b0faa27e33f00fd65d0afe97" id="r_abfce9fe7b0faa27e33f00fd65d0afe97"><td class="memItemLeft" align="right" valign="top">static esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfce9fe7b0faa27e33f00fd65d0afe97">ble_mesh_store_node_info</a> (const uint8_t uuid[16], uint16_t unicast, uint8_t elem_num)</td></tr>
-<tr class="memdesc:abfce9fe7b0faa27e33f00fd65d0afe97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores or updates provisioned node information.  <br /></td></tr>
-<tr class="memitem:a104f0e4f55b35e8a280a94680da6140a" id="r_a104f0e4f55b35e8a280a94680da6140a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structesp__ble__mesh__node__info__t.html">esp_ble_mesh_node_info_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a104f0e4f55b35e8a280a94680da6140a">ble_mesh_get_node_info</a> (uint16_t unicast)</td></tr>
-<tr class="memdesc:a104f0e4f55b35e8a280a94680da6140a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds a stored node entry by unicast address.  <br /></td></tr>
-<tr class="memitem:aebe0603e7eb27babf691bc402f852232" id="r_aebe0603e7eb27babf691bc402f852232"><td class="memItemLeft" align="right" valign="top">static esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebe0603e7eb27babf691bc402f852232">ble_mesh_set_msg_common</a> (esp_ble_mesh_client_common_param_t *common, <a class="el" href="structesp__ble__mesh__node__info__t.html">esp_ble_mesh_node_info_t</a> *node, esp_ble_mesh_model_t *model, uint32_t opcode)</td></tr>
-<tr class="memdesc:aebe0603e7eb27babf691bc402f852232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills common message fields for a client operation.  <br /></td></tr>
-<tr class="memitem:a08f981e9a462d2e322d8886f6533c69c" id="r_a08f981e9a462d2e322d8886f6533c69c"><td class="memItemLeft" align="right" valign="top">static esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08f981e9a462d2e322d8886f6533c69c">prov_complete</a> (int node_idx, const esp_ble_mesh_octet16_t uuid, uint16_t unicast, uint8_t elem_num, uint16_t net_idx)</td></tr>
-<tr class="memdesc:a08f981e9a462d2e322d8886f6533c69c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles successful provisioning of a node.  <br /></td></tr>
-<tr class="memitem:abda89d29348d7ae8876e1ac704fd690f" id="r_abda89d29348d7ae8876e1ac704fd690f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda89d29348d7ae8876e1ac704fd690f">prov_link_open</a> (esp_ble_mesh_prov_bearer_t bearer)</td></tr>
-<tr class="memdesc:abda89d29348d7ae8876e1ac704fd690f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs provisioning link open events.  <br /></td></tr>
-<tr class="memitem:a61154f97ccf8955abfbb4c89b951c53b" id="r_a61154f97ccf8955abfbb4c89b951c53b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61154f97ccf8955abfbb4c89b951c53b">prov_link_close</a> (esp_ble_mesh_prov_bearer_t bearer, uint8_t reason)</td></tr>
-<tr class="memdesc:a61154f97ccf8955abfbb4c89b951c53b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs provisioning link close events.  <br /></td></tr>
-<tr class="memitem:a175bf486fe640f7e7ced6a1acb8d56b3" id="r_a175bf486fe640f7e7ced6a1acb8d56b3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a175bf486fe640f7e7ced6a1acb8d56b3">recv_unprov_adv_pkt</a> (uint8_t dev_uuid_param[16], uint8_t addr[BD_ADDR_LEN], esp_ble_mesh_addr_type_t addr_type, uint16_t oob_info, uint8_t adv_type_param, esp_ble_mesh_prov_bearer_t bearer)</td></tr>
-<tr class="memdesc:a175bf486fe640f7e7ced6a1acb8d56b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an unprovisioned device to the provisioner queue.  <br /></td></tr>
-<tr class="memitem:a36a60351ebeba283722589af4414bbe6" id="r_a36a60351ebeba283722589af4414bbe6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36a60351ebeba283722589af4414bbe6">ble_mesh_provisioning_cb</a> (esp_ble_mesh_prov_cb_event_t event, esp_ble_mesh_prov_cb_param_t *param)</td></tr>
-<tr class="memdesc:a36a60351ebeba283722589af4414bbe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provisioner provisioning callback handler.  <br /></td></tr>
-<tr class="memitem:a50bb6d21edf44ef66bc17424a84dc1ab" id="r_a50bb6d21edf44ef66bc17424a84dc1ab"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50bb6d21edf44ef66bc17424a84dc1ab">ble_mesh_config_client_cb</a> (esp_ble_mesh_cfg_client_cb_event_t event, esp_ble_mesh_cfg_client_cb_param_t *param)</td></tr>
-<tr class="memdesc:a50bb6d21edf44ef66bc17424a84dc1ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provisioner configuration client callback handler.  <br /></td></tr>
-<tr class="memitem:a12fbcc517c402c44fa29f9dad1d1092b" id="r_a12fbcc517c402c44fa29f9dad1d1092b"><td class="memItemLeft" align="right" valign="top">static esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12fbcc517c402c44fa29f9dad1d1092b">ble_mesh_init</a> (void)</td></tr>
-<tr class="memdesc:a12fbcc517c402c44fa29f9dad1d1092b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the BLE Mesh provisioner and enables provisioning.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab69fa84381554e34b3cd5fb275f60ea1" id="r_ab69fa84381554e34b3cd5fb275f60ea1"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab69fa84381554e34b3cd5fb275f60ea1">dev_uuid</a> [16]</td></tr>
-<tr class="memitem:a5460b3bf8e6b0bf769188a0873275b08" id="r_a5460b3bf8e6b0bf769188a0873275b08"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structesp__ble__mesh__node__info__t.html">esp_ble_mesh_node_info_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5460b3bf8e6b0bf769188a0873275b08">nodes</a> [CONFIG_BLE_MESH_MAX_PROV_NODES] = {}</td></tr>
-<tr class="memdesc:a5460b3bf8e6b0bf769188a0873275b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provisioned node table used to map UUIDs to unicast ranges.  <br /></td></tr>
-<tr class="memitem:a97c0ec146e3b23b9399e376bd0fe5c14" id="r_a97c0ec146e3b23b9399e376bd0fe5c14"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="provisioner_8h.html#a500d6865c033bccde2465a07ba1c920b">esp_ble_mesh_prov_key_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a97c0ec146e3b23b9399e376bd0fe5c14">prov_key</a> = {}</td></tr>
-<tr class="memdesc:a97c0ec146e3b23b9399e376bd0fe5c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local NetKey/AppKey material used for configuration messages.  <br /></td></tr>
-<tr class="memitem:a30dbbe3548a569d0b17d6f5cba317e90" id="r_a30dbbe3548a569d0b17d6f5cba317e90"><td class="memItemLeft" align="right" valign="top">static esp_ble_mesh_client_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30dbbe3548a569d0b17d6f5cba317e90">config_client</a></td></tr>
-<tr class="memdesc:a30dbbe3548a569d0b17d6f5cba317e90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration Client model instance.  <br /></td></tr>
-<tr class="memitem:ab59e9693779c3941ae92a1a1b98cd662" id="r_ab59e9693779c3941ae92a1a1b98cd662"><td class="memItemLeft" align="right" valign="top">static esp_ble_mesh_cfg_srv_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab59e9693779c3941ae92a1a1b98cd662">config_server</a></td></tr>
-<tr class="memdesc:ab59e9693779c3941ae92a1a1b98cd662"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuration Server model state for the local provisioner node.  <br /></td></tr>
-<tr class="memitem:a27f57e8b0b732ca1f292bf442a32511d" id="r_a27f57e8b0b732ca1f292bf442a32511d"><td class="memItemLeft" align="right" valign="top">static esp_ble_mesh_model_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a27f57e8b0b732ca1f292bf442a32511d">root_models</a> []</td></tr>
-<tr class="memitem:acdfdf4400899296066a6500c4d78f075" id="r_acdfdf4400899296066a6500c4d78f075"><td class="memItemLeft" align="right" valign="top">static esp_ble_mesh_elem_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdfdf4400899296066a6500c4d78f075">elements</a> []</td></tr>
-<tr class="memdesc:acdfdf4400899296066a6500c4d78f075"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local element table describing which models the provisioner exposes.  <br /></td></tr>
-<tr class="memitem:a2610ff7d8b18896de285998bb5b51b7e" id="r_a2610ff7d8b18896de285998bb5b51b7e"><td class="memItemLeft" align="right" valign="top">static esp_ble_mesh_comp_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2610ff7d8b18896de285998bb5b51b7e">composition</a></td></tr>
-<tr class="memdesc:a2610ff7d8b18896de285998bb5b51b7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Local composition data passed to the BLE Mesh stack.  <br /></td></tr>
-<tr class="memitem:aa4572504622beb18ca2f41077573ee52" id="r_aa4572504622beb18ca2f41077573ee52"><td class="memItemLeft" align="right" valign="top">static esp_ble_mesh_prov_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4572504622beb18ca2f41077573ee52">provision</a></td></tr>
-<tr class="memdesc:aa4572504622beb18ca2f41077573ee52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provisioner role configuration passed to the BLE Mesh stack.  <br /></td></tr>
+<tr class="memitem:acd19037d9e007bd25d5df76bcf17d0d0" id="r_acd19037d9e007bd25d5df76bcf17d0d0"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd19037d9e007bd25d5df76bcf17d0d0">ble_mesh_init</a> (void)</td></tr>
+<tr class="memdesc:acd19037d9e007bd25d5df76bcf17d0d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh as provisioner.  <br /></td></tr>
 </table>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="aecc495dad9dcf4e16c86634006659738" name="aecc495dad9dcf4e16c86634006659738"></a>
@@ -279,83 +239,11 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="a50bb6d21edf44ef66bc17424a84dc1ab" name="a50bb6d21edf44ef66bc17424a84dc1ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50bb6d21edf44ef66bc17424a84dc1ab">&#9670;&#160;</a></span>ble_mesh_config_client_cb()</h2>
+<a id="acd19037d9e007bd25d5df76bcf17d0d0" name="acd19037d9e007bd25d5df76bcf17d0d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd19037d9e007bd25d5df76bcf17d0d0">&#9670;&#160;</a></span>ble_mesh_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ble_mesh_config_client_cb </td>
-          <td>(</td>
-          <td class="paramtype">esp_ble_mesh_cfg_client_cb_event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">esp_ble_mesh_cfg_client_cb_param_t *</td>          <td class="paramname"><span class="paramname"><em>param</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>Configuration client event ID. </td></tr>
-    <tr><td class="paramname">param</td><td>Event parameters. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="a104f0e4f55b35e8a280a94680da6140a" name="a104f0e4f55b35e8a280a94680da6140a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a104f0e4f55b35e8a280a94680da6140a">&#9670;&#160;</a></span>ble_mesh_get_node_info()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structesp__ble__mesh__node__info__t.html">esp_ble_mesh_node_info_t</a> * ble_mesh_get_node_info </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>unicast</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">unicast</td><td>Node unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the node info, or NULL if not found/invalid. </dd></dl>
-
-</div>
-</div>
-<a id="a12fbcc517c402c44fa29f9dad1d1092b" name="a12fbcc517c402c44fa29f9dad1d1092b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12fbcc517c402c44fa29f9dad1d1092b">&#9670;&#160;</a></span>ble_mesh_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">esp_err_t ble_mesh_init </td>
@@ -364,580 +252,32 @@ Variables</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">None.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, otherwise an ESP-IDF error code. </dd></dl>
+<p>Initializes the BLE Mesh stack in provisioner mode. The provisioner will automatically discover and provision devices with matching UUIDs.</p>
+<p>Initialization steps:</p><ol type="1">
+<li>Configure provisioning keys (network and application)</li>
+<li>Register provisioning and configuration callbacks</li>
+<li>Initialize BLE Mesh stack with provisioner composition</li>
+<li>Set UUID matching filter (0xdd, 0xdd prefix)</li>
+<li>Enable provisioning on ADV and GATT bearers</li>
+<li>Add local application key</li>
+</ol>
+<p>Configuration:</p><ul>
+<li>Provisioner address: 0x0001</li>
+<li>Start address for nodes: 0x0005</li>
+<li>Application key: All bytes set to 0x12</li>
+<li>UUID filter: Devices starting with 0xdd 0xdd</li>
+</ul>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK: Provisioner initialized successfully</li>
+<li>Error codes from BLE Mesh initialization functions</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function should be called after <a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> </dd>
+<dd>
+The provisioner runs automatically once initialized</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="bluetooth_8c.html#a2bae8dcbee489037789f228234a3072d" title="Initialize Bluetooth stack.">bluetooth_init()</a> </dd></dl>
 
-</div>
-</div>
-<a id="a36a60351ebeba283722589af4414bbe6" name="a36a60351ebeba283722589af4414bbe6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36a60351ebeba283722589af4414bbe6">&#9670;&#160;</a></span>ble_mesh_provisioning_cb()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ble_mesh_provisioning_cb </td>
-          <td>(</td>
-          <td class="paramtype">esp_ble_mesh_prov_cb_event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">esp_ble_mesh_prov_cb_param_t *</td>          <td class="paramname"><span class="paramname"><em>param</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">event</td><td>Provisioning event ID. </td></tr>
-    <tr><td class="paramname">param</td><td>Event parameters. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="aebe0603e7eb27babf691bc402f852232" name="aebe0603e7eb27babf691bc402f852232"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebe0603e7eb27babf691bc402f852232">&#9670;&#160;</a></span>ble_mesh_set_msg_common()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_err_t ble_mesh_set_msg_common </td>
-          <td>(</td>
-          <td class="paramtype">esp_ble_mesh_client_common_param_t *</td>          <td class="paramname"><span class="paramname"><em>common</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structesp__ble__mesh__node__info__t.html">esp_ble_mesh_node_info_t</a> *</td>          <td class="paramname"><span class="paramname"><em>node</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">esp_ble_mesh_model_t *</td>          <td class="paramname"><span class="paramname"><em>model</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>opcode</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">common</td><td>Common client parameters to fill. </td></tr>
-    <tr><td class="paramname">node</td><td>Destination node info. </td></tr>
-    <tr><td class="paramname">model</td><td>Model instance used to send. </td></tr>
-    <tr><td class="paramname">opcode</td><td>Opcode to send. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, otherwise ESP_ERR_INVALID_ARG. </dd></dl>
-
-</div>
-</div>
-<a id="abfce9fe7b0faa27e33f00fd65d0afe97" name="abfce9fe7b0faa27e33f00fd65d0afe97"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfce9fe7b0faa27e33f00fd65d0afe97">&#9670;&#160;</a></span>ble_mesh_store_node_info()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_err_t ble_mesh_store_node_info </td>
-          <td>(</td>
-          <td class="paramtype">const uint8_t</td>          <td class="paramname"><span class="paramname"><em>uuid</em></span>[16], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>unicast</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_num</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">uuid</td><td>Node UUID. </td></tr>
-    <tr><td class="paramname">unicast</td><td>Node unicast address. </td></tr>
-    <tr><td class="paramname">elem_num</td><td>Number of elements on the node. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, otherwise an ESP-IDF error code. </dd></dl>
-
-</div>
-</div>
-<a id="a08f981e9a462d2e322d8886f6533c69c" name="a08f981e9a462d2e322d8886f6533c69c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08f981e9a462d2e322d8886f6533c69c">&#9670;&#160;</a></span>prov_complete()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_err_t prov_complete </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>node_idx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const esp_ble_mesh_octet16_t</td>          <td class="paramname"><span class="paramname"><em>uuid</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>unicast</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_num</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>net_idx</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">node_idx</td><td>Index assigned by the provisioner. </td></tr>
-    <tr><td class="paramname">uuid</td><td>Provisioned device UUID. </td></tr>
-    <tr><td class="paramname">unicast</td><td>Assigned unicast address. </td></tr>
-    <tr><td class="paramname">elem_num</td><td>Number of elements in the node. </td></tr>
-    <tr><td class="paramname">net_idx</td><td>NetKey index used during provisioning. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, otherwise ESP_FAIL. </dd></dl>
-
-</div>
-</div>
-<a id="a61154f97ccf8955abfbb4c89b951c53b" name="a61154f97ccf8955abfbb4c89b951c53b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61154f97ccf8955abfbb4c89b951c53b">&#9670;&#160;</a></span>prov_link_close()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void prov_link_close </td>
-          <td>(</td>
-          <td class="paramtype">esp_ble_mesh_prov_bearer_t</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reason</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bearer</td><td>Provisioning bearer. </td></tr>
-    <tr><td class="paramname">reason</td><td>Link close reason code. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="abda89d29348d7ae8876e1ac704fd690f" name="abda89d29348d7ae8876e1ac704fd690f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abda89d29348d7ae8876e1ac704fd690f">&#9670;&#160;</a></span>prov_link_open()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void prov_link_open </td>
-          <td>(</td>
-          <td class="paramtype">esp_ble_mesh_prov_bearer_t</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bearer</td><td>Provisioning bearer. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="a175bf486fe640f7e7ced6a1acb8d56b3" name="a175bf486fe640f7e7ced6a1acb8d56b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a175bf486fe640f7e7ced6a1acb8d56b3">&#9670;&#160;</a></span>recv_unprov_adv_pkt()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void recv_unprov_adv_pkt </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>dev_uuid_param</em></span>[16], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>[BD_ADDR_LEN], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">esp_ble_mesh_addr_type_t</td>          <td class="paramname"><span class="paramname"><em>addr_type</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>oob_info</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>adv_type_param</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">esp_ble_mesh_prov_bearer_t</td>          <td class="paramname"><span class="paramname"><em>bearer</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">dev_uuid_param</td><td>Device UUID from the advertising packet. </td></tr>
-    <tr><td class="paramname">addr</td><td>Device address. </td></tr>
-    <tr><td class="paramname">addr_type</td><td>Device address type. </td></tr>
-    <tr><td class="paramname">oob_info</td><td>OOB info field from the packet. </td></tr>
-    <tr><td class="paramname">adv_type_param</td><td>Advertising type. </td></tr>
-    <tr><td class="paramname">bearer</td><td>Supported provisioning bearers. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="a2610ff7d8b18896de285998bb5b51b7e" name="a2610ff7d8b18896de285998bb5b51b7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2610ff7d8b18896de285998bb5b51b7e">&#9670;&#160;</a></span>composition</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_ble_mesh_comp_t composition</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .cid = <a class="code hl_define" href="#abde255c5abc3ab0c35adf9e0eedaa714">CID_ESP</a>,</div>
-<div class="line">    .element_count = ARRAY_SIZE(<a class="code hl_variable" href="client_8c.html#acdfdf4400899296066a6500c4d78f075">elements</a>),</div>
-<div class="line">    .elements = <a class="code hl_variable" href="client_8c.html#acdfdf4400899296066a6500c4d78f075">elements</a>,</div>
-<div class="line">}</div>
-<div class="ttc" id="aclient_8c_html_acdfdf4400899296066a6500c4d78f075"><div class="ttname"><a href="client_8c.html#acdfdf4400899296066a6500c4d78f075">elements</a></div><div class="ttdeci">static esp_ble_mesh_elem_t elements[]</div><div class="ttdef"><b>Definition</b> client.c:49</div></div>
-<div class="ttc" id="aprovisioner_8c_html_abde255c5abc3ab0c35adf9e0eedaa714"><div class="ttname"><a href="#abde255c5abc3ab0c35adf9e0eedaa714">CID_ESP</a></div><div class="ttdeci">#define CID_ESP</div><div class="ttdef"><b>Definition</b> provisioner.c:11</div></div>
-</div><!-- fragment --><p>The mesh stack needs the company ID and element/model layout to create the local node and enable model operation. </p>
-
-</div>
-</div>
-<a id="a30dbbe3548a569d0b17d6f5cba317e90" name="a30dbbe3548a569d0b17d6f5cba317e90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30dbbe3548a569d0b17d6f5cba317e90">&#9670;&#160;</a></span>config_client</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_ble_mesh_client_t config_client</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Required to send Config Client opcodes (e.g., Composition Data Get, AppKey Add, Model App Bind) after a node is provisioned. </p>
-
-</div>
-</div>
-<a id="ab59e9693779c3941ae92a1a1b98cd662" name="ab59e9693779c3941ae92a1a1b98cd662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab59e9693779c3941ae92a1a1b98cd662">&#9670;&#160;</a></span>config_server</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_ble_mesh_cfg_srv_t config_server</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),</div>
-<div class="line">    .relay = ESP_BLE_MESH_RELAY_DISABLED,</div>
-<div class="line">    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),</div>
-<div class="line">    .beacon = ESP_BLE_MESH_BEACON_ENABLED,</div>
-<div class="line">    .gatt_proxy = ESP_BLE_MESH_GATT_PROXY_ENABLED,</div>
-<div class="line">    .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,</div>
-<div class="line">    .default_ttl = 7</div>
-<div class="line">}</div>
-</div><!-- fragment --><p>Defines local Configuration Server behavior (TTL, relay/proxy/beacon settings) and is referenced by the local configuration server model. </p>
-
-</div>
-</div>
-<a id="ab69fa84381554e34b3cd5fb275f60ea1" name="ab69fa84381554e34b3cd5fb275f60ea1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab69fa84381554e34b3cd5fb275f60ea1">&#9670;&#160;</a></span>dev_uuid</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t dev_uuid[16]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acdfdf4400899296066a6500c4d78f075" name="acdfdf4400899296066a6500c4d78f075"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdfdf4400899296066a6500c4d78f075">&#9670;&#160;</a></span>elements</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_ble_mesh_elem_t elements[]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    ESP_BLE_MESH_ELEMENT(0, <a class="code hl_variable" href="#a27f57e8b0b732ca1f292bf442a32511d">root_models</a>, ESP_BLE_MESH_MODEL_NONE),</div>
-<div class="line">}</div>
-<div class="ttc" id="aprovisioner_8c_html_a27f57e8b0b732ca1f292bf442a32511d"><div class="ttname"><a href="#a27f57e8b0b732ca1f292bf442a32511d">root_models</a></div><div class="ttdeci">static esp_ble_mesh_model_t root_models[]</div><div class="ttdef"><b>Definition</b> provisioner.c:67</div></div>
-</div><!-- fragment --><p>BLE Mesh uses the composition data (elements + models) to describe the local node; the stack requires this at initialization time. </p>
-
-</div>
-</div>
-<a id="a5460b3bf8e6b0bf769188a0873275b08" name="a5460b3bf8e6b0bf769188a0873275b08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5460b3bf8e6b0bf769188a0873275b08">&#9670;&#160;</a></span>nodes</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structesp__ble__mesh__node__info__t.html">esp_ble_mesh_node_info_t</a> nodes[CONFIG_BLE_MESH_MAX_PROV_NODES] = {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The provisioner needs this cache to (1) avoid duplicating entries when a device is reprovisioned, and (2) resolve incoming status messages to the owning node based on the destination unicast address (including element offsets). </p>
-
-</div>
-</div>
-<a id="a97c0ec146e3b23b9399e376bd0fe5c14" name="a97c0ec146e3b23b9399e376bd0fe5c14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97c0ec146e3b23b9399e376bd0fe5c14">&#9670;&#160;</a></span>prov_key</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="provisioner_8h.html#a500d6865c033bccde2465a07ba1c920b">esp_ble_mesh_prov_key_t</a> prov_key = {}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>The provisioner must know which NetKey/AppKey indices (and AppKey value) it uses when sending Config Client messages to provisioned nodes. </p>
-
-</div>
-</div>
-<a id="aa4572504622beb18ca2f41077573ee52" name="aa4572504622beb18ca2f41077573ee52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4572504622beb18ca2f41077573ee52">&#9670;&#160;</a></span>provision</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_ble_mesh_prov_t provision</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    .prov_uuid           = <a class="code hl_variable" href="client_8c.html#ab69fa84381554e34b3cd5fb275f60ea1">dev_uuid</a>,</div>
-<div class="line">    .prov_unicast_addr   = <a class="code hl_define" href="#afc1a880890590225677d9626b4855212">PROV_OWN_ADDR</a>,</div>
-<div class="line">    .prov_start_address  = 0x0005,</div>
-<div class="line">    .prov_attention      = 0x00,</div>
-<div class="line">    .prov_algorithm      = 0x00,</div>
-<div class="line">    .prov_pub_key_oob    = 0x00,</div>
-<div class="line">    .prov_static_oob_val = NULL,</div>
-<div class="line">    .prov_static_oob_len = 0x00,</div>
-<div class="line">    .flags               = 0x00,</div>
-<div class="line">    .iv_index            = 0x00,</div>
-<div class="line">}</div>
-<div class="ttc" id="aclient_8c_html_ab69fa84381554e34b3cd5fb275f60ea1"><div class="ttname"><a href="client_8c.html#ab69fa84381554e34b3cd5fb275f60ea1">dev_uuid</a></div><div class="ttdeci">static uint8_t dev_uuid[16]</div><div class="ttdef"><b>Definition</b> client.c:13</div></div>
-<div class="ttc" id="aprovisioner_8c_html_afc1a880890590225677d9626b4855212"><div class="ttname"><a href="#afc1a880890590225677d9626b4855212">PROV_OWN_ADDR</a></div><div class="ttdeci">#define PROV_OWN_ADDR</div><div class="ttdef"><b>Definition</b> provisioner.c:13</div></div>
-</div><!-- fragment --><p>Defines how the provisioner behaves during provisioning (UUID, unicast allocation range, and provisioning parameters) and is required by esp_ble_mesh_init(). </p>
-
-</div>
-</div>
-<a id="a27f57e8b0b732ca1f292bf442a32511d" name="a27f57e8b0b732ca1f292bf442a32511d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27f57e8b0b732ca1f292bf442a32511d">&#9670;&#160;</a></span>root_models</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">esp_ble_mesh_model_t root_models[]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    ESP_BLE_MESH_MODEL_CFG_SRV(&amp;<a class="code hl_variable" href="client_8c.html#ab59e9693779c3941ae92a1a1b98cd662">config_server</a>),</div>
-<div class="line">    ESP_BLE_MESH_MODEL_CFG_CLI(&amp;<a class="code hl_variable" href="client_8c.html#a30dbbe3548a569d0b17d6f5cba317e90">config_client</a>),</div>
-<div class="line">}</div>
-<div class="ttc" id="aclient_8c_html_a30dbbe3548a569d0b17d6f5cba317e90"><div class="ttname"><a href="client_8c.html#a30dbbe3548a569d0b17d6f5cba317e90">config_client</a></div><div class="ttdeci">static esp_ble_mesh_client_t config_client</div><div class="ttdef"><b>Definition</b> client.c:34</div></div>
-<div class="ttc" id="aclient_8c_html_ab59e9693779c3941ae92a1a1b98cd662"><div class="ttname"><a href="client_8c.html#ab59e9693779c3941ae92a1a1b98cd662">config_server</a></div><div class="ttdeci">static esp_ble_mesh_cfg_srv_t config_server</div><div class="ttdef"><b>Definition</b> client.c:17</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
@@ -953,7 +293,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="provisioner_8c.html">provisioner.c</a></li>
+    <li class="navelem"><a href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a href="dir_723f60b4e886d990e4cd05efe19ebd33.html">dezibot_bluetooth_mesh</a></li><li class="navelem"><a href="dir_c961f851be95828c166d5784c7f83012.html">provisioner</a></li><li class="navelem"><a href="provisioner_8c.html">provisioner.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

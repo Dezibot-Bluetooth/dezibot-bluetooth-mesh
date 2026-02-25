@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dezibot Bluetooth Mesh: lib/client.h File Reference</title>
+<title>Dezibot Bluetooth Mesh: components/dezibot_bluetooth_mesh/client/client.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,29 +91,18 @@ $(function(){initNavTree('client_8h.html','',''); });
   <div class="headertitle"><div class="title">client.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p>Public BLE Mesh client node API.  
-</p>
-<div class="textblock"><code>#include &quot;<a class="el" href="common_8h.html">common.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8h.html">../common/common.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a000984d14109a79f000c1996d1b02336" id="r_a000984d14109a79f000c1996d1b02336"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000984d14109a79f000c1996d1b02336">ble_mesh_client_init</a> (void)</td></tr>
-<tr class="memdesc:a000984d14109a79f000c1996d1b02336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the BLE Mesh client node and enables provisioning.  <br /></td></tr>
 <tr class="memitem:a9e3f5a594e8d5ef4bfd613e4149221b6" id="r_a9e3f5a594e8d5ef4bfd613e4149221b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e3f5a594e8d5ef4bfd613e4149221b6">ble_mesh_client_send</a> (uint8_t val, uint16_t addr)</td></tr>
-<tr class="memdesc:a9e3f5a594e8d5ef4bfd613e4149221b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic OnOff Set Unacknowledged message.  <br /></td></tr>
 <tr class="memitem:a8b1e4dcd45cd5ad4d03f0428c77d7811" id="r_a8b1e4dcd45cd5ad4d03f0428c77d7811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b1e4dcd45cd5ad4d03f0428c77d7811">ble_mesh_client_send_level</a> (int16_t level, uint16_t addr)</td></tr>
-<tr class="memdesc:a8b1e4dcd45cd5ad4d03f0428c77d7811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic Level Set Unacknowledged message.  <br /></td></tr>
 <tr class="memitem:aa92a2a608bda9b1a95a950e9a478fe07" id="r_aa92a2a608bda9b1a95a950e9a478fe07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92a2a608bda9b1a95a950e9a478fe07">ble_mesh_client_send_default_transition_time</a> (uint8_t transition_time, uint16_t addr)</td></tr>
-<tr class="memdesc:aa92a2a608bda9b1a95a950e9a478fe07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic Default Transition Time Set Unacknowledged message.  <br /></td></tr>
 <tr class="memitem:ad9abb937d224b2e5a0bd77cf1976e782" id="r_ad9abb937d224b2e5a0bd77cf1976e782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9abb937d224b2e5a0bd77cf1976e782">ble_mesh_client_send_power_level</a> (uint16_t power, uint16_t addr)</td></tr>
-<tr class="memdesc:ad9abb937d224b2e5a0bd77cf1976e782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic Power Level Set Unacknowledged message.  <br /></td></tr>
 <tr class="memitem:abd8f83b7dcb9a5461f34a4a30666132f" id="r_abd8f83b7dcb9a5461f34a4a30666132f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd8f83b7dcb9a5461f34a4a30666132f">ble_mesh_client_send_battery</a> (uint8_t battery_level, uint16_t addr)</td></tr>
-<tr class="memdesc:abd8f83b7dcb9a5461f34a4a30666132f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic Battery Get message.  <br /></td></tr>
 <tr class="memitem:a0c98556e4db0ff6a95eeff8c82fc9e84" id="r_a0c98556e4db0ff6a95eeff8c82fc9e84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c98556e4db0ff6a95eeff8c82fc9e84">ble_mesh_client_send_location</a> (uint32_t latitude, uint32_t longitude, int16_t altitude, uint16_t addr)</td></tr>
-<tr class="memdesc:a0c98556e4db0ff6a95eeff8c82fc9e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic Location Global Set Unacknowledged message.  <br /></td></tr>
 <tr class="memitem:a701a06ddc32e9c390340d925c3bb3c35" id="r_a701a06ddc32e9c390340d925c3bb3c35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a701a06ddc32e9c390340d925c3bb3c35">ble_mesh_client_send_property</a> (uint16_t property_id, uint8_t *property_value, uint16_t property_value_len, uint16_t addr)</td></tr>
-<tr class="memdesc:a701a06ddc32e9c390340d925c3bb3c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Generic User Property Set Unacknowledged message.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="a000984d14109a79f000c1996d1b02336" name="a000984d14109a79f000c1996d1b02336"></a>
@@ -130,7 +119,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, otherwise an ESP-IDF error code. </dd></dl>
 
 </div>
 </div>
@@ -152,14 +140,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>OnOff value to set (0 or 1). </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -181,14 +161,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">battery_level</td><td>Unused; kept for API compatibility. </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -210,14 +182,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">transition_time</td><td>Transition time encoded per Mesh specification. </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -239,14 +203,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">level</td><td>Level value to set. </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -278,16 +234,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">latitude</td><td>Global latitude value. </td></tr>
-    <tr><td class="paramname">longitude</td><td>Global longitude value. </td></tr>
-    <tr><td class="paramname">altitude</td><td>Global altitude value. </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -309,14 +255,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">power</td><td>Power level value to set. </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -348,16 +286,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">property_id</td><td>Property ID to set. </td></tr>
-    <tr><td class="paramname">property_value</td><td>Pointer to property value bytes. </td></tr>
-    <tr><td class="paramname">property_value_len</td><td>Length of the property value in bytes. </td></tr>
-    <tr><td class="paramname">addr</td><td>Destination unicast address. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
 
 </div>
 </div>
@@ -374,7 +302,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="client_8h.html">client.h</a></li>
+    <li class="navelem"><a href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a href="dir_723f60b4e886d990e4cd05efe19ebd33.html">dezibot_bluetooth_mesh</a></li><li class="navelem"><a href="dir_ff71cf5f1d467d4f4df4be2e7f507f06.html">client</a></li><li class="navelem"><a href="client_8h.html">client.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

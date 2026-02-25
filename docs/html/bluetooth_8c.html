@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dezibot Bluetooth Mesh: lib/bluetooth.c File Reference</title>
+<title>Dezibot Bluetooth Mesh: components/dezibot_bluetooth_mesh/common/bluetooth.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -92,8 +92,8 @@ $(function(){initNavTree('bluetooth_8c.html','',''); });
 </div><!--header-->
 <div class="contents">
 
-<p>NimBLE host initialization helpers for BLE Mesh.  
-</p>
+<p>Bluetooth stack initialization implementation.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="bluetooth_8h.html">bluetooth.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
@@ -103,25 +103,18 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a931b25a8797246e24c60c4a3abae8905" id="r_a931b25a8797246e24c60c4a3abae8905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a931b25a8797246e24c60c4a3abae8905">ble_store_config_init</a> (void)</td></tr>
-<tr class="memdesc:a931b25a8797246e24c60c4a3abae8905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the NimBLE persistent storage configuration.  <br /></td></tr>
-<tr class="memitem:a4c7465dc3b7f31add02610dcd8647477" id="r_a4c7465dc3b7f31add02610dcd8647477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c7465dc3b7f31add02610dcd8647477">ble_mesh_get_dev_uuid</a> (uint8_t *<a class="el" href="client_8c.html#ab69fa84381554e34b3cd5fb275f60ea1">dev_uuid</a>)</td></tr>
-<tr class="memdesc:a4c7465dc3b7f31add02610dcd8647477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the BLE Mesh device UUID from the controller address.  <br /></td></tr>
-<tr class="memitem:a7808136bf045f4e5796713b293546737" id="r_a7808136bf045f4e5796713b293546737"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7808136bf045f4e5796713b293546737">mesh_on_reset</a> (int reason)</td></tr>
-<tr class="memdesc:a7808136bf045f4e5796713b293546737"><td class="mdescLeft">&#160;</td><td class="mdescRight">NimBLE reset callback used to log reset reasons.  <br /></td></tr>
-<tr class="memitem:a94195bf76be2ed28d9a309c9a5a438e7" id="r_a94195bf76be2ed28d9a309c9a5a438e7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94195bf76be2ed28d9a309c9a5a438e7">mesh_on_sync</a> (void)</td></tr>
-<tr class="memdesc:a94195bf76be2ed28d9a309c9a5a438e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">NimBLE sync callback that signals address readiness.  <br /></td></tr>
+<tr class="memitem:a4c7465dc3b7f31add02610dcd8647477" id="r_a4c7465dc3b7f31add02610dcd8647477"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c7465dc3b7f31add02610dcd8647477">ble_mesh_get_dev_uuid</a> (uint8_t *dev_uuid)</td></tr>
+<tr class="memdesc:a4c7465dc3b7f31add02610dcd8647477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate device UUID from Bluetooth MAC address.  <br /></td></tr>
 <tr class="memitem:a41d25ff11d51b7facf433550f1c9ddc6" id="r_a41d25ff11d51b7facf433550f1c9ddc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41d25ff11d51b7facf433550f1c9ddc6">mesh_host_task</a> (void *param)</td></tr>
-<tr class="memdesc:a41d25ff11d51b7facf433550f1c9ddc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the NimBLE host in a FreeRTOS task.  <br /></td></tr>
+<tr class="memdesc:a41d25ff11d51b7facf433550f1c9ddc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">NimBLE host task.  <br /></td></tr>
 <tr class="memitem:a2bae8dcbee489037789f228234a3072d" id="r_a2bae8dcbee489037789f228234a3072d"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bae8dcbee489037789f228234a3072d">bluetooth_init</a> (void)</td></tr>
-<tr class="memdesc:a2bae8dcbee489037789f228234a3072d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the NimBLE host and waits for BLE sync.  <br /></td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aef92e86ca3c431f9632a6b080a2f732a" id="r_aef92e86ca3c431f9632a6b080a2f732a"><td class="memItemLeft" align="right" valign="top">static SemaphoreHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef92e86ca3c431f9632a6b080a2f732a">mesh_sem</a></td></tr>
-<tr class="memitem:acb10ebe924ae5f8ca981db2b32212404" id="r_acb10ebe924ae5f8ca981db2b32212404"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb10ebe924ae5f8ca981db2b32212404">own_addr_type</a></td></tr>
-<tr class="memitem:a93f60f11159df5e630a8b7534ecb82d6" id="r_a93f60f11159df5e630a8b7534ecb82d6"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f60f11159df5e630a8b7534ecb82d6">addr_val</a> [6] = {0}</td></tr>
+<tr class="memdesc:a2bae8dcbee489037789f228234a3072d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Bluetooth stack.  <br /></td></tr>
 </table>
-<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implements NimBLE stack initialization with FreeRTOS integration and provides device UUID generation from Bluetooth MAC address.</p>
+<dl class="section author"><dt>Author</dt><dd>DeziBot Project </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2026 </dd></dl>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
 <a id="afc3d101f633a076cc1ca84b85b6224b2" name="afc3d101f633a076cc1ca84b85b6224b2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afc3d101f633a076cc1ca84b85b6224b2">&#9670;&#160;</a></span>TAG</h2>
 
@@ -133,6 +126,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Logging tag for this module </p>
 
 </div>
 </div>
@@ -151,13 +145,22 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates a 16-byte UUID with the device's Bluetooth MAC address embedded at bytes 2-7. This provides a deterministic unique identifier that remains constant across reboots.</p>
+<p>UUID Structure:</p><ul>
+<li>Bytes 0-1: Uninitialized (may contain garbage)</li>
+<li>Bytes 2-7: Bluetooth MAC address</li>
+<li>Bytes 8-15: Uninitialized (may contain garbage)</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dev_uuid</td><td>Pointer to a 16-byte UUID buffer to fill. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dev_uuid</td><td>Pointer to 16-byte buffer for UUID output</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Logs error and returns if dev_uuid is NULL </dd>
+<dd>
+MAC address must be retrieved first via mesh_on_sync()</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>mesh_on_sync() </dd></dl>
 
 </div>
 </div>
@@ -175,13 +178,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">None.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
+<p>External function from NimBLE </p>
 
 </div>
 </div>
@@ -199,14 +196,35 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Initializes the NimBLE host used by BLE Mesh.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">None.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, otherwise an ESP-IDF error code. </dd></dl>
+<p>Initializes the NimBLE Bluetooth stack and waits for synchronization. This function blocks until the stack is ready for mesh operations.</p>
+<p>Initialization sequence:</p><ol type="1">
+<li>Create binary semaphore for synchronization</li>
+<li>Initialize NimBLE port</li>
+<li>Configure host callbacks:<ul>
+<li>reset_cb: mesh_on_reset()</li>
+<li>sync_cb: mesh_on_sync()</li>
+<li>store_status_cb: ble_store_util_status_rr()</li>
+</ul>
+</li>
+<li>Initialize BLE storage configuration</li>
+<li>Create and start host task via nimble_port_freertos_init()</li>
+<li>Wait for sync callback (blocks on semaphore)</li>
+</ol>
+<p>Synchronization Pattern: The function creates a binary semaphore, starts the BLE host task, and blocks on the semaphore. When the host is ready, mesh_on_sync() gives the semaphore, allowing this function to return.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK: Bluetooth initialized and synchronized</li>
+<li>ESP_FAIL: Failed to create semaphore</li>
+<li>Other: Error from nimble_port_init()</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function blocks until Bluetooth is ready </dd>
+<dd>
+Must be called before any mesh operations </dd>
+<dd>
+Stores Bluetooth MAC address for UUID generation</dd></dl>
+<dl class="section see"><dt>See also</dt><dd>mesh_on_sync() </dd>
+<dd>
+<a class="el" href="#a4c7465dc3b7f31add02610dcd8647477" title="Generate device UUID from Bluetooth MAC address.">ble_mesh_get_dev_uuid()</a> </dd></dl>
 
 </div>
 </div>
@@ -224,144 +242,21 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>FreeRTOS task that runs the NimBLE host stack. This is a blocking call that processes BLE events until the stack is shut down.</p>
+<p>Task flow:</p><ol type="1">
+<li>Log task start</li>
+<li>Run NimBLE host (blocking)</li>
+<li>Deinitialize FreeRTOS integration on exit</li>
+</ol>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">param</td><td>Task parameter (unused). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param</td><td>Task parameter (unused)</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="a7808136bf045f4e5796713b293546737" name="a7808136bf045f4e5796713b293546737"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7808136bf045f4e5796713b293546737">&#9670;&#160;</a></span>mesh_on_reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mesh_on_reset </td>
-          <td>(</td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>reason</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">reason</td><td>NimBLE reset reason code. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a id="a94195bf76be2ed28d9a309c9a5a438e7" name="a94195bf76be2ed28d9a309c9a5a438e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94195bf76be2ed28d9a309c9a5a438e7">&#9670;&#160;</a></span>mesh_on_sync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void mesh_on_sync </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">None.</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>None. </dd></dl>
-
-</div>
-</div>
-<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="a93f60f11159df5e630a8b7534ecb82d6" name="a93f60f11159df5e630a8b7534ecb82d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93f60f11159df5e630a8b7534ecb82d6">&#9670;&#160;</a></span>addr_val</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t addr_val[6] = {0}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aef92e86ca3c431f9632a6b080a2f732a" name="aef92e86ca3c431f9632a6b080a2f732a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef92e86ca3c431f9632a6b080a2f732a">&#9670;&#160;</a></span>mesh_sem</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">SemaphoreHandle_t mesh_sem</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acb10ebe924ae5f8ca981db2b32212404" name="acb10ebe924ae5f8ca981db2b32212404"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb10ebe924ae5f8ca981db2b32212404">&#9670;&#160;</a></span>own_addr_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t own_addr_type</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>This task is created automatically by nimble_port_freertos_init() </dd>
+<dd>
+Task runs until nimble_port_stop() is called </dd></dl>
 
 </div>
 </div>
@@ -378,7 +273,7 @@ Variables</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_97aefd0d527b934f1d99a682da8fe6a9.html">lib</a></li><li class="navelem"><a href="bluetooth_8c.html">bluetooth.c</a></li>
+    <li class="navelem"><a href="dir_409f97388efe006bc3438b95e9edef48.html">components</a></li><li class="navelem"><a href="dir_723f60b4e886d990e4cd05efe19ebd33.html">dezibot_bluetooth_mesh</a></li><li class="navelem"><a href="dir_b9ea37aac66dceb3cecb4b933320d8a1.html">common</a></li><li class="navelem"><a href="bluetooth_8c.html">bluetooth.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>
