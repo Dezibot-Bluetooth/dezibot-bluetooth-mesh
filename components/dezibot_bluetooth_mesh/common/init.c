@@ -19,6 +19,14 @@
 // Arduino-ESP32's initArduino() will release BT controller memory unless
 // btInUse() returns true. This project uses ESP-IDF NimBLE directly, so we
 // must prevent that early memory release.
+/**
+ * @brief Indicate to Arduino core that Bluetooth is used.
+ *
+ * Arduino-ESP32 calls this hook to decide whether it can release BT controller
+ * memory during startup.
+ *
+ * @return true (Bluetooth is in use)
+ */
 bool btInUse(void)
 {
     return true;

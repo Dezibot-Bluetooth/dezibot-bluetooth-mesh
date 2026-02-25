@@ -11,11 +11,18 @@
 
 #include "bluetooth.h"
 
+#include <assert.h>
+
 #define TAG "BLUETOOTH"  /**< Logging tag for this module */
 
 static SemaphoreHandle_t mesh_sem;  /**< Binary semaphore for init synchronization */
 static uint8_t own_addr_type;       /**< Bluetooth address type (public/random) */
-void ble_store_config_init(void);   /**< External function from NimBLE */
+/**
+ * @brief Initialize NimBLE persistent storage configuration.
+ *
+ * Provided by NimBLE's ble_store_config module.
+ */
+void ble_store_config_init(void);
 static uint8_t addr_val[6] = {0};   /**< Bluetooth MAC address storage */
 
 /**

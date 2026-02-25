@@ -15,10 +15,22 @@ DeziBotMesh::DeziBotMesh()
     , _meshInitialized(false) {
 }
 
+/**
+ * @brief Destroy the mesh wrapper object.
+ *
+ * Cleanup is handled by the underlying ESP-IDF components.
+ */
 DeziBotMesh::~DeziBotMesh() {
     // Cleanup handled by ESP-IDF
 }
 
+/**
+ * @brief Initialize core prerequisites (NVS + Bluetooth).
+ *
+ * Safe to call multiple times.
+ *
+ * @return true on success, false on failure.
+ */
 bool DeziBotMesh::init() {
     if (_initialized) {
         return true;
@@ -42,6 +54,13 @@ bool DeziBotMesh::init() {
     return true;
 }
 
+/**
+ * @brief Initialize the node in client-only mode.
+ *
+ * Requires init() to have been called successfully.
+ *
+ * @return true on success, false on failure.
+ */
 bool DeziBotMesh::beginClient(char *device_name) {
     if (!_initialized) {
         ESP_LOGE("DeziBotMesh", "Must call init() before beginClient()");
@@ -368,6 +387,11 @@ esp_err_t DeziBotMesh::getClientProperties(uint16_t propertyId, uint16_t addr, u
     return mesh_bridge_client_get_client_properties(propertyId, addr, elemIndex);
 }
 
+/**
+ * @brief Retrieve the device UUID used by the mesh stack.
+ *
+ * @param[out] uuid Output buffer (16 bytes)
+ */
 void DeziBotMesh::getDeviceUUID(uint8_t* uuid) {
     if (uuid != nullptr) {
         mesh_bridge_get_device_uuid(uuid);
