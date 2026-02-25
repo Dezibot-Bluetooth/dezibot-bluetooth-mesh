@@ -88,6 +88,9 @@ esp_err_t mesh_bridge_client_get_client_properties(uint16_t property_id, uint16_
 // server/server
 esp_err_t mesh_bridge_server_init(mesh_server_evt_cb_t cb);
 
+// node/node
+esp_err_t mesh_bridge_node_init(mesh_server_evt_cb_t cb);
+
 #ifdef __cplusplus
 }
 #endif
