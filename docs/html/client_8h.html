@@ -98,24 +98,663 @@ $(function(){initNavTree('client_8h.html','',''); });
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ab9acda6bc00979b3d8ede3484bdde85e" id="r_ab9acda6bc00979b3d8ede3484bdde85e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9acda6bc00979b3d8ede3484bdde85e">mesh_config_client_cb</a> (esp_ble_mesh_cfg_client_cb_event_t event, esp_ble_mesh_cfg_client_cb_param_t *param)</td></tr>
+<tr class="memdesc:ab9acda6bc00979b3d8ede3484bdde85e"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Mesh Configuration Client callback handler.  <br /></td></tr>
+<tr class="memitem:aacc2f2cffec47aa777e5cb8709a7eecb" id="r_aacc2f2cffec47aa777e5cb8709a7eecb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacc2f2cffec47aa777e5cb8709a7eecb">mesh_generic_client_cb</a> (esp_ble_mesh_generic_client_cb_event_t event, esp_ble_mesh_generic_client_cb_param_t *param)</td></tr>
+<tr class="memdesc:aacc2f2cffec47aa777e5cb8709a7eecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Mesh Generic Client callback handler.  <br /></td></tr>
+<tr class="memitem:a098775d3e65d8f4f5272809c7974e0ff" id="r_a098775d3e65d8f4f5272809c7974e0ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098775d3e65d8f4f5272809c7974e0ff">ble_mesh_client_set_composition</a> (esp_ble_mesh_comp_t *comp)</td></tr>
+<tr class="memdesc:a098775d3e65d8f4f5272809c7974e0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default composition data.  <br /></td></tr>
 <tr class="memitem:a000984d14109a79f000c1996d1b02336" id="r_a000984d14109a79f000c1996d1b02336"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000984d14109a79f000c1996d1b02336">ble_mesh_client_init</a> (void)</td></tr>
-<tr class="memdesc:a000984d14109a79f000c1996d1b02336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh client node.  <br /></td></tr>
-<tr class="memitem:a9e3f5a594e8d5ef4bfd613e4149221b6" id="r_a9e3f5a594e8d5ef4bfd613e4149221b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e3f5a594e8d5ef4bfd613e4149221b6">ble_mesh_client_send</a> (uint8_t val, uint16_t addr)</td></tr>
-<tr class="memdesc:a9e3f5a594e8d5ef4bfd613e4149221b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff Set Unacknowledged.  <br /></td></tr>
-<tr class="memitem:a8b1e4dcd45cd5ad4d03f0428c77d7811" id="r_a8b1e4dcd45cd5ad4d03f0428c77d7811"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b1e4dcd45cd5ad4d03f0428c77d7811">ble_mesh_client_send_level</a> (int16_t level, uint16_t addr)</td></tr>
-<tr class="memdesc:a8b1e4dcd45cd5ad4d03f0428c77d7811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Level Set Unacknowledged.  <br /></td></tr>
-<tr class="memitem:aa92a2a608bda9b1a95a950e9a478fe07" id="r_aa92a2a608bda9b1a95a950e9a478fe07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92a2a608bda9b1a95a950e9a478fe07">ble_mesh_client_send_default_transition_time</a> (uint8_t transition_time, uint16_t addr)</td></tr>
-<tr class="memdesc:aa92a2a608bda9b1a95a950e9a478fe07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the default transition time on a target.  <br /></td></tr>
-<tr class="memitem:ad9abb937d224b2e5a0bd77cf1976e782" id="r_ad9abb937d224b2e5a0bd77cf1976e782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9abb937d224b2e5a0bd77cf1976e782">ble_mesh_client_send_power_level</a> (uint16_t power, uint16_t addr)</td></tr>
-<tr class="memdesc:ad9abb937d224b2e5a0bd77cf1976e782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Level Set Unacknowledged.  <br /></td></tr>
-<tr class="memitem:abd8f83b7dcb9a5461f34a4a30666132f" id="r_abd8f83b7dcb9a5461f34a4a30666132f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd8f83b7dcb9a5461f34a4a30666132f">ble_mesh_client_send_battery</a> (uint8_t battery_level, uint16_t addr)</td></tr>
-<tr class="memdesc:abd8f83b7dcb9a5461f34a4a30666132f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request Generic Battery state.  <br /></td></tr>
-<tr class="memitem:a0c98556e4db0ff6a95eeff8c82fc9e84" id="r_a0c98556e4db0ff6a95eeff8c82fc9e84"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c98556e4db0ff6a95eeff8c82fc9e84">ble_mesh_client_send_location</a> (uint32_t latitude, uint32_t longitude, int16_t altitude, uint16_t addr)</td></tr>
-<tr class="memdesc:a0c98556e4db0ff6a95eeff8c82fc9e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Location Global Set Unacknowledged.  <br /></td></tr>
-<tr class="memitem:a701a06ddc32e9c390340d925c3bb3c35" id="r_a701a06ddc32e9c390340d925c3bb3c35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a701a06ddc32e9c390340d925c3bb3c35">ble_mesh_client_send_property</a> (uint16_t property_id, uint8_t *property_value, uint16_t property_value_len, uint16_t addr)</td></tr>
-<tr class="memdesc:a701a06ddc32e9c390340d925c3bb3c35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic User Property Set Unacknowledged.  <br /></td></tr>
+<tr class="memdesc:a000984d14109a79f000c1996d1b02336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh client models.  <br /></td></tr>
+<tr class="memitem:aa2babfb718ce1def01e81bdc1cc60c7d" id="r_aa2babfb718ce1def01e81bdc1cc60c7d"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2babfb718ce1def01e81bdc1cc60c7d">ble_mesh_client_get_onoff</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:aa2babfb718ce1def01e81bdc1cc60c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff Get.  <br /></td></tr>
+<tr class="memitem:a2452fb42d0710f6bbf34e684ca0cd9a0" id="r_a2452fb42d0710f6bbf34e684ca0cd9a0"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2452fb42d0710f6bbf34e684ca0cd9a0">ble_mesh_client_set_onoff</a> (uint8_t val, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a2452fb42d0710f6bbf34e684ca0cd9a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a0c81eab8db8e09fab888e6115d546673" id="r_a0c81eab8db8e09fab888e6115d546673"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c81eab8db8e09fab888e6115d546673">ble_mesh_client_get_level</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a0c81eab8db8e09fab888e6115d546673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Level Get.  <br /></td></tr>
+<tr class="memitem:aefde696a8a88a95c2ced499ebe4e74bd" id="r_aefde696a8a88a95c2ced499ebe4e74bd"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefde696a8a88a95c2ced499ebe4e74bd">ble_mesh_client_set_level</a> (int16_t level, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:aefde696a8a88a95c2ced499ebe4e74bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Level Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:aca5375f21128f646ed567f674d42aaf1" id="r_aca5375f21128f646ed567f674d42aaf1"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca5375f21128f646ed567f674d42aaf1">ble_mesh_client_set_delta</a> (int32_t delta, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:aca5375f21128f646ed567f674d42aaf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Delta Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:af4d42fbb3afe1f4fff6f78e2836c3839" id="r_af4d42fbb3afe1f4fff6f78e2836c3839"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4d42fbb3afe1f4fff6f78e2836c3839">ble_mesh_client_set_move</a> (int16_t move, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:af4d42fbb3afe1f4fff6f78e2836c3839"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Move Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a9a8dc8bd5bfc2807a02b87a05e7027a4" id="r_a9a8dc8bd5bfc2807a02b87a05e7027a4"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a8dc8bd5bfc2807a02b87a05e7027a4">ble_mesh_client_get_default_transition_time</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a9a8dc8bd5bfc2807a02b87a05e7027a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Default Transition Time Get.  <br /></td></tr>
+<tr class="memitem:a0f463946c6dc2ddb217c4c024f19ff4a" id="r_a0f463946c6dc2ddb217c4c024f19ff4a"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f463946c6dc2ddb217c4c024f19ff4a">ble_mesh_client_set_default_transition_time</a> (uint8_t transition_time, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a0f463946c6dc2ddb217c4c024f19ff4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Default Transition Time Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a533d2813df08d8200e8d21d2b74174aa" id="r_a533d2813df08d8200e8d21d2b74174aa"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a533d2813df08d8200e8d21d2b74174aa">ble_mesh_client_get_onpowerup</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a533d2813df08d8200e8d21d2b74174aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnPowerUp Get.  <br /></td></tr>
+<tr class="memitem:a584f70be28e93415b60f8ea67d553197" id="r_a584f70be28e93415b60f8ea67d553197"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a584f70be28e93415b60f8ea67d553197">ble_mesh_client_set_onpowerup</a> (uint8_t power, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a584f70be28e93415b60f8ea67d553197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnPowerUp Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a118102e559016b3131e914f0baba302e" id="r_a118102e559016b3131e914f0baba302e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a118102e559016b3131e914f0baba302e">ble_mesh_client_get_power_level</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a118102e559016b3131e914f0baba302e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Level Get.  <br /></td></tr>
+<tr class="memitem:a16fc78961fc35df5ca5118b19b2a16e7" id="r_a16fc78961fc35df5ca5118b19b2a16e7"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16fc78961fc35df5ca5118b19b2a16e7">ble_mesh_client_set_power_level</a> (uint16_t power, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a16fc78961fc35df5ca5118b19b2a16e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Level Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:aa3bd93c2e3b0648dfbf0fe98d389adbf" id="r_aa3bd93c2e3b0648dfbf0fe98d389adbf"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3bd93c2e3b0648dfbf0fe98d389adbf">ble_mesh_client_get_power_default</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:aa3bd93c2e3b0648dfbf0fe98d389adbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Default Get.  <br /></td></tr>
+<tr class="memitem:a249dff8a4426b2c1871cc3880a54e57e" id="r_a249dff8a4426b2c1871cc3880a54e57e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a249dff8a4426b2c1871cc3880a54e57e">ble_mesh_client_set_power_default</a> (uint16_t power_default, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a249dff8a4426b2c1871cc3880a54e57e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Default Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a82b23e799a675f7006fac101f7712795" id="r_a82b23e799a675f7006fac101f7712795"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82b23e799a675f7006fac101f7712795">ble_mesh_client_get_power_range</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a82b23e799a675f7006fac101f7712795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Range Get.  <br /></td></tr>
+<tr class="memitem:abd75d59a9ad8ec791d6e6b98f49067f1" id="r_abd75d59a9ad8ec791d6e6b98f49067f1"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd75d59a9ad8ec791d6e6b98f49067f1">ble_mesh_client_set_power_range</a> (uint16_t min, uint16_t max, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:abd75d59a9ad8ec791d6e6b98f49067f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Power Range Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a0be5e8178c8c67b3fa23537b17ea9e71" id="r_a0be5e8178c8c67b3fa23537b17ea9e71"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0be5e8178c8c67b3fa23537b17ea9e71">ble_mesh_client_get_battery</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a0be5e8178c8c67b3fa23537b17ea9e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Battery Get.  <br /></td></tr>
+<tr class="memitem:a924f741d04aa47c7cac382a183c8871f" id="r_a924f741d04aa47c7cac382a183c8871f"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a924f741d04aa47c7cac382a183c8871f">ble_mesh_client_get_loc_global</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a924f741d04aa47c7cac382a183c8871f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Global Location Get.  <br /></td></tr>
+<tr class="memitem:af2e013a5ecbd6c9ca353823df253354c" id="r_af2e013a5ecbd6c9ca353823df253354c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2e013a5ecbd6c9ca353823df253354c">ble_mesh_client_set_loc_global</a> (int32_t latitude, int32_t longitude, int16_t altitude, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:af2e013a5ecbd6c9ca353823df253354c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Global Location Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a4b169ab968f08acf461c705ea3425cd3" id="r_a4b169ab968f08acf461c705ea3425cd3"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b169ab968f08acf461c705ea3425cd3">ble_mesh_client_get_loc_local</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a4b169ab968f08acf461c705ea3425cd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Local Location Get.  <br /></td></tr>
+<tr class="memitem:a691a4f5833e482400d7ed77326066a7c" id="r_a691a4f5833e482400d7ed77326066a7c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a691a4f5833e482400d7ed77326066a7c">ble_mesh_client_set_loc_local</a> (int16_t north, int16_t east, int16_t altitude, uint8_t floor_number, uint16_t uncertainty, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a691a4f5833e482400d7ed77326066a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Local Location Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a0cb2cc7e9185bf3a8fe663be41b101de" id="r_a0cb2cc7e9185bf3a8fe663be41b101de"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cb2cc7e9185bf3a8fe663be41b101de">ble_mesh_client_get_user_properties</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a0cb2cc7e9185bf3a8fe663be41b101de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic User Properties Get.  <br /></td></tr>
+<tr class="memitem:a514690c065912b2d81606424cc0d8632" id="r_a514690c065912b2d81606424cc0d8632"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a514690c065912b2d81606424cc0d8632">ble_mesh_client_get_user_property</a> (uint16_t property_id, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a514690c065912b2d81606424cc0d8632"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic User Property Get.  <br /></td></tr>
+<tr class="memitem:ae60eb880697efdc1429263d8f2db7fd2" id="r_ae60eb880697efdc1429263d8f2db7fd2"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae60eb880697efdc1429263d8f2db7fd2">ble_mesh_client_set_user_property</a> (uint16_t property_id, uint8_t *property_value, uint16_t property_value_len, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:ae60eb880697efdc1429263d8f2db7fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic User Property Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a0c2ab152bcb2c0794997dc6ec56316e3" id="r_a0c2ab152bcb2c0794997dc6ec56316e3"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c2ab152bcb2c0794997dc6ec56316e3">ble_mesh_client_get_admin_properties</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a0c2ab152bcb2c0794997dc6ec56316e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Admin Properties Get.  <br /></td></tr>
+<tr class="memitem:afcbc4e7f6a08008f72ad28272eb4e778" id="r_afcbc4e7f6a08008f72ad28272eb4e778"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcbc4e7f6a08008f72ad28272eb4e778">ble_mesh_client_get_admin_property</a> (uint16_t property_id, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:afcbc4e7f6a08008f72ad28272eb4e778"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Admin Property Get.  <br /></td></tr>
+<tr class="memitem:a9309a1b7b1b5eac3062ab5285789a451" id="r_a9309a1b7b1b5eac3062ab5285789a451"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9309a1b7b1b5eac3062ab5285789a451">ble_mesh_client_set_admin_property</a> (uint16_t property_id, uint8_t admin_access, uint8_t *property_value, uint16_t property_value_len, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a9309a1b7b1b5eac3062ab5285789a451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Admin Property Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:ae4ccfef261e9725132f69030cf3e961d" id="r_ae4ccfef261e9725132f69030cf3e961d"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae4ccfef261e9725132f69030cf3e961d">ble_mesh_client_get_manu_properties</a> (uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:ae4ccfef261e9725132f69030cf3e961d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Manufacturer Properties Get.  <br /></td></tr>
+<tr class="memitem:a4f48f8d12388a6c62ccf95c38126e8a3" id="r_a4f48f8d12388a6c62ccf95c38126e8a3"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4f48f8d12388a6c62ccf95c38126e8a3">ble_mesh_client_get_manu_property</a> (uint16_t property_id, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a4f48f8d12388a6c62ccf95c38126e8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Manufacturer Property Get.  <br /></td></tr>
+<tr class="memitem:a007be6babe03006280d8ff9d3c864132" id="r_a007be6babe03006280d8ff9d3c864132"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a007be6babe03006280d8ff9d3c864132">ble_mesh_client_set_manu_property</a> (uint16_t property_id, uint8_t admin_access, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a007be6babe03006280d8ff9d3c864132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Manufacturer Property Set Unacknowledged.  <br /></td></tr>
+<tr class="memitem:a9df9766a6679a222a3de39249a080635" id="r_a9df9766a6679a222a3de39249a080635"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9df9766a6679a222a3de39249a080635">ble_mesh_client_get_client_properties</a> (uint16_t property_id, uint16_t addr, uint8_t elem_index)</td></tr>
+<tr class="memdesc:a9df9766a6679a222a3de39249a080635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Client Properties Get.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a0c2ab152bcb2c0794997dc6ec56316e3" name="a0c2ab152bcb2c0794997dc6ec56316e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2ab152bcb2c0794997dc6ec56316e3">&#9670;&#160;</a></span>ble_mesh_client_get_admin_properties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_admin_properties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="afcbc4e7f6a08008f72ad28272eb4e778" name="afcbc4e7f6a08008f72ad28272eb4e778"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcbc4e7f6a08008f72ad28272eb4e778">&#9670;&#160;</a></span>ble_mesh_client_get_admin_property()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_admin_property </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a0be5e8178c8c67b3fa23537b17ea9e71" name="a0be5e8178c8c67b3fa23537b17ea9e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0be5e8178c8c67b3fa23537b17ea9e71">&#9670;&#160;</a></span>ble_mesh_client_get_battery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_battery </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a9df9766a6679a222a3de39249a080635" name="a9df9766a6679a222a3de39249a080635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df9766a6679a222a3de39249a080635">&#9670;&#160;</a></span>ble_mesh_client_get_client_properties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_client_properties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Client property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a9a8dc8bd5bfc2807a02b87a05e7027a4" name="a9a8dc8bd5bfc2807a02b87a05e7027a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a8dc8bd5bfc2807a02b87a05e7027a4">&#9670;&#160;</a></span>ble_mesh_client_get_default_transition_time()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_default_transition_time </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a0c81eab8db8e09fab888e6115d546673" name="a0c81eab8db8e09fab888e6115d546673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c81eab8db8e09fab888e6115d546673">&#9670;&#160;</a></span>ble_mesh_client_get_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_level </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a924f741d04aa47c7cac382a183c8871f" name="a924f741d04aa47c7cac382a183c8871f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a924f741d04aa47c7cac382a183c8871f">&#9670;&#160;</a></span>ble_mesh_client_get_loc_global()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_loc_global </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a4b169ab968f08acf461c705ea3425cd3" name="a4b169ab968f08acf461c705ea3425cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b169ab968f08acf461c705ea3425cd3">&#9670;&#160;</a></span>ble_mesh_client_get_loc_local()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_loc_local </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ae4ccfef261e9725132f69030cf3e961d" name="ae4ccfef261e9725132f69030cf3e961d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4ccfef261e9725132f69030cf3e961d">&#9670;&#160;</a></span>ble_mesh_client_get_manu_properties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_manu_properties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a4f48f8d12388a6c62ccf95c38126e8a3" name="a4f48f8d12388a6c62ccf95c38126e8a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f48f8d12388a6c62ccf95c38126e8a3">&#9670;&#160;</a></span>ble_mesh_client_get_manu_property()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_manu_property </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="aa2babfb718ce1def01e81bdc1cc60c7d" name="aa2babfb718ce1def01e81bdc1cc60c7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2babfb718ce1def01e81bdc1cc60c7d">&#9670;&#160;</a></span>ble_mesh_client_get_onoff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_onoff </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a533d2813df08d8200e8d21d2b74174aa" name="a533d2813df08d8200e8d21d2b74174aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a533d2813df08d8200e8d21d2b74174aa">&#9670;&#160;</a></span>ble_mesh_client_get_onpowerup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_onpowerup </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="aa3bd93c2e3b0648dfbf0fe98d389adbf" name="aa3bd93c2e3b0648dfbf0fe98d389adbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3bd93c2e3b0648dfbf0fe98d389adbf">&#9670;&#160;</a></span>ble_mesh_client_get_power_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_power_default </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a118102e559016b3131e914f0baba302e" name="a118102e559016b3131e914f0baba302e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118102e559016b3131e914f0baba302e">&#9670;&#160;</a></span>ble_mesh_client_get_power_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_power_level </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a82b23e799a675f7006fac101f7712795" name="a82b23e799a675f7006fac101f7712795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82b23e799a675f7006fac101f7712795">&#9670;&#160;</a></span>ble_mesh_client_get_power_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_power_range </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a0cb2cc7e9185bf3a8fe663be41b101de" name="a0cb2cc7e9185bf3a8fe663be41b101de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb2cc7e9185bf3a8fe663be41b101de">&#9670;&#160;</a></span>ble_mesh_client_get_user_properties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_user_properties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a514690c065912b2d81606424cc0d8632" name="a514690c065912b2d81606424cc0d8632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a514690c065912b2d81606424cc0d8632">&#9670;&#160;</a></span>ble_mesh_client_get_user_property()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_get_user_property </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
 <a id="a000984d14109a79f000c1996d1b02336" name="a000984d14109a79f000c1996d1b02336"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a000984d14109a79f000c1996d1b02336">&#9670;&#160;</a></span>ble_mesh_client_init()</h2>
 
@@ -130,139 +769,228 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets up provisioning for a mesh node that contains a set of Generic Client models (OnOff, Level, etc.) and enables provisioning over ADV and GATT.</p>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh stack. </dd></dl>
+<p>Registers callbacks and initializes the client-side models.</p>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
-<a id="a9e3f5a594e8d5ef4bfd613e4149221b6" name="a9e3f5a594e8d5ef4bfd613e4149221b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e3f5a594e8d5ef4bfd613e4149221b6">&#9670;&#160;</a></span>ble_mesh_client_send()</h2>
+<a id="a9309a1b7b1b5eac3062ab5285789a451" name="a9309a1b7b1b5eac3062ab5285789a451"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9309a1b7b1b5eac3062ab5285789a451">&#9670;&#160;</a></span>ble_mesh_client_set_admin_property()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ble_mesh_client_send </td>
+          <td class="memname">esp_err_t ble_mesh_client_set_admin_property </td>
           <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>admin_access</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>property_value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_value_len</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>0 for Off, non-zero for On </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">admin_access</td><td>Admin access value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property value buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a098775d3e65d8f4f5272809c7974e0ff" name="a098775d3e65d8f4f5272809c7974e0ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a098775d3e65d8f4f5272809c7974e0ff">&#9670;&#160;</a></span>ble_mesh_client_set_composition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ble_mesh_client_set_composition </td>
+          <td>(</td>
+          <td class="paramtype">esp_ble_mesh_comp_t *</td>          <td class="paramname"><span class="paramname"><em>comp</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Call this before <a class="el" href="#a000984d14109a79f000c1996d1b02336">ble_mesh_client_init</a> if you want to provide a custom element/model composition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>Composition data to use. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="abd8f83b7dcb9a5461f34a4a30666132f" name="abd8f83b7dcb9a5461f34a4a30666132f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd8f83b7dcb9a5461f34a4a30666132f">&#9670;&#160;</a></span>ble_mesh_client_send_battery()</h2>
+<a id="a0f463946c6dc2ddb217c4c024f19ff4a" name="a0f463946c6dc2ddb217c4c024f19ff4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f463946c6dc2ddb217c4c024f19ff4a">&#9670;&#160;</a></span>ble_mesh_client_set_default_transition_time()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ble_mesh_client_send_battery </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>battery_level</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Note: Battery is typically read-only; this issues a GET.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">battery_level</td><td>Unused (reserved for future use) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aa92a2a608bda9b1a95a950e9a478fe07" name="aa92a2a608bda9b1a95a950e9a478fe07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa92a2a608bda9b1a95a950e9a478fe07">&#9670;&#160;</a></span>ble_mesh_client_send_default_transition_time()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ble_mesh_client_send_default_transition_time </td>
+          <td class="memname">esp_err_t ble_mesh_client_set_default_transition_time </td>
           <td>(</td>
           <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>transition_time</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">transition_time</td><td>Encoded transition time per Mesh Model spec </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">transition_time</td><td>Transition time value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
-<a id="a8b1e4dcd45cd5ad4d03f0428c77d7811" name="a8b1e4dcd45cd5ad4d03f0428c77d7811"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b1e4dcd45cd5ad4d03f0428c77d7811">&#9670;&#160;</a></span>ble_mesh_client_send_level()</h2>
+<a id="aca5375f21128f646ed567f674d42aaf1" name="aca5375f21128f646ed567f674d42aaf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5375f21128f646ed567f674d42aaf1">&#9670;&#160;</a></span>ble_mesh_client_set_delta()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ble_mesh_client_send_level </td>
+          <td class="memname">esp_err_t ble_mesh_client_set_delta </td>
+          <td>(</td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">delta</td><td>Delta level value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="aefde696a8a88a95c2ced499ebe4e74bd" name="aefde696a8a88a95c2ced499ebe4e74bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefde696a8a88a95c2ced499ebe4e74bd">&#9670;&#160;</a></span>ble_mesh_client_set_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_level </td>
           <td>(</td>
           <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Signed level value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Target level value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
-<a id="a0c98556e4db0ff6a95eeff8c82fc9e84" name="a0c98556e4db0ff6a95eeff8c82fc9e84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c98556e4db0ff6a95eeff8c82fc9e84">&#9670;&#160;</a></span>ble_mesh_client_send_location()</h2>
+<a id="af2e013a5ecbd6c9ca353823df253354c" name="af2e013a5ecbd6c9ca353823df253354c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2e013a5ecbd6c9ca353823df253354c">&#9670;&#160;</a></span>ble_mesh_client_set_loc_global()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ble_mesh_client_send_location </td>
+          <td class="memname">esp_err_t ble_mesh_client_set_loc_global </td>
           <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>latitude</em></span>, </td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>latitude</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>longitude</em></span>, </td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>longitude</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -272,58 +1000,389 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>Encoded latitude </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>Encoded longitude </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Altitude in meters (or spec encoding) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">latitude</td><td>Global latitude value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">longitude</td><td>Global longitude value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Global altitude value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
-<a id="ad9abb937d224b2e5a0bd77cf1976e782" name="ad9abb937d224b2e5a0bd77cf1976e782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9abb937d224b2e5a0bd77cf1976e782">&#9670;&#160;</a></span>ble_mesh_client_send_power_level()</h2>
+<a id="a691a4f5833e482400d7ed77326066a7c" name="a691a4f5833e482400d7ed77326066a7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a691a4f5833e482400d7ed77326066a7c">&#9670;&#160;</a></span>ble_mesh_client_set_loc_local()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ble_mesh_client_send_power_level </td>
+          <td class="memname">esp_err_t ble_mesh_client_set_loc_local </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>north</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>east</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>altitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>floor_number</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>uncertainty</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">north</td><td>Local north value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">east</td><td>Local east value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">altitude</td><td>Local altitude value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">floor_number</td><td>Local floor number. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uncertainty</td><td>Uncertainty value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a007be6babe03006280d8ff9d3c864132" name="a007be6babe03006280d8ff9d3c864132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a007be6babe03006280d8ff9d3c864132">&#9670;&#160;</a></span>ble_mesh_client_set_manu_property()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_manu_property </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>admin_access</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">admin_access</td><td>Admin access value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="af4d42fbb3afe1f4fff6f78e2836c3839" name="af4d42fbb3afe1f4fff6f78e2836c3839"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4d42fbb3afe1f4fff6f78e2836c3839">&#9670;&#160;</a></span>ble_mesh_client_set_move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_move </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>move</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">move</td><td>Move level value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a2452fb42d0710f6bbf34e684ca0cd9a0" name="a2452fb42d0710f6bbf34e684ca0cd9a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2452fb42d0710f6bbf34e684ca0cd9a0">&#9670;&#160;</a></span>ble_mesh_client_set_onoff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_onoff </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>val</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>Target OnOff value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a584f70be28e93415b60f8ea67d553197" name="a584f70be28e93415b60f8ea67d553197"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584f70be28e93415b60f8ea67d553197">&#9670;&#160;</a></span>ble_mesh_client_set_onpowerup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_onpowerup </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>power</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>OnPowerUp value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a249dff8a4426b2c1871cc3880a54e57e" name="a249dff8a4426b2c1871cc3880a54e57e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a249dff8a4426b2c1871cc3880a54e57e">&#9670;&#160;</a></span>ble_mesh_client_set_power_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_power_default </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>power_default</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">power_default</td><td>Target power default value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="a16fc78961fc35df5ca5118b19b2a16e7" name="a16fc78961fc35df5ca5118b19b2a16e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fc78961fc35df5ca5118b19b2a16e7">&#9670;&#160;</a></span>ble_mesh_client_set_power_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_power_level </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>power</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Power level value </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">power</td><td>Target power value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
-<a id="a701a06ddc32e9c390340d925c3bb3c35" name="a701a06ddc32e9c390340d925c3bb3c35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a701a06ddc32e9c390340d925c3bb3c35">&#9670;&#160;</a></span>ble_mesh_client_send_property()</h2>
+<a id="abd75d59a9ad8ec791d6e6b98f49067f1" name="abd75d59a9ad8ec791d6e6b98f49067f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd75d59a9ad8ec791d6e6b98f49067f1">&#9670;&#160;</a></span>ble_mesh_client_set_power_range()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ble_mesh_client_send_property </td>
+          <td class="memname">esp_err_t ble_mesh_client_set_power_range </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>max</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>Minimum power value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Maximum power value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ae60eb880697efdc1429263d8f2db7fd2" name="ae60eb880697efdc1429263d8f2db7fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae60eb880697efdc1429263d8f2db7fd2">&#9670;&#160;</a></span>ble_mesh_client_set_user_property()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t ble_mesh_client_set_user_property </td>
           <td>(</td>
           <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>property_id</em></span>, </td>
         </tr>
@@ -340,16 +1399,85 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elem_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property identifier </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value bytes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property_value in bytes </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_id</td><td>Property ID. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value</td><td>Pointer to property value buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property_value_len</td><td>Length of property value buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">addr</td><td>Target unicast or group address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elem_index</td><td>Local element index to use.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ab9acda6bc00979b3d8ede3484bdde85e" name="ab9acda6bc00979b3d8ede3484bdde85e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9acda6bc00979b3d8ede3484bdde85e">&#9670;&#160;</a></span>mesh_config_client_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mesh_config_client_cb </td>
+          <td>(</td>
+          <td class="paramtype">esp_ble_mesh_cfg_client_cb_event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">esp_ble_mesh_cfg_client_cb_param_t *</td>          <td class="paramname"><span class="paramname"><em>param</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal callback passed to the ESP BLE Mesh stack for Configuration Client model events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Event ID from the ESP BLE Mesh stack. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param</td><td>Event parameters provided by the ESP BLE Mesh stack. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aacc2f2cffec47aa777e5cb8709a7eecb" name="aacc2f2cffec47aa777e5cb8709a7eecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacc2f2cffec47aa777e5cb8709a7eecb">&#9670;&#160;</a></span>mesh_generic_client_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mesh_generic_client_cb </td>
+          <td>(</td>
+          <td class="paramtype">esp_ble_mesh_generic_client_cb_event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">esp_ble_mesh_generic_client_cb_param_t *</td>          <td class="paramname"><span class="paramname"><em>param</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal callback passed to the ESP BLE Mesh stack for Generic Client model events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Event ID from the ESP BLE Mesh stack. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param</td><td>Event parameters provided by the ESP BLE Mesh stack. </td></tr>
   </table>
   </dd>
 </dl>

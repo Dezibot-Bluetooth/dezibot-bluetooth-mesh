@@ -127,15 +127,14 @@ Arduino C++: <span class="tt">DeziBotMesh</span></h2>
 <div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5">beginClient</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// broadcast to all nodes</span></div>
-<div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#a6f0fcb05579585196bbd13b8f343b42d">sendOnOff</a>(<span class="keyword">true</span>, 0xFFFF);</div>
+<div class="line">  mesh.sendOnOff(<span class="keyword">true</span>, 0xFFFF);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">  delay(1000);</div>
 <div class="line">}</div>
 <div class="ttc" id="aDeziBotMesh_8h_html"><div class="ttname"><a href="DeziBotMesh_8h.html">DeziBotMesh.h</a></div><div class="ttdoc">Arduino wrapper for DeziBot Bluetooth Mesh library.</div></div>
-<div class="ttc" id="aclassDeziBotMesh_html"><div class="ttname"><a href="classDeziBotMesh.html">DeziBotMesh</a></div><div class="ttdoc">Main DeziBot Bluetooth Mesh class.</div><div class="ttdef"><b>Definition</b> DeziBotMesh.h:21</div></div>
-<div class="ttc" id="aclassDeziBotMesh_html_a6f0fcb05579585196bbd13b8f343b42d"><div class="ttname"><a href="classDeziBotMesh.html#a6f0fcb05579585196bbd13b8f343b42d">DeziBotMesh::sendOnOff</a></div><div class="ttdeci">void sendOnOff(bool onoff, uint16_t addr)</div><div class="ttdoc">Send Generic OnOff command to another node.</div></div>
+<div class="ttc" id="aclassDeziBotMesh_html"><div class="ttname"><a href="classDeziBotMesh.html">DeziBotMesh</a></div><div class="ttdoc">Main DeziBot Bluetooth Mesh class.</div><div class="ttdef"><b>Definition</b> DeziBotMesh.h:22</div></div>
 <div class="ttc" id="aclassDeziBotMesh_html_a86ea112c6c3fab8382753284296886d5"><div class="ttname"><a href="classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5">DeziBotMesh::beginClient</a></div><div class="ttdeci">bool beginClient()</div><div class="ttdoc">Initialize mesh node as client-only (send commands)</div></div>
 <div class="ttc" id="aclassDeziBotMesh_html_ae0dd6a93b4adda2dac388f3b73a76ca2"><div class="ttname"><a href="classDeziBotMesh.html#ae0dd6a93b4adda2dac388f3b73a76ca2">DeziBotMesh::init</a></div><div class="ttdeci">bool init()</div><div class="ttdoc">Initialize Bluetooth and pre-requisites.</div></div>
 </div><!-- fragment --><p>Minimal server example (logs incoming OnOff Set): </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>

@@ -62,7 +62,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"DeziBotMesh_8h.html"
+"DeziBotMesh_8h.html",
+"structmesh__server__t.html#a191cd643c615a935e8e0a0697eadceb4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

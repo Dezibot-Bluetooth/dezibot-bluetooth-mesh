@@ -94,15 +94,19 @@ $(function(){initNavTree('server_8h.html','',''); });
 
 <p>BLE Mesh server API.  
 </p>
-<div class="textblock"><code>#include &quot;<a class="el" href="common_8h.html">../common/common.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="server__events_8h.html">server_events.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="common_8h.html">common/common.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="server__events_8h.html">server/server_events.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a26f7cc0667946230bb800334687f9fb5" id="r_a26f7cc0667946230bb800334687f9fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f7cc0667946230bb800334687f9fb5">ble_mesh_server_set_composition</a> (esp_ble_mesh_comp_t *comp)</td></tr>
 <tr class="memdesc:a26f7cc0667946230bb800334687f9fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default composition data.  <br /></td></tr>
+<tr class="memitem:ab03c524ac8583c20f4803f2fd7d7f068" id="r_ab03c524ac8583c20f4803f2fd7d7f068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab03c524ac8583c20f4803f2fd7d7f068">mesh_generic_server_cb</a> (esp_ble_mesh_generic_server_cb_event_t event, esp_ble_mesh_generic_server_cb_param_t *param)</td></tr>
+<tr class="memdesc:ab03c524ac8583c20f4803f2fd7d7f068"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Mesh Generic Server callback handler.  <br /></td></tr>
+<tr class="memitem:a273fe08aec0e4148a3dfef722313a261" id="r_a273fe08aec0e4148a3dfef722313a261"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a273fe08aec0e4148a3dfef722313a261">mesh_config_server_cb</a> (esp_ble_mesh_cfg_server_cb_event_t event, esp_ble_mesh_cfg_server_cb_param_t *param)</td></tr>
+<tr class="memdesc:a273fe08aec0e4148a3dfef722313a261"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Mesh Configuration Server callback handler.  <br /></td></tr>
 <tr class="memitem:aa5d6b91c558ea48d06a68c3819920eb0" id="r_aa5d6b91c558ea48d06a68c3819920eb0"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5d6b91c558ea48d06a68c3819920eb0">ble_mesh_server_init</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
-<tr class="memdesc:aa5d6b91c558ea48d06a68c3819920eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh server node.  <br /></td></tr>
+<tr class="memdesc:aa5d6b91c558ea48d06a68c3819920eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh server models.  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="aa5d6b91c558ea48d06a68c3819920eb0" name="aa5d6b91c558ea48d06a68c3819920eb0"></a>
@@ -119,14 +123,18 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sets up provisioning and server models and registers callbacks that forward incoming messages as <a class="el" href="structmesh__server__evt__t.html">mesh_server_evt_t</a> events.</p>
+<p>Registers callbacks and initializes the server-side models. The application callback is invoked for incoming server events.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Application callback for server events.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Application callback for incoming server events.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success; otherwise an esp_err_t from the BLE Mesh stack. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>ESP_OK on success</li>
+<li>ESP_FAIL / other esp_err_t on failure </li>
+</ul>
+</dd></dl>
 
 </div>
 </div>
@@ -148,6 +156,64 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>Composition data to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a273fe08aec0e4148a3dfef722313a261" name="a273fe08aec0e4148a3dfef722313a261"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a273fe08aec0e4148a3dfef722313a261">&#9670;&#160;</a></span>mesh_config_server_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mesh_config_server_cb </td>
+          <td>(</td>
+          <td class="paramtype">esp_ble_mesh_cfg_server_cb_event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">esp_ble_mesh_cfg_server_cb_param_t *</td>          <td class="paramname"><span class="paramname"><em>param</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal callback passed to the ESP BLE Mesh stack for Configuration Server model events.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Event ID from the ESP BLE Mesh stack. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param</td><td>Event parameters provided by the ESP BLE Mesh stack. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab03c524ac8583c20f4803f2fd7d7f068" name="ab03c524ac8583c20f4803f2fd7d7f068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab03c524ac8583c20f4803f2fd7d7f068">&#9670;&#160;</a></span>mesh_generic_server_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mesh_generic_server_cb </td>
+          <td>(</td>
+          <td class="paramtype">esp_ble_mesh_generic_server_cb_event_t</td>          <td class="paramname"><span class="paramname"><em>event</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">esp_ble_mesh_generic_server_cb_param_t *</td>          <td class="paramname"><span class="paramname"><em>param</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Internal callback passed to the ESP BLE Mesh stack for Generic Server model events. Applications typically register their handler via <a class="el" href="#aa5d6b91c558ea48d06a68c3819920eb0">ble_mesh_server_init</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>Event ID from the ESP BLE Mesh stack. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">param</td><td>Event parameters provided by the ESP BLE Mesh stack. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['server_2eh_0',['server.h',['../server_8h.html',1,'']]],
-  ['server_5fevents_2eh_1',['server_events.h',['../server__events_8h.html',1,'']]],
-  ['server_5fwrapper_2eh_2',['server_wrapper.h',['../server__wrapper_8h.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../components_2dezibot__bluetooth__mesh_2README_8md.html',1,'(Global Namespace)'],['../README_8md.html',1,'(Global Namespace)']]]
 ];

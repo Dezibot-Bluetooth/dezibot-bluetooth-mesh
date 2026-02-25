@@ -117,8 +117,70 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a86ea112c6c3fab8382753284296886d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as client-only (send commands)  <br /></td></tr>
 <tr class="memitem:ab4becc3cb51dd4153542f30fed7e66ca" id="r_ab4becc3cb51dd4153542f30fed7e66ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4becc3cb51dd4153542f30fed7e66ca">beginServer</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
 <tr class="memdesc:ab4becc3cb51dd4153542f30fed7e66ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as server-only (receive commands and store data)  <br /></td></tr>
-<tr class="memitem:a6f0fcb05579585196bbd13b8f343b42d" id="r_a6f0fcb05579585196bbd13b8f343b42d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f0fcb05579585196bbd13b8f343b42d">sendOnOff</a> (bool onoff, uint16_t addr)</td></tr>
-<tr class="memdesc:a6f0fcb05579585196bbd13b8f343b42d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff command to another node.  <br /></td></tr>
+<tr class="memitem:a5195171bbeb3d3f8fbbebd558a557d17" id="r_a5195171bbeb3d3f8fbbebd558a557d17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5195171bbeb3d3f8fbbebd558a557d17">beginNode</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
+<tr class="memdesc:a5195171bbeb3d3f8fbbebd558a557d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as with clients and servers.  <br /></td></tr>
+<tr class="memitem:aa7a09d803a117af26f2a3561e5ca10f2" id="r_aa7a09d803a117af26f2a3561e5ca10f2"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7a09d803a117af26f2a3561e5ca10f2">getOnOff</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:aa7a09d803a117af26f2a3561e5ca10f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic OnOff state from another node.  <br /></td></tr>
+<tr class="memitem:af920fb9020e043bd4b1e7ef5295555bc" id="r_af920fb9020e043bd4b1e7ef5295555bc"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af920fb9020e043bd4b1e7ef5295555bc">setOnOff</a> (bool onoff, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:af920fb9020e043bd4b1e7ef5295555bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic OnOff state on another node.  <br /></td></tr>
+<tr class="memitem:a6fa7f6a5c10c51231a054e02454e40cf" id="r_a6fa7f6a5c10c51231a054e02454e40cf"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fa7f6a5c10c51231a054e02454e40cf">getLevel</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a6fa7f6a5c10c51231a054e02454e40cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Level state from another node.  <br /></td></tr>
+<tr class="memitem:aa0508d4ab51ab057eaec5f61b56d0864" id="r_aa0508d4ab51ab057eaec5f61b56d0864"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0508d4ab51ab057eaec5f61b56d0864">setLevel</a> (int16_t level, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:aa0508d4ab51ab057eaec5f61b56d0864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Level state on another node.  <br /></td></tr>
+<tr class="memitem:aa43eb3d26cb25efa249d94e080feeee8" id="r_aa43eb3d26cb25efa249d94e080feeee8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa43eb3d26cb25efa249d94e080feeee8">setDelta</a> (int32_t delta, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:aa43eb3d26cb25efa249d94e080feeee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Delta Set Unacknowledged to another node.  <br /></td></tr>
+<tr class="memitem:a0f00263dd8e5409518cf57d82006ac99" id="r_a0f00263dd8e5409518cf57d82006ac99"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f00263dd8e5409518cf57d82006ac99">setMove</a> (int16_t move, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a0f00263dd8e5409518cf57d82006ac99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Move Set Unacknowledged to another node.  <br /></td></tr>
+<tr class="memitem:a453009b862407bb8ca5f65f9873161f7" id="r_a453009b862407bb8ca5f65f9873161f7"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a453009b862407bb8ca5f65f9873161f7">getDefaultTransitionTime</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a453009b862407bb8ca5f65f9873161f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Default Transition Time from another node.  <br /></td></tr>
+<tr class="memitem:ac1d49cdbd608933c69e9b44cc12a87d4" id="r_ac1d49cdbd608933c69e9b44cc12a87d4"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1d49cdbd608933c69e9b44cc12a87d4">setDefaultTransitionTime</a> (uint8_t transitionTime, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:ac1d49cdbd608933c69e9b44cc12a87d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Default Transition Time on another node.  <br /></td></tr>
+<tr class="memitem:a87b6c27728b4a7edae2a0001c5c724c3" id="r_a87b6c27728b4a7edae2a0001c5c724c3"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87b6c27728b4a7edae2a0001c5c724c3">getOnPowerUp</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a87b6c27728b4a7edae2a0001c5c724c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic OnPowerUp state from another node.  <br /></td></tr>
+<tr class="memitem:a9e85d015974275a4dac1dc6f1aab894b" id="r_a9e85d015974275a4dac1dc6f1aab894b"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e85d015974275a4dac1dc6f1aab894b">setOnPowerUp</a> (uint8_t power, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a9e85d015974275a4dac1dc6f1aab894b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic OnPowerUp state on another node.  <br /></td></tr>
+<tr class="memitem:ab1069ac5d537c4a9c8c8fde5cd0ef6f5" id="r_ab1069ac5d537c4a9c8c8fde5cd0ef6f5"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab1069ac5d537c4a9c8c8fde5cd0ef6f5">getPowerLevel</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:ab1069ac5d537c4a9c8c8fde5cd0ef6f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Power Level state from another node.  <br /></td></tr>
+<tr class="memitem:a28bcfdc8a644e9a928162772b252f978" id="r_a28bcfdc8a644e9a928162772b252f978"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28bcfdc8a644e9a928162772b252f978">setPowerLevel</a> (uint16_t power, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a28bcfdc8a644e9a928162772b252f978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Power Level on another node.  <br /></td></tr>
+<tr class="memitem:ac557745c12269847335e6f31c3a8d47c" id="r_ac557745c12269847335e6f31c3a8d47c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac557745c12269847335e6f31c3a8d47c">getPowerDefault</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:ac557745c12269847335e6f31c3a8d47c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Power Default from another node.  <br /></td></tr>
+<tr class="memitem:a5fa19dc21d50aee03835960a9fd465b8" id="r_a5fa19dc21d50aee03835960a9fd465b8"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fa19dc21d50aee03835960a9fd465b8">setPowerDefault</a> (uint16_t powerDefault, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a5fa19dc21d50aee03835960a9fd465b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Power Default on another node.  <br /></td></tr>
+<tr class="memitem:ad38b053776845053b41e68a96cd57e5d" id="r_ad38b053776845053b41e68a96cd57e5d"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad38b053776845053b41e68a96cd57e5d">getPowerRange</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:ad38b053776845053b41e68a96cd57e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Power Range from another node.  <br /></td></tr>
+<tr class="memitem:a4fb64c06f4d1afc46d16e611d7419a24" id="r_a4fb64c06f4d1afc46d16e611d7419a24"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fb64c06f4d1afc46d16e611d7419a24">setPowerRange</a> (uint16_t min, uint16_t max, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a4fb64c06f4d1afc46d16e611d7419a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Power Range on another node.  <br /></td></tr>
+<tr class="memitem:ae6ac17c6ae80e439ca12f4a92e87e762" id="r_ae6ac17c6ae80e439ca12f4a92e87e762"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6ac17c6ae80e439ca12f4a92e87e762">getBattery</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:ae6ac17c6ae80e439ca12f4a92e87e762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Battery state from another node.  <br /></td></tr>
+<tr class="memitem:a6c1e4f1ffd1fc68deb37f24f854cb143" id="r_a6c1e4f1ffd1fc68deb37f24f854cb143"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c1e4f1ffd1fc68deb37f24f854cb143">getLocGlobal</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a6c1e4f1ffd1fc68deb37f24f854cb143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Global Location state from another node.  <br /></td></tr>
+<tr class="memitem:a15eaeca8cea8f346a27d71cdcf07e983" id="r_a15eaeca8cea8f346a27d71cdcf07e983"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15eaeca8cea8f346a27d71cdcf07e983">setLocGlobal</a> (int32_t latitude, int32_t longitude, int16_t altitude, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a15eaeca8cea8f346a27d71cdcf07e983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Global Location state on another node.  <br /></td></tr>
+<tr class="memitem:a6dfc30124cb513e7f4c0a5abbe106320" id="r_a6dfc30124cb513e7f4c0a5abbe106320"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dfc30124cb513e7f4c0a5abbe106320">getLocLocal</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a6dfc30124cb513e7f4c0a5abbe106320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic Local Location state from another node.  <br /></td></tr>
+<tr class="memitem:a602d790945c3a593ae918a692e3b6f2d" id="r_a602d790945c3a593ae918a692e3b6f2d"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a602d790945c3a593ae918a692e3b6f2d">setLocLocal</a> (int16_t north, int16_t east, int16_t altitude, uint8_t floorNumber, uint16_t uncertainty, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a602d790945c3a593ae918a692e3b6f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Generic Local Location state on another node.  <br /></td></tr>
+<tr class="memitem:a1713f0116221694b25859497c6ae1b83" id="r_a1713f0116221694b25859497c6ae1b83"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1713f0116221694b25859497c6ae1b83">getUserProperties</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a1713f0116221694b25859497c6ae1b83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of Generic User Property IDs from another node.  <br /></td></tr>
+<tr class="memitem:a98d069917fbd7f158467c8e3db443fa2" id="r_a98d069917fbd7f158467c8e3db443fa2"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98d069917fbd7f158467c8e3db443fa2">getUserProperty</a> (uint16_t propertyId, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a98d069917fbd7f158467c8e3db443fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a Generic User Property value from another node.  <br /></td></tr>
+<tr class="memitem:aedcbb662d23b1df55cd3fd067d797742" id="r_aedcbb662d23b1df55cd3fd067d797742"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aedcbb662d23b1df55cd3fd067d797742">setUserProperty</a> (uint16_t propertyId, uint8_t *propertyValue, uint16_t propertyValueLen, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:aedcbb662d23b1df55cd3fd067d797742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a Generic User Property value on another node.  <br /></td></tr>
+<tr class="memitem:a36714fd20faf2efb7ca9be72a9ded77a" id="r_a36714fd20faf2efb7ca9be72a9ded77a"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36714fd20faf2efb7ca9be72a9ded77a">getAdminProperties</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a36714fd20faf2efb7ca9be72a9ded77a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of Generic Admin Property IDs from another node.  <br /></td></tr>
+<tr class="memitem:af906b60b8caeac87dcc6d93dc7f14848" id="r_af906b60b8caeac87dcc6d93dc7f14848"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af906b60b8caeac87dcc6d93dc7f14848">getAdminProperty</a> (uint16_t propertyId, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:af906b60b8caeac87dcc6d93dc7f14848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a Generic Admin Property value from another node.  <br /></td></tr>
+<tr class="memitem:a4b3a984aa40372d2c56a22726af0229c" id="r_a4b3a984aa40372d2c56a22726af0229c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b3a984aa40372d2c56a22726af0229c">setAdminProperty</a> (uint16_t propertyId, uint8_t adminAccess, uint8_t *propertyValue, uint16_t propertyValueLen, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a4b3a984aa40372d2c56a22726af0229c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a Generic Admin Property value on another node.  <br /></td></tr>
+<tr class="memitem:a51970fcf5f9bc8ca0eea886e9d0dc284" id="r_a51970fcf5f9bc8ca0eea886e9d0dc284"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51970fcf5f9bc8ca0eea886e9d0dc284">getManuProperties</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a51970fcf5f9bc8ca0eea886e9d0dc284"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of Generic Manufacturer Property IDs from another node.  <br /></td></tr>
+<tr class="memitem:a412268ef7a737f8a6ca36a2b8e32d05b" id="r_a412268ef7a737f8a6ca36a2b8e32d05b"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a412268ef7a737f8a6ca36a2b8e32d05b">getManuProperty</a> (uint16_t propertyId, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a412268ef7a737f8a6ca36a2b8e32d05b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a Generic Manufacturer Property value from another node.  <br /></td></tr>
+<tr class="memitem:ae39b3c978b222213d2a00134d4852533" id="r_ae39b3c978b222213d2a00134d4852533"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae39b3c978b222213d2a00134d4852533">setManuProperty</a> (uint16_t propertyId, uint8_t adminAccess, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:ae39b3c978b222213d2a00134d4852533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a Generic Manufacturer Property value on another node.  <br /></td></tr>
+<tr class="memitem:a9d766966546ba1f1938bfdf8641baf18" id="r_a9d766966546ba1f1938bfdf8641baf18"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d766966546ba1f1938bfdf8641baf18">getClientProperties</a> (uint16_t propertyId, uint16_t addr, uint8_t elemIndex=0)</td></tr>
+<tr class="memdesc:a9d766966546ba1f1938bfdf8641baf18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of Generic Client Property IDs from another node.  <br /></td></tr>
 <tr class="memitem:af3c4a5f78e295684dafdf23e8dde5a62" id="r_af3c4a5f78e295684dafdf23e8dde5a62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3c4a5f78e295684dafdf23e8dde5a62">getDeviceUUID</a> (uint8_t *uuid)</td></tr>
 <tr class="memdesc:af3c4a5f78e295684dafdf23e8dde5a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get device UUID.  <br /></td></tr>
 </table>
@@ -202,6 +264,25 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5195171bbeb3d3f8fbbebd558a557d17" name="a5195171bbeb3d3f8fbbebd558a557d17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5195171bbeb3d3f8fbbebd558a557d17">&#9670;&#160;</a></span>beginNode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool DeziBotMesh::beginNode </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>serverCallback</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This initializes a node which can both send commands and receive commands. This is the most common mode for general-purpose nodes.</p>
+<dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
+
+</div>
+</div>
 <a id="ab4becc3cb51dd4153542f30fed7e66ca" name="ab4becc3cb51dd4153542f30fed7e66ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4becc3cb51dd4153542f30fed7e66ca">&#9670;&#160;</a></span>beginServer()</h2>
 
@@ -218,6 +299,164 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p>This initializes a node that can only receives commands and stores data.</p>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
+
+</div>
+</div>
+<a id="a36714fd20faf2efb7ca9be72a9ded77a" name="a36714fd20faf2efb7ca9be72a9ded77a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36714fd20faf2efb7ca9be72a9ded77a">&#9670;&#160;</a></span>getAdminProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getAdminProperties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="af906b60b8caeac87dcc6d93dc7f14848" name="af906b60b8caeac87dcc6d93dc7f14848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af906b60b8caeac87dcc6d93dc7f14848">&#9670;&#160;</a></span>getAdminProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getAdminProperty </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Property ID </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae6ac17c6ae80e439ca12f4a92e87e762" name="ae6ac17c6ae80e439ca12f4a92e87e762"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ac17c6ae80e439ca12f4a92e87e762">&#9670;&#160;</a></span>getBattery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getBattery </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic Battery Get to the target address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a9d766966546ba1f1938bfdf8641baf18" name="a9d766966546ba1f1938bfdf8641baf18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d766966546ba1f1938bfdf8641baf18">&#9670;&#160;</a></span>getClientProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getClientProperties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Client property ID </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a453009b862407bb8ca5f65f9873161f7" name="a453009b862407bb8ca5f65f9873161f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453009b862407bb8ca5f65f9873161f7">&#9670;&#160;</a></span>getDefaultTransitionTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getDefaultTransitionTime </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
 
 </div>
 </div>
@@ -244,6 +483,368 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6fa7f6a5c10c51231a054e02454e40cf" name="a6fa7f6a5c10c51231a054e02454e40cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fa7f6a5c10c51231a054e02454e40cf">&#9670;&#160;</a></span>getLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getLevel </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic Level Get to the target address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a6c1e4f1ffd1fc68deb37f24f854cb143" name="a6c1e4f1ffd1fc68deb37f24f854cb143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c1e4f1ffd1fc68deb37f24f854cb143">&#9670;&#160;</a></span>getLocGlobal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getLocGlobal </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a6dfc30124cb513e7f4c0a5abbe106320" name="a6dfc30124cb513e7f4c0a5abbe106320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dfc30124cb513e7f4c0a5abbe106320">&#9670;&#160;</a></span>getLocLocal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getLocLocal </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a51970fcf5f9bc8ca0eea886e9d0dc284" name="a51970fcf5f9bc8ca0eea886e9d0dc284"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51970fcf5f9bc8ca0eea886e9d0dc284">&#9670;&#160;</a></span>getManuProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getManuProperties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a412268ef7a737f8a6ca36a2b8e32d05b" name="a412268ef7a737f8a6ca36a2b8e32d05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412268ef7a737f8a6ca36a2b8e32d05b">&#9670;&#160;</a></span>getManuProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getManuProperty </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Property ID </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa7a09d803a117af26f2a3561e5ca10f2" name="aa7a09d803a117af26f2a3561e5ca10f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7a09d803a117af26f2a3561e5ca10f2">&#9670;&#160;</a></span>getOnOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getOnOff </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic OnOff Get to the target address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a87b6c27728b4a7edae2a0001c5c724c3" name="a87b6c27728b4a7edae2a0001c5c724c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b6c27728b4a7edae2a0001c5c724c3">&#9670;&#160;</a></span>getOnPowerUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getOnPowerUp </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ac557745c12269847335e6f31c3a8d47c" name="ac557745c12269847335e6f31c3a8d47c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac557745c12269847335e6f31c3a8d47c">&#9670;&#160;</a></span>getPowerDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getPowerDefault </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ab1069ac5d537c4a9c8c8fde5cd0ef6f5" name="ab1069ac5d537c4a9c8c8fde5cd0ef6f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1069ac5d537c4a9c8c8fde5cd0ef6f5">&#9670;&#160;</a></span>getPowerLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getPowerLevel </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ad38b053776845053b41e68a96cd57e5d" name="ad38b053776845053b41e68a96cd57e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad38b053776845053b41e68a96cd57e5d">&#9670;&#160;</a></span>getPowerRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getPowerRange </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a1713f0116221694b25859497c6ae1b83" name="a1713f0116221694b25859497c6ae1b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1713f0116221694b25859497c6ae1b83">&#9670;&#160;</a></span>getUserProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getUserProperties </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a98d069917fbd7f158467c8e3db443fa2" name="a98d069917fbd7f158467c8e3db443fa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d069917fbd7f158467c8e3db443fa2">&#9670;&#160;</a></span>getUserProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::getUserProperty </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Property ID </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
 <a id="ae0dd6a93b4adda2dac388f3b73a76ca2" name="ae0dd6a93b4adda2dac388f3b73a76ca2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae0dd6a93b4adda2dac388f3b73a76ca2">&#9670;&#160;</a></span>init()</h2>
 
@@ -263,31 +864,576 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f0fcb05579585196bbd13b8f343b42d" name="a6f0fcb05579585196bbd13b8f343b42d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f0fcb05579585196bbd13b8f343b42d">&#9670;&#160;</a></span>sendOnOff()</h2>
+<a id="a4b3a984aa40372d2c56a22726af0229c" name="a4b3a984aa40372d2c56a22726af0229c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3a984aa40372d2c56a22726af0229c">&#9670;&#160;</a></span>setAdminProperty()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DeziBotMesh::sendOnOff </td>
+          <td class="memname">esp_err_t DeziBotMesh::setAdminProperty </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>adminAccess</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>propertyValue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyValueLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic Admin Property Set Unacknowledged.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Property ID </td></tr>
+    <tr><td class="paramname">adminAccess</td><td>Admin access value </td></tr>
+    <tr><td class="paramname">propertyValue</td><td>Pointer to the property value buffer </td></tr>
+    <tr><td class="paramname">propertyValueLen</td><td>Length of the property value buffer </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ac1d49cdbd608933c69e9b44cc12a87d4" name="ac1d49cdbd608933c69e9b44cc12a87d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d49cdbd608933c69e9b44cc12a87d4">&#9670;&#160;</a></span>setDefaultTransitionTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setDefaultTransitionTime </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>transitionTime</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">transitionTime</td><td>Transition time value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa43eb3d26cb25efa249d94e080feeee8" name="aa43eb3d26cb25efa249d94e080feeee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa43eb3d26cb25efa249d94e080feeee8">&#9670;&#160;</a></span>setDelta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setDelta </td>
+          <td>(</td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>delta</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delta</td><td>Delta level value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aa0508d4ab51ab057eaec5f61b56d0864" name="aa0508d4ab51ab057eaec5f61b56d0864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0508d4ab51ab057eaec5f61b56d0864">&#9670;&#160;</a></span>setLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setLevel </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>level</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic Level Set Unacknowledged to the target address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>Target level value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a15eaeca8cea8f346a27d71cdcf07e983" name="a15eaeca8cea8f346a27d71cdcf07e983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15eaeca8cea8f346a27d71cdcf07e983">&#9670;&#160;</a></span>setLocGlobal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setLocGlobal </td>
+          <td>(</td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>latitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>longitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>altitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">latitude</td><td>Global latitude value </td></tr>
+    <tr><td class="paramname">longitude</td><td>Global longitude value </td></tr>
+    <tr><td class="paramname">altitude</td><td>Global altitude value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a602d790945c3a593ae918a692e3b6f2d" name="a602d790945c3a593ae918a692e3b6f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a602d790945c3a593ae918a692e3b6f2d">&#9670;&#160;</a></span>setLocLocal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setLocLocal </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>north</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>east</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>altitude</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>floorNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>uncertainty</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">north</td><td>Local north value </td></tr>
+    <tr><td class="paramname">east</td><td>Local east value </td></tr>
+    <tr><td class="paramname">altitude</td><td>Local altitude value </td></tr>
+    <tr><td class="paramname">floorNumber</td><td>Local floor number value </td></tr>
+    <tr><td class="paramname">uncertainty</td><td>Uncertainty value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ae39b3c978b222213d2a00134d4852533" name="ae39b3c978b222213d2a00134d4852533"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae39b3c978b222213d2a00134d4852533">&#9670;&#160;</a></span>setManuProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setManuProperty </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>adminAccess</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic Manufacturer Property Set Unacknowledged.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Property ID </td></tr>
+    <tr><td class="paramname">adminAccess</td><td>Admin access value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a0f00263dd8e5409518cf57d82006ac99" name="a0f00263dd8e5409518cf57d82006ac99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f00263dd8e5409518cf57d82006ac99">&#9670;&#160;</a></span>setMove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setMove </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>move</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">move</td><td>Move delta level value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="af920fb9020e043bd4b1e7ef5295555bc" name="af920fb9020e043bd4b1e7ef5295555bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af920fb9020e043bd4b1e7ef5295555bc">&#9670;&#160;</a></span>setOnOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setOnOff </td>
           <td>(</td>
           <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>onoff</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic OnOff Set Unacknowledged to the target address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">onoff</td><td>true=ON, false=OFF </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a9e85d015974275a4dac1dc6f1aab894b" name="a9e85d015974275a4dac1dc6f1aab894b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e85d015974275a4dac1dc6f1aab894b">&#9670;&#160;</a></span>setOnPowerUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setOnPowerUp </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>power</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">onoff</td><td>true=ON, false=OFF </td></tr>
+    <tr><td class="paramname">power</td><td>OnPowerUp value </td></tr>
     <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a5fa19dc21d50aee03835960a9fd465b8" name="a5fa19dc21d50aee03835960a9fd465b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa19dc21d50aee03835960a9fd465b8">&#9670;&#160;</a></span>setPowerDefault()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setPowerDefault </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>powerDefault</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">powerDefault</td><td>Target power default value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a28bcfdc8a644e9a928162772b252f978" name="a28bcfdc8a644e9a928162772b252f978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28bcfdc8a644e9a928162772b252f978">&#9670;&#160;</a></span>setPowerLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setPowerLevel </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>power</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">power</td><td>Target power value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a4fb64c06f4d1afc46d16e611d7419a24" name="a4fb64c06f4d1afc46d16e611d7419a24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fb64c06f4d1afc46d16e611d7419a24">&#9670;&#160;</a></span>setPowerRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setPowerRange </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>max</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">min</td><td>Minimum power value </td></tr>
+    <tr><td class="paramname">max</td><td>Maximum power value </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
+
+</div>
+</div>
+<a id="aedcbb662d23b1df55cd3fd067d797742" name="aedcbb662d23b1df55cd3fd067d797742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedcbb662d23b1df55cd3fd067d797742">&#9670;&#160;</a></span>setUserProperty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">esp_err_t DeziBotMesh::setUserProperty </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>propertyValue</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>propertyValueLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>elemIndex</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sends a Generic User Property Set Unacknowledged.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">propertyId</td><td>Property ID </td></tr>
+    <tr><td class="paramname">propertyValue</td><td>Pointer to the property value buffer </td></tr>
+    <tr><td class="paramname">propertyValueLen</td><td>Length of the property value buffer </td></tr>
+    <tr><td class="paramname">addr</td><td>Target unicast or group address </td></tr>
+    <tr><td class="paramname">elemIndex</td><td>Local element index to use (default: 0)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ESP_OK on success, error code otherwise </dd></dl>
 
 </div>
 </div>
