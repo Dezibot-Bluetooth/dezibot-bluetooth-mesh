@@ -636,8 +636,7 @@ static void handle_gen_user_prop_msg(esp_ble_mesh_model_t *model,
     }
 }
 
-static void mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_event_t event,
-                                   esp_ble_mesh_generic_server_cb_param_t *param)
+void mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_event_t event, esp_ble_mesh_generic_server_cb_param_t *param)
 {
     switch (event) {
         case ESP_BLE_MESH_GENERIC_SERVER_STATE_CHANGE_EVT:
@@ -1029,8 +1028,7 @@ static void mesh_prov_cb(esp_ble_mesh_prov_cb_event_t event,
     }
 }
 
-static void mesh_config_server_cb(esp_ble_mesh_cfg_server_cb_event_t event,
-                                  esp_ble_mesh_cfg_server_cb_param_t *param)
+void mesh_config_server_cb(esp_ble_mesh_cfg_server_cb_event_t event, esp_ble_mesh_cfg_server_cb_param_t *param)
 {
     if (event == ESP_BLE_MESH_CFG_SERVER_STATE_CHANGE_EVT) {
         switch (param->ctx.recv_op) {
