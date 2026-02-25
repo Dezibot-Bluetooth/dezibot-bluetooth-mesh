@@ -1,5 +1,5 @@
 /**
-* @file ClientOnly.cpp
+ * @file ClientOnly.cpp
  * @brief Example: Client-only node (sends commands)
  *
  * This example demonstrates a DeziBot configured as a client-only node
@@ -10,6 +10,16 @@
 #include <cstdint>
 #include <Dezibot.h>
 #include <DeziBotMesh.h>
+#include <esp_log.h>
+
+static const char *TAG = "main";
+
+// Prevent Arduino's initArduino() from releasing BT controller memory.
+// Without this, esp_bt_controller_mem_release() runs before setup(),
+// and the later nimble_port_init() crashes on freed memory.
+extern "C" bool btInUse() {
+  return true;
+}
 
 const std::uint16_t TARGET_ALL = 0xFFFF;
 
@@ -21,27 +31,30 @@ Dezibot dezibot = Dezibot();
 DeziBotMesh dezimesh = DeziBotMesh();
 
 void setup() {
+    ESP_LOGI(TAG, "=== DeziBot Mesh Client Starting ===");
+
     dezibot.begin();
+    ESP_LOGI(TAG, "Dezibot hardware initialized");
 
     if (!dezimesh.init()) {
+        ESP_LOGE(TAG, "Mesh init failed");
         while (1) { delay(1000); }
     }
+    ESP_LOGI(TAG, "Mesh stack initialized");
 
     if (!dezimesh.beginClient()) {
+        ESP_LOGE(TAG, "Mesh client init failed");
         while (1) { delay(1000); }
     }
+    ESP_LOGI(TAG, "Mesh client ready - shake to send OnOff");
 }
 
 void loop() {
-    // Check for shake gesture
     if (dezibot.motion.detection.isShaken() && (millis() - lastShakeTime > SHAKE_DEBOUNCE_MS)) {
         lastShakeTime = millis();
         commandState = !commandState;
 
-        // Send OnOff command to all nodes
-        Serial.print("Sending OnOff(");
-        Serial.print(commandState ? "ON" : "OFF");
-        Serial.println(") to all nodes");
+        ESP_LOGI(TAG, "Sending OnOff(%s) to all nodes", commandState ? "ON" : "OFF");
         dezimesh.sendOnOff(commandState, TARGET_ALL);
     }
     delay(10);
