@@ -9,7 +9,7 @@
 #ifndef DEZIBOT_MESH_ARDUINO_H
 #define DEZIBOT_MESH_ARDUINO_H
 
-#include <Arduino.h>
+#include <stdint.h>
 
 /**
  * @brief Main DeziBot Bluetooth Mesh class

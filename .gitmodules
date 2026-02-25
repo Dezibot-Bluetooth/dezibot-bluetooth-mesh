@@ -1,0 +1,31 @@
+[submodule "arduino_components/adafruit_neopixel"]
+	path = arduino_components/adafruit_neopixel
+	url = https://github.com/adafruit/Adafruit_NeoPixel.git
+
+[submodule "arduino_components/arduino_json"]
+	path = arduino_components/arduino_json
+	url = https://github.com/bblanchon/ArduinoJson.git
+
+[submodule "arduino_components/async_tcp"]
+	path = arduino_components/async_tcp
+	url = https://github.com/me-no-dev/AsyncTCP.git
+
+[submodule "arduino_components/dezibot"]
+	path = arduino_components/dezibot
+	url = https://github.com/dezibot/dezibot.git
+
+[submodule "arduino_components/painlessMesh"]
+	path = arduino_components/painlessMesh
+	url = https://gitlab.com/painlessMesh/painlessMesh.git
+
+[submodule "arduino_components/task_scheduler"]
+	path = arduino_components/task_scheduler
+	url = https://github.com/arkhipenko/TaskScheduler.git
+
+[submodule "arduino_components/veml6040"]
+	path = arduino_components/veml6040
+	url = https://github.com/thewknd/VEML6040.git
+
+[submodule "components/arduino"]
+	path = components/arduino
+	url = https://github.com/espressif/arduino-esp32.git

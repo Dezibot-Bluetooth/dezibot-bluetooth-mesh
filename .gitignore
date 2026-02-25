@@ -1,4 +1,12 @@
 .pio
 .idea
+.github
+.cache
 build
 sdkconfig.esp32s3usbotg.old
+cmake-build-idf
+managed_components
+
+# Documentation build output
+documentation/doxygen/
+documentation/*.pdf

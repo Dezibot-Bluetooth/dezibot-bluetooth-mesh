@@ -4,13 +4,10 @@
  */
 
 #include "DeziBotMesh.h"
+#include "ble_mesh_bridge.h"
 
-extern "C" {
-    #include "../lib/common.h"
-    #include "../lib/init.h"
-    #include "../lib/bluetooth.h"
-    #include "../lib/client.h"
-}
+#include "esp_err.h"
+#include "esp_log.h"
 
 DeziBotMesh::DeziBotMesh()
     : _mode(MODE_NODE)
@@ -27,17 +24,19 @@ bool DeziBotMesh::init() {
         return true;
     }
 
-    esp_err_t err = pre_init();
+    esp_err_t err = mesh_bridge_pre_init();
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "pre_init failed: %d", err);
         return false;
     }
 
-    err = bluetooth_init();
+    /**
+    err = mesh_bridge_bluetooth_init();
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "bluetooth_init failed: %d", err);
         return false;
     }
+    **/
 
     _initialized = true;
     return true;
@@ -57,7 +56,7 @@ bool DeziBotMesh::beginClient() {
     _mode = MODE_CLIENT_ONLY;
     
     // Initialize client only
-    esp_err_t err = ble_mesh_client_init();
+    esp_err_t err = mesh_bridge_client_init();
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "ble_mesh_client_init failed: %d", err);
         return false;
@@ -72,7 +71,7 @@ void DeziBotMesh::sendOnOff(bool onoff, uint16_t addr) {
     if (_mode == MODE_NODE) {
         // TODO
     } else if (_mode == MODE_CLIENT_ONLY) {
-        ble_mesh_client_send(onoff ? 1 : 0, addr);
+        mesh_bridge_client_send(onoff ? 1 : 0, addr);
     } else {
         ESP_LOGW("DeziBotMesh", "Cannot send in server-only mode");
     }
@@ -80,7 +79,7 @@ void DeziBotMesh::sendOnOff(bool onoff, uint16_t addr) {
 
 void DeziBotMesh::getDeviceUUID(uint8_t* uuid) {
     if (uuid != nullptr) {
-        ble_mesh_get_dev_uuid(uuid);
+        mesh_bridge_get_device_uuid(uuid);
     } else {
         ESP_LOGE("DeziBotMesh", "UUID buffer is null");
     }
