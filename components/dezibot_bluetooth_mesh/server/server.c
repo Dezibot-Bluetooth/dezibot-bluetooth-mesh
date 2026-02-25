@@ -1,6 +1,6 @@
-#include "../../../lib/server.h"
-#include "bluetooth.h"
-#include "common.h"
+#include "server.h"
+#include "common/bluetooth.h"
+#include "common/common.h"
 
 #define TAG "BLE_MESH_SERVER"
 #define APP_KEY_IDX 0x0000
