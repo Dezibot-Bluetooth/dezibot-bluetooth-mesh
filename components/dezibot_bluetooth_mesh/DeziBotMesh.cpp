@@ -67,6 +67,31 @@ bool DeziBotMesh::beginClient() {
     return true;
 }
 
+bool DeziBotMesh::beginServer(mesh_server_evt_cb_t serverCallback) {
+    if (!_initialized) {
+        ESP_LOGE("DeziBotMesh", "Must call init() before beginServer()");
+        return false;
+    }
+
+    if (_meshInitialized) {
+        ESP_LOGW("DeziBotMesh", "Mesh already initialized");
+        return true;
+    }
+
+    _mode = MODE_SERVER_ONLY;
+
+    // Initialize server
+    esp_err_t err = mesh_bridge_server_init(serverCallback);
+    if (err != ESP_OK) {
+        ESP_LOGE("DeziBotMesh", "ble_mesh_server_init failed: %d", err);
+        return false;
+    }
+
+    _meshInitialized = true;
+    ESP_LOGI("DeziBotMesh", "Mesh initialized as server");
+    return true;
+}
+
 void DeziBotMesh::sendOnOff(bool onoff, uint16_t addr) {
     if (_mode == MODE_NODE) {
         // TODO

@@ -1,6 +1,7 @@
 #include "server.h"
 #include "common/bluetooth.h"
 #include "common/common.h"
+#include "server_wrapper.h"
 
 #define TAG "BLE_MESH_SERVER"
 #define APP_KEY_IDX 0x0000
@@ -47,13 +48,16 @@ static void handle_gen_onoff_msg(esp_ble_mesh_model_t *model,
                                          esp_ble_mesh_msg_ctx_t *ctx,
                                          esp_ble_mesh_server_recv_gen_onoff_set_t *set)
 {
-    esp_ble_mesh_gen_onoff_srv_t *srv = model->user_data;
+    mesh_server_t *wrapper = model->user_data;
+    esp_ble_mesh_gen_onoff_srv_t *srv = &wrapper->srv.onoff;
 
     switch (ctx->recv_op) {
         case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_GET:
         {
             esp_ble_mesh_server_model_send_msg(model, ctx,
                ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS, sizeof(srv->state.onoff), &srv->state.onoff);
+            mesh_server_evt_t evt = {.type = MESH_EVT_ONOFF_GET};
+            mesh_server_evt_dispatch(wrapper, &evt);
             break;
         }
         case ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET:
@@ -66,6 +70,8 @@ static void handle_gen_onoff_msg(esp_ble_mesh_model_t *model,
             }
             esp_ble_mesh_model_publish(model, ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS,
                 sizeof(srv->state.onoff), &srv->state.onoff, ROLE_NODE);
+            mesh_server_evt_t evt = {.type = MESH_EVT_ONOFF_SET, .onoff_set.onoff = srv->state.onoff};
+            mesh_server_evt_dispatch(wrapper, &evt);
             break;
         }
         default:
@@ -1069,10 +1075,22 @@ static void mesh_config_server_cb(esp_ble_mesh_cfg_server_cb_event_t event,
     }
 }
 
-esp_err_t ble_mesh_server_init(void)
+esp_err_t ble_mesh_server_init(mesh_server_evt_cb_t cb)
 {
     ESP_LOGI(TAG, "Initializing...");
-    esp_err_t err;
+
+    for (int i = 0; i < composition.element_count; ++i) {
+        esp_ble_mesh_elem_t *elem = &composition.elements[i];
+        if (!elem || !elem->sig_models) {
+            continue;
+        }
+        for (int m = 0; m < elem->sig_model_count; ++m) {
+            esp_ble_mesh_model_t *model = &elem->sig_models[m];
+            if (model && model->user_data) {
+                ((mesh_server_t *)model->user_data)->cb = cb;
+            }
+        }
+    }
 
     ble_mesh_get_dev_uuid(dev_uuid);
     ESP_LOGI(TAG, "Device UUID: %02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
@@ -1080,6 +1098,8 @@ esp_err_t ble_mesh_server_init(void)
              dev_uuid[4], dev_uuid[5], dev_uuid[6], dev_uuid[7],
              dev_uuid[8], dev_uuid[9], dev_uuid[10], dev_uuid[11],
              dev_uuid[12], dev_uuid[13], dev_uuid[14], dev_uuid[15]);
+
+    esp_err_t err;
 
     err = esp_ble_mesh_register_prov_callback(mesh_prov_cb);
     if (err != ESP_OK) {

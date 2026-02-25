@@ -35,7 +35,7 @@ void mesh_bridge_client_send(uint8_t val, uint16_t addr)
 }
 
 // server/server
-esp_err_t mesh_bridge_server_init(void)
+esp_err_t mesh_bridge_server_init(mesh_server_evt_cb_t cb)
 {
-    return ble_mesh_server_init();
+    return ble_mesh_server_init(cb);
 }
