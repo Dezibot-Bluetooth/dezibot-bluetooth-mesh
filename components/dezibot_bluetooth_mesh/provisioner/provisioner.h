@@ -80,6 +80,6 @@ typedef struct esp_ble_mesh_key {
  * 
  * @see bluetooth_init()
  */
-esp_err_t ble_mesh_init(void);
+esp_err_t ble_mesh_provisioner_init(void);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_PROVISIONER_H

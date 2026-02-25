@@ -5,6 +5,7 @@
 #include "client/client.h"
 #include "server/server.h"
 #include "node/node.h"
+#include "provisioner/provisioner.h"
 
 // common/init
 esp_err_t mesh_bridge_pre_init(void)
@@ -197,4 +198,10 @@ esp_err_t mesh_bridge_server_init(mesh_server_evt_cb_t cb)
 esp_err_t mesh_bridge_node_init(mesh_server_evt_cb_t cb)
 {
     return ble_mesh_node_init(cb);
+}
+
+// provisioner/provisioner
+esp_err_t mesh_bridge_provisioner_init(void)
+{
+    return ble_mesh_provisioner_init();
 }

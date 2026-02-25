@@ -1,5 +1,6 @@
 #include "provisioner.h"
-#include "../common/common.h"
+#include "common/common.h"
+#include "common/bluetooth.h"
 
 #define TAG                 "PROVISIONER"
 
@@ -16,7 +17,7 @@
 #define APP_KEY_IDX         0x0000
 #define APP_KEY_OCTET       0x12
 
-static uint8_t dev_uuid[16];
+static uint8_t dev_uuid[16] = {0};
 
 static esp_ble_mesh_node_info_t nodes[CONFIG_BLE_MESH_MAX_PROV_NODES] = {};
 
@@ -24,18 +25,7 @@ static esp_ble_mesh_prov_key_t prov_key = {};
 
 static esp_ble_mesh_client_t config_client;
 
-static esp_ble_mesh_cfg_srv_t config_server = {
-    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .relay = ESP_BLE_MESH_RELAY_DISABLED,
-    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .beacon = ESP_BLE_MESH_BEACON_ENABLED,
-    .gatt_proxy = ESP_BLE_MESH_GATT_PROXY_ENABLED,
-    .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
-    .default_ttl = 7
-};
-
 static esp_ble_mesh_model_t root_models[] = {
-    ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
     ESP_BLE_MESH_MODEL_CFG_CLI(&config_client),
 };
 
@@ -380,20 +370,13 @@ static void ble_mesh_config_client_cb(
                     }
                     break;
                 }
-                /*
+
                 case ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND:
                 {
-                    esp_ble_mesh_generic_client_get_state_t get_state = {};
-                    ble_mesh_set_msg_common(&common, node, onoff_client.model, ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_GET);
-                    error = esp_ble_mesh_generic_client_get_state(&common, &get_state);
-                    if (error)
-                    {
-                        ESP_LOGE(TAG, "%s: Generic OnOff Get failed", __func__);
-                        return;
-                    }
+                    ESP_LOGI(TAG, "ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND event");
                     break;
                 }
-                */
+
                 default:
                     break;
             }
@@ -465,7 +448,7 @@ static void ble_mesh_config_client_cb(
     }
 }
 
-esp_err_t ble_mesh_init(void)
+esp_err_t ble_mesh_provisioner_init(void)
 {
     uint8_t match[2] = {0xdd, 0xdd};
     esp_err_t error = ESP_OK;
@@ -476,6 +459,13 @@ esp_err_t ble_mesh_init(void)
 
     esp_ble_mesh_register_prov_callback(ble_mesh_provisioning_cb);
     esp_ble_mesh_register_config_client_callback(ble_mesh_config_client_cb);
+
+    ble_mesh_get_dev_uuid(dev_uuid);
+    ESP_LOGI(TAG, "Device UUID: %02x%02x%02x%02x-%02x%02x-%02x%02x-%02x%02x-%02x%02x%02x%02x%02x%02x",
+             dev_uuid[0], dev_uuid[1], dev_uuid[2], dev_uuid[3],
+             dev_uuid[4], dev_uuid[5], dev_uuid[6], dev_uuid[7],
+             dev_uuid[8], dev_uuid[9], dev_uuid[10], dev_uuid[11],
+             dev_uuid[12], dev_uuid[13], dev_uuid[14], dev_uuid[15]);
 
     error = esp_ble_mesh_init(&provision, &composition);
     if (error != ESP_OK)
