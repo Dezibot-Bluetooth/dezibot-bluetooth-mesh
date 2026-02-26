@@ -10,6 +10,7 @@
  * Initializes a node with both client and server models enabled and registers
  * the application callback for incoming server events.
  *
+ * @param[in] device_name Device name to expose via GAP.
  * @param[in] cb Application callback for incoming server events.
  *
  * @return

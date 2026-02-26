@@ -47,6 +47,8 @@ void mesh_bridge_get_device_uuid(uint8_t *uuid);
 /**
  * @brief Initialize the BLE Mesh client models.
  *
+ * @param[in] device_name Device name to expose via GAP.
+ *
  * @return
  *   - ESP_OK on success
  *   - ESP_FAIL / other esp_err_t on failure
@@ -462,6 +464,7 @@ esp_err_t mesh_bridge_client_get_client_properties(uint16_t property_id, uint16_
 /**
  * @brief Initialize the BLE Mesh server models.
  *
+ * @param[in] device_name Device name to expose via GAP.
  * @param[in] cb Application callback for incoming server events.
  *
  * @return
@@ -476,6 +479,7 @@ esp_err_t mesh_bridge_server_init(char *device_name, mesh_server_evt_cb_t cb);
  * Initializes a node with both client and server models enabled and registers
  * the application callback for incoming server events.
  *
+ * @param[in] device_name Device name to expose via GAP.
  * @param[in] cb Application callback for incoming server events.
  *
  * @return

@@ -48,6 +48,7 @@ void mesh_config_server_cb(esp_ble_mesh_cfg_server_cb_event_t event, esp_ble_mes
  * Registers callbacks and initializes the server-side models. The application
  * callback is invoked for incoming server events.
  *
+ * @param[in] device_name Device name to expose via GAP.
  * @param[in] cb Application callback for incoming server events.
  *
  * @return

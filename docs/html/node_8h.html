@@ -96,12 +96,12 @@ $(function(){initNavTree('node_8h.html','',''); });
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab8d7e49fb475268b10e307c03923b838" id="r_ab8d7e49fb475268b10e307c03923b838"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8d7e49fb475268b10e307c03923b838">ble_mesh_node_init</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
-<tr class="memdesc:ab8d7e49fb475268b10e307c03923b838"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh node (client + server).  <br /></td></tr>
+<tr class="memitem:a87d27b80c44a3f037d6af2a3b2e14aa1" id="r_a87d27b80c44a3f037d6af2a3b2e14aa1"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87d27b80c44a3f037d6af2a3b2e14aa1">ble_mesh_node_init</a> (char *device_name, <a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
+<tr class="memdesc:a87d27b80c44a3f037d6af2a3b2e14aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh node (client + server).  <br /></td></tr>
 </table>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ab8d7e49fb475268b10e307c03923b838" name="ab8d7e49fb475268b10e307c03923b838"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8d7e49fb475268b10e307c03923b838">&#9670;&#160;</a></span>ble_mesh_node_init()</h2>
+<a id="a87d27b80c44a3f037d6af2a3b2e14aa1" name="a87d27b80c44a3f037d6af2a3b2e14aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d27b80c44a3f037d6af2a3b2e14aa1">&#9670;&#160;</a></span>ble_mesh_node_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -109,14 +109,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t ble_mesh_node_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Initializes a node with both client and server models enabled and registers the application callback for incoming server events.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device_name</td><td>Device name to expose via GAP. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Application callback for incoming server events.</td></tr>
   </table>
   </dd>

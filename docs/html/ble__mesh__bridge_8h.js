@@ -1,6 +1,6 @@
 var ble__mesh__bridge_8h =
 [
-    [ "mesh_bridge_bluetooth_init", "ble__mesh__bridge_8h.html#ae0f89a901fba87f4b5aa4dce83cb6238", null ],
+    [ "mesh_bridge_bluetooth_init", "ble__mesh__bridge_8h.html#a104ee8b3a7fa6e947037e9bcc230a078", null ],
     [ "mesh_bridge_client_get_admin_properties", "ble__mesh__bridge_8h.html#a61ada8e0d0b487fd1f1bb226edc6bb2b", null ],
     [ "mesh_bridge_client_get_admin_property", "ble__mesh__bridge_8h.html#a10717454ca4415a9a92e6e08fd039f91", null ],
     [ "mesh_bridge_client_get_battery", "ble__mesh__bridge_8h.html#af4be817af40d8d07e55941562099406d", null ],
@@ -18,7 +18,7 @@ var ble__mesh__bridge_8h =
     [ "mesh_bridge_client_get_power_range", "ble__mesh__bridge_8h.html#a88c6dd2137a92097feade7795e9ac472", null ],
     [ "mesh_bridge_client_get_user_properties", "ble__mesh__bridge_8h.html#a26d418fd600a4e3017f1440242facca0", null ],
     [ "mesh_bridge_client_get_user_property", "ble__mesh__bridge_8h.html#aa66348af9e7b20fece2a454404d675b6", null ],
-    [ "mesh_bridge_client_init", "ble__mesh__bridge_8h.html#a376eb7c6c5eef71f458f95026ec8b524", null ],
+    [ "mesh_bridge_client_init", "ble__mesh__bridge_8h.html#a553b2a214393e4321302b058c6a9e199", null ],
     [ "mesh_bridge_client_set_admin_property", "ble__mesh__bridge_8h.html#a970c15792ec2c219e2d6ebc6ff90aa78", null ],
     [ "mesh_bridge_client_set_default_transition_time", "ble__mesh__bridge_8h.html#a7503e6a55e82fd784bb09059b25040bc", null ],
     [ "mesh_bridge_client_set_delta", "ble__mesh__bridge_8h.html#a579b57aa22c0de12efc3949ca41a63ca", null ],
@@ -34,7 +34,7 @@ var ble__mesh__bridge_8h =
     [ "mesh_bridge_client_set_power_range", "ble__mesh__bridge_8h.html#a162837689bc26f384e3eddd091933d70", null ],
     [ "mesh_bridge_client_set_user_property", "ble__mesh__bridge_8h.html#a2e0da6bfb1f708d36130d966a44ac0d0", null ],
     [ "mesh_bridge_get_device_uuid", "ble__mesh__bridge_8h.html#ad2b037c217bb1e363b61257bff086470", null ],
-    [ "mesh_bridge_node_init", "ble__mesh__bridge_8h.html#ac0f1b259ec628b4c0b3a4f6f784caa09", null ],
-    [ "mesh_bridge_pre_init", "ble__mesh__bridge_8h.html#ac1ee35b8e8f425223e74142cfea7d63e", null ],
-    [ "mesh_bridge_server_init", "ble__mesh__bridge_8h.html#a6e41c2730dd4b603d198342902fb7de6", null ]
+    [ "mesh_bridge_node_init", "ble__mesh__bridge_8h.html#a31b4d7f18fd308f2a7a8be2be3e12818", null ],
+    [ "mesh_bridge_pre_init", "ble__mesh__bridge_8h.html#a87d47483dadb0bfac7e9a1f6b657203c", null ],
+    [ "mesh_bridge_server_init", "ble__mesh__bridge_8h.html#a57aa5c1640f2180985b3598960145b9e", null ]
 ];

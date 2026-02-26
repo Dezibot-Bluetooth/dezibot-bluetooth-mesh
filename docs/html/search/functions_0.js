@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['beginclient_0',['beginClient',['../classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5',1,'DeziBotMesh']]],
-  ['beginnode_1',['beginNode',['../classDeziBotMesh.html#a5195171bbeb3d3f8fbbebd558a557d17',1,'DeziBotMesh']]],
-  ['beginserver_2',['beginServer',['../classDeziBotMesh.html#ab4becc3cb51dd4153542f30fed7e66ca',1,'DeziBotMesh']]],
+  ['beginclient_0',['beginClient',['../classDeziBotMesh.html#a38512a53e002212d239b5f2f881c6b15',1,'DeziBotMesh']]],
+  ['beginnode_1',['beginNode',['../classDeziBotMesh.html#aa1644950f26a065b78e03ed960347f5f',1,'DeziBotMesh']]],
+  ['beginserver_2',['beginServer',['../classDeziBotMesh.html#a2f599185d0cc9f8820c49754e61e5745',1,'DeziBotMesh']]],
   ['ble_5fmesh_5fclient_5fget_5fadmin_5fproperties_3',['ble_mesh_client_get_admin_properties',['../client_8h.html#a0c2ab152bcb2c0794997dc6ec56316e3',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fget_5fadmin_5fproperty_4',['ble_mesh_client_get_admin_property',['../client_8h.html#afcbc4e7f6a08008f72ad28272eb4e778',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fget_5fbattery_5',['ble_mesh_client_get_battery',['../client_8h.html#a0be5e8178c8c67b3fa23537b17ea9e71',1,'client.h']]],
@@ -20,7 +20,7 @@ var searchData=
   ['ble_5fmesh_5fclient_5fget_5fpower_5frange_17',['ble_mesh_client_get_power_range',['../client_8h.html#a82b23e799a675f7006fac101f7712795',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fget_5fuser_5fproperties_18',['ble_mesh_client_get_user_properties',['../client_8h.html#a0cb2cc7e9185bf3a8fe663be41b101de',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fget_5fuser_5fproperty_19',['ble_mesh_client_get_user_property',['../client_8h.html#a514690c065912b2d81606424cc0d8632',1,'client.h']]],
-  ['ble_5fmesh_5fclient_5finit_20',['ble_mesh_client_init',['../client_8h.html#a000984d14109a79f000c1996d1b02336',1,'client.h']]],
+  ['ble_5fmesh_5fclient_5finit_20',['ble_mesh_client_init',['../client_8h.html#a3569d73a6c48152aaca6dd458f888322',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fset_5fadmin_5fproperty_21',['ble_mesh_client_set_admin_property',['../client_8h.html#a9309a1b7b1b5eac3062ab5285789a451',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fset_5fcomposition_22',['ble_mesh_client_set_composition',['../client_8h.html#a098775d3e65d8f4f5272809c7974e0ff',1,'client.h']]],
   ['ble_5fmesh_5fclient_5fset_5fdefault_5ftransition_5ftime_23',['ble_mesh_client_set_default_transition_time',['../client_8h.html#a0f463946c6dc2ddb217c4c024f19ff4a',1,'client.h']]],
@@ -38,8 +38,8 @@ var searchData=
   ['ble_5fmesh_5fclient_5fset_5fuser_5fproperty_35',['ble_mesh_client_set_user_property',['../client_8h.html#ae60eb880697efdc1429263d8f2db7fd2',1,'client.h']]],
   ['ble_5fmesh_5fget_5fdev_5fuuid_36',['ble_mesh_get_dev_uuid',['../bluetooth_8h.html#a4c7465dc3b7f31add02610dcd8647477',1,'bluetooth.h']]],
   ['ble_5fmesh_5finit_37',['ble_mesh_init',['../provisioner_8h.html#acd19037d9e007bd25d5df76bcf17d0d0',1,'provisioner.h']]],
-  ['ble_5fmesh_5fnode_5finit_38',['ble_mesh_node_init',['../node_8h.html#ab8d7e49fb475268b10e307c03923b838',1,'node.h']]],
-  ['ble_5fmesh_5fserver_5finit_39',['ble_mesh_server_init',['../server_8h.html#aa5d6b91c558ea48d06a68c3819920eb0',1,'server.h']]],
+  ['ble_5fmesh_5fnode_5finit_38',['ble_mesh_node_init',['../node_8h.html#a87d27b80c44a3f037d6af2a3b2e14aa1',1,'node.h']]],
+  ['ble_5fmesh_5fserver_5finit_39',['ble_mesh_server_init',['../server_8h.html#a215a7104c536f94aec4b6beebbc65eb3',1,'server.h']]],
   ['ble_5fmesh_5fserver_5fset_5fcomposition_40',['ble_mesh_server_set_composition',['../server_8h.html#a26f7cc0667946230bb800334687f9fb5',1,'server.h']]],
-  ['bluetooth_5finit_41',['bluetooth_init',['../bluetooth_8h.html#a2bae8dcbee489037789f228234a3072d',1,'bluetooth.h']]]
+  ['bluetooth_5finit_41',['bluetooth_init',['../bluetooth_8h.html#aa38e93ee2e4caa793c4b97c424da08b3',1,'bluetooth.h']]]
 ];

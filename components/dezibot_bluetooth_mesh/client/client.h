@@ -45,6 +45,8 @@ void ble_mesh_client_set_composition(esp_ble_mesh_comp_t *comp);
  *
  * Registers callbacks and initializes the client-side models.
  *
+ * @param[in] device_name Device name to expose via GAP.
+ *
  * @return
  *   - ESP_OK on success
  *   - ESP_FAIL / other esp_err_t on failure

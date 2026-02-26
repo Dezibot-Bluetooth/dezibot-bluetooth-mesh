@@ -94,20 +94,20 @@ $(function(){initNavTree('ble__mesh__bridge_8h.html','',''); });
 
 <p>C ABI bridge for DeziBot Bluetooth Mesh.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="server__events_8h.html">server/server_events.h</a>&quot;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
 <code>#include &quot;esp_err.h&quot;</code><br />
+<code>#include &lt;<a class="el" href="server__events_8h.html">server/server_events.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac1ee35b8e8f425223e74142cfea7d63e" id="r_ac1ee35b8e8f425223e74142cfea7d63e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1ee35b8e8f425223e74142cfea7d63e">mesh_bridge_pre_init</a> (void)</td></tr>
-<tr class="memdesc:ac1ee35b8e8f425223e74142cfea7d63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform pre-initialization for the mesh stack.  <br /></td></tr>
-<tr class="memitem:ae0f89a901fba87f4b5aa4dce83cb6238" id="r_ae0f89a901fba87f4b5aa4dce83cb6238"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0f89a901fba87f4b5aa4dce83cb6238">mesh_bridge_bluetooth_init</a> (void)</td></tr>
-<tr class="memdesc:ae0f89a901fba87f4b5aa4dce83cb6238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Bluetooth host stack.  <br /></td></tr>
+<tr class="memitem:a87d47483dadb0bfac7e9a1f6b657203c" id="r_a87d47483dadb0bfac7e9a1f6b657203c"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87d47483dadb0bfac7e9a1f6b657203c">mesh_bridge_pre_init</a> ()</td></tr>
+<tr class="memdesc:a87d47483dadb0bfac7e9a1f6b657203c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Perform pre-initialization for the mesh stack.  <br /></td></tr>
+<tr class="memitem:a104ee8b3a7fa6e947037e9bcc230a078" id="r_a104ee8b3a7fa6e947037e9bcc230a078"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a104ee8b3a7fa6e947037e9bcc230a078">mesh_bridge_bluetooth_init</a> ()</td></tr>
+<tr class="memdesc:a104ee8b3a7fa6e947037e9bcc230a078"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the Bluetooth host stack.  <br /></td></tr>
 <tr class="memitem:ad2b037c217bb1e363b61257bff086470" id="r_ad2b037c217bb1e363b61257bff086470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2b037c217bb1e363b61257bff086470">mesh_bridge_get_device_uuid</a> (uint8_t *uuid)</td></tr>
 <tr class="memdesc:ad2b037c217bb1e363b61257bff086470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device UUID used for provisioning.  <br /></td></tr>
-<tr class="memitem:a376eb7c6c5eef71f458f95026ec8b524" id="r_a376eb7c6c5eef71f458f95026ec8b524"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a376eb7c6c5eef71f458f95026ec8b524">mesh_bridge_client_init</a> (void)</td></tr>
-<tr class="memdesc:a376eb7c6c5eef71f458f95026ec8b524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh client models.  <br /></td></tr>
+<tr class="memitem:a553b2a214393e4321302b058c6a9e199" id="r_a553b2a214393e4321302b058c6a9e199"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a553b2a214393e4321302b058c6a9e199">mesh_bridge_client_init</a> (char *device_name)</td></tr>
+<tr class="memdesc:a553b2a214393e4321302b058c6a9e199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh client models.  <br /></td></tr>
 <tr class="memitem:a921ee97973168aa53801e09e80122eb7" id="r_a921ee97973168aa53801e09e80122eb7"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a921ee97973168aa53801e09e80122eb7">mesh_bridge_client_get_onoff</a> (uint16_t addr, uint8_t elem_index)</td></tr>
 <tr class="memdesc:a921ee97973168aa53801e09e80122eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff Get.  <br /></td></tr>
 <tr class="memitem:afc5e6785dfa6f8ffde2ede6fcdef6351" id="r_afc5e6785dfa6f8ffde2ede6fcdef6351"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc5e6785dfa6f8ffde2ede6fcdef6351">mesh_bridge_client_set_onoff</a> (uint8_t val, uint16_t addr, uint8_t elem_index)</td></tr>
@@ -170,16 +170,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:afb93190b03d37e180a0dc9ced629b616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Manufacturer Property Set Unacknowledged.  <br /></td></tr>
 <tr class="memitem:a730899a926e0e81056f618e2a8bdd59b" id="r_a730899a926e0e81056f618e2a8bdd59b"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a730899a926e0e81056f618e2a8bdd59b">mesh_bridge_client_get_client_properties</a> (uint16_t property_id, uint16_t addr, uint8_t elem_index)</td></tr>
 <tr class="memdesc:a730899a926e0e81056f618e2a8bdd59b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic Client Properties Get.  <br /></td></tr>
-<tr class="memitem:a6e41c2730dd4b603d198342902fb7de6" id="r_a6e41c2730dd4b603d198342902fb7de6"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e41c2730dd4b603d198342902fb7de6">mesh_bridge_server_init</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
-<tr class="memdesc:a6e41c2730dd4b603d198342902fb7de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh server models.  <br /></td></tr>
-<tr class="memitem:ac0f1b259ec628b4c0b3a4f6f784caa09" id="r_ac0f1b259ec628b4c0b3a4f6f784caa09"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0f1b259ec628b4c0b3a4f6f784caa09">mesh_bridge_node_init</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
-<tr class="memdesc:ac0f1b259ec628b4c0b3a4f6f784caa09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh node (client + server).  <br /></td></tr>
+<tr class="memitem:a57aa5c1640f2180985b3598960145b9e" id="r_a57aa5c1640f2180985b3598960145b9e"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57aa5c1640f2180985b3598960145b9e">mesh_bridge_server_init</a> (char *device_name, <a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
+<tr class="memdesc:a57aa5c1640f2180985b3598960145b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the BLE Mesh server models.  <br /></td></tr>
+<tr class="memitem:a31b4d7f18fd308f2a7a8be2be3e12818" id="r_a31b4d7f18fd308f2a7a8be2be3e12818"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31b4d7f18fd308f2a7a8be2be3e12818">mesh_bridge_node_init</a> (char *device_name, <a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> cb)</td></tr>
+<tr class="memdesc:a31b4d7f18fd308f2a7a8be2be3e12818"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh node (client + server).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides a small, C-linkage wrapper around the underlying library so the mesh stack can be initialized and used from C or other language bindings. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="ae0f89a901fba87f4b5aa4dce83cb6238" name="ae0f89a901fba87f4b5aa4dce83cb6238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0f89a901fba87f4b5aa4dce83cb6238">&#9670;&#160;</a></span>mesh_bridge_bluetooth_init()</h2>
+<a id="a104ee8b3a7fa6e947037e9bcc230a078" name="a104ee8b3a7fa6e947037e9bcc230a078"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104ee8b3a7fa6e947037e9bcc230a078">&#9670;&#160;</a></span>mesh_bridge_bluetooth_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -187,7 +187,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t mesh_bridge_bluetooth_init </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -785,8 +785,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a376eb7c6c5eef71f458f95026ec8b524" name="a376eb7c6c5eef71f458f95026ec8b524"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a376eb7c6c5eef71f458f95026ec8b524">&#9670;&#160;</a></span>mesh_bridge_client_init()</h2>
+<a id="a553b2a214393e4321302b058c6a9e199" name="a553b2a214393e4321302b058c6a9e199"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553b2a214393e4321302b058c6a9e199">&#9670;&#160;</a></span>mesh_bridge_client_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -794,11 +794,17 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t mesh_bridge_client_init </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device_name</td><td>Device name to expose via GAP.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>ESP_OK on success</li>
 <li>ESP_FAIL / other esp_err_t on failure </li>
@@ -1454,8 +1460,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac0f1b259ec628b4c0b3a4f6f784caa09" name="ac0f1b259ec628b4c0b3a4f6f784caa09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0f1b259ec628b4c0b3a4f6f784caa09">&#9670;&#160;</a></span>mesh_bridge_node_init()</h2>
+<a id="a31b4d7f18fd308f2a7a8be2be3e12818" name="a31b4d7f18fd308f2a7a8be2be3e12818"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b4d7f18fd308f2a7a8be2be3e12818">&#9670;&#160;</a></span>mesh_bridge_node_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1463,14 +1469,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t mesh_bridge_node_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Initializes a node with both client and server models enabled and registers the application callback for incoming server events.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device_name</td><td>Device name to expose via GAP. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Application callback for incoming server events.</td></tr>
   </table>
   </dd>
@@ -1483,8 +1494,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac1ee35b8e8f425223e74142cfea7d63e" name="ac1ee35b8e8f425223e74142cfea7d63e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1ee35b8e8f425223e74142cfea7d63e">&#9670;&#160;</a></span>mesh_bridge_pre_init()</h2>
+<a id="a87d47483dadb0bfac7e9a1f6b657203c" name="a87d47483dadb0bfac7e9a1f6b657203c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d47483dadb0bfac7e9a1f6b657203c">&#9670;&#160;</a></span>mesh_bridge_pre_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1492,7 +1503,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t mesh_bridge_pre_init </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1506,8 +1517,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6e41c2730dd4b603d198342902fb7de6" name="a6e41c2730dd4b603d198342902fb7de6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e41c2730dd4b603d198342902fb7de6">&#9670;&#160;</a></span>mesh_bridge_server_init()</h2>
+<a id="a57aa5c1640f2180985b3598960145b9e" name="a57aa5c1640f2180985b3598960145b9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57aa5c1640f2180985b3598960145b9e">&#9670;&#160;</a></span>mesh_bridge_server_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1515,13 +1526,18 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t mesh_bridge_server_init </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>cb</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device_name</td><td>Device name to expose via GAP. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>Application callback for incoming server events.</td></tr>
   </table>
   </dd>

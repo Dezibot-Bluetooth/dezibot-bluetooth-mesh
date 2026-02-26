@@ -17,7 +17,7 @@ var client_8h =
     [ "ble_mesh_client_get_power_range", "client_8h.html#a82b23e799a675f7006fac101f7712795", null ],
     [ "ble_mesh_client_get_user_properties", "client_8h.html#a0cb2cc7e9185bf3a8fe663be41b101de", null ],
     [ "ble_mesh_client_get_user_property", "client_8h.html#a514690c065912b2d81606424cc0d8632", null ],
-    [ "ble_mesh_client_init", "client_8h.html#a000984d14109a79f000c1996d1b02336", null ],
+    [ "ble_mesh_client_init", "client_8h.html#a3569d73a6c48152aaca6dd458f888322", null ],
     [ "ble_mesh_client_set_admin_property", "client_8h.html#a9309a1b7b1b5eac3062ab5285789a451", null ],
     [ "ble_mesh_client_set_composition", "client_8h.html#a098775d3e65d8f4f5272809c7974e0ff", null ],
     [ "ble_mesh_client_set_default_transition_time", "client_8h.html#a0f463946c6dc2ddb217c4c024f19ff4a", null ],

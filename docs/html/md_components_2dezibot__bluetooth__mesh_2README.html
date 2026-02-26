@@ -124,7 +124,7 @@ Arduino C++: <span class="tt">DeziBotMesh</span></h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
 <div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#ae0dd6a93b4adda2dac388f3b73a76ca2">init</a>();</div>
-<div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5">beginClient</a>();</div>
+<div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#a38512a53e002212d239b5f2f881c6b15">beginClient</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// broadcast to all nodes</span></div>
 <div class="line">  mesh.sendOnOff(<span class="keyword">true</span>, 0xFFFF);</div>
@@ -135,7 +135,7 @@ Arduino C++: <span class="tt">DeziBotMesh</span></h2>
 <div class="line">}</div>
 <div class="ttc" id="aDeziBotMesh_8h_html"><div class="ttname"><a href="DeziBotMesh_8h.html">DeziBotMesh.h</a></div><div class="ttdoc">Arduino wrapper for DeziBot Bluetooth Mesh library.</div></div>
 <div class="ttc" id="aclassDeziBotMesh_html"><div class="ttname"><a href="classDeziBotMesh.html">DeziBotMesh</a></div><div class="ttdoc">Main DeziBot Bluetooth Mesh class.</div><div class="ttdef"><b>Definition</b> DeziBotMesh.h:22</div></div>
-<div class="ttc" id="aclassDeziBotMesh_html_a86ea112c6c3fab8382753284296886d5"><div class="ttname"><a href="classDeziBotMesh.html#a86ea112c6c3fab8382753284296886d5">DeziBotMesh::beginClient</a></div><div class="ttdeci">bool beginClient()</div><div class="ttdoc">Initialize mesh node as client-only (send commands)</div></div>
+<div class="ttc" id="aclassDeziBotMesh_html_a38512a53e002212d239b5f2f881c6b15"><div class="ttname"><a href="classDeziBotMesh.html#a38512a53e002212d239b5f2f881c6b15">DeziBotMesh::beginClient</a></div><div class="ttdeci">bool beginClient(char *device_name)</div><div class="ttdoc">Initialize mesh node as client-only (send commands)</div></div>
 <div class="ttc" id="aclassDeziBotMesh_html_ae0dd6a93b4adda2dac388f3b73a76ca2"><div class="ttname"><a href="classDeziBotMesh.html#ae0dd6a93b4adda2dac388f3b73a76ca2">DeziBotMesh::init</a></div><div class="ttdeci">bool init()</div><div class="ttdoc">Initialize Bluetooth and pre-requisites.</div></div>
 </div><!-- fragment --><p>Minimal server example (logs incoming OnOff Set): </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;Arduino.h&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;<a class="code" href="DeziBotMesh_8h.html">DeziBotMesh.h</a>&gt;</span></div>
@@ -152,13 +152,13 @@ Arduino C++: <span class="tt">DeziBotMesh</span></h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> setup() {</div>
 <div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#ae0dd6a93b4adda2dac388f3b73a76ca2">init</a>();</div>
-<div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#ab4becc3cb51dd4153542f30fed7e66ca">beginServer</a>(onEvt);</div>
+<div class="line">  mesh.<a class="code hl_function" href="classDeziBotMesh.html#a2f599185d0cc9f8820c49754e61e5745">beginServer</a>(onEvt);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> loop() {</div>
 <div class="line">  delay(10);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassDeziBotMesh_html_ab4becc3cb51dd4153542f30fed7e66ca"><div class="ttname"><a href="classDeziBotMesh.html#ab4becc3cb51dd4153542f30fed7e66ca">DeziBotMesh::beginServer</a></div><div class="ttdeci">bool beginServer(mesh_server_evt_cb_t serverCallback)</div><div class="ttdoc">Initialize mesh node as server-only (receive commands and store data)</div></div>
+<div class="ttc" id="aclassDeziBotMesh_html_a2f599185d0cc9f8820c49754e61e5745"><div class="ttname"><a href="classDeziBotMesh.html#a2f599185d0cc9f8820c49754e61e5745">DeziBotMesh::beginServer</a></div><div class="ttdeci">bool beginServer(char *device_name, mesh_server_evt_cb_t serverCallback)</div><div class="ttdoc">Initialize mesh node as server-only (receive commands and store data)</div></div>
 <div class="ttc" id="aserver__events_8h_html"><div class="ttname"><a href="server__events_8h.html">server_events.h</a></div><div class="ttdoc">Event types and payloads emitted by the server models.</div></div>
 <div class="ttc" id="aserver__events_8h_html_a482ececa68964d0e988d45a6caacd88ea099995ef681695e8951a9faa83d4a2b9"><div class="ttname"><a href="server__events_8h.html#a482ececa68964d0e988d45a6caacd88ea099995ef681695e8951a9faa83d4a2b9">MESH_EVT_ONOFF_SET</a></div><div class="ttdeci">@ MESH_EVT_ONOFF_SET</div><div class="ttdef"><b>Definition</b> server_events.h:16</div></div>
 <div class="ttc" id="astructmesh__server__evt__t_html"><div class="ttname"><a href="structmesh__server__evt__t.html">mesh_server_evt_t</a></div><div class="ttdoc">Server event payload.</div><div class="ttdef"><b>Definition</b> server_events.h:52</div></div>

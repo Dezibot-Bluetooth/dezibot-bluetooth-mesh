@@ -7,7 +7,7 @@ var searchData=
   ['power_5flevel_5fset_4',['power_level_set',['../structmesh__server__evt__t.html#a42f0a30f474bf250986b6db0e0d657f7',1,'mesh_server_evt_t']]],
   ['power_5frange_5',['power_range',['../structmesh__server__t.html#a498378d15c1baa46b25074b29f6eabda',1,'mesh_server_t']]],
   ['power_5frange_5fset_6',['power_range_set',['../structmesh__server__evt__t.html#a7151991379f5709dc7db0d0045b1c8fa',1,'mesh_server_evt_t']]],
-  ['pre_5finit_7',['pre_init',['../init_8h.html#a0cb996b4d1a992c504d8ef55b432edb5',1,'init.h']]],
+  ['pre_5finit_7',['pre_init',['../init_8h.html#af6f6e65603692da14cd058a703d0d698',1,'init.h']]],
   ['property_5fid_8',['property_id',['../structmesh__server__evt__t.html#a8a2a748befa181a0106d359a163b74b6',1,'mesh_server_evt_t']]],
   ['provisioner_2eh_9',['provisioner.h',['../provisioner_8h.html',1,'']]]
 ];

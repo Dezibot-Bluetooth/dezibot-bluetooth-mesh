@@ -113,12 +113,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5b850d3b02ccac1e392d5b5a6e247972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <br /></td></tr>
 <tr class="memitem:ae0dd6a93b4adda2dac388f3b73a76ca2" id="r_ae0dd6a93b4adda2dac388f3b73a76ca2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0dd6a93b4adda2dac388f3b73a76ca2">init</a> ()</td></tr>
 <tr class="memdesc:ae0dd6a93b4adda2dac388f3b73a76ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Bluetooth and pre-requisites.  <br /></td></tr>
-<tr class="memitem:a86ea112c6c3fab8382753284296886d5" id="r_a86ea112c6c3fab8382753284296886d5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86ea112c6c3fab8382753284296886d5">beginClient</a> ()</td></tr>
-<tr class="memdesc:a86ea112c6c3fab8382753284296886d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as client-only (send commands)  <br /></td></tr>
-<tr class="memitem:ab4becc3cb51dd4153542f30fed7e66ca" id="r_ab4becc3cb51dd4153542f30fed7e66ca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4becc3cb51dd4153542f30fed7e66ca">beginServer</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
-<tr class="memdesc:ab4becc3cb51dd4153542f30fed7e66ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as server-only (receive commands and store data)  <br /></td></tr>
-<tr class="memitem:a5195171bbeb3d3f8fbbebd558a557d17" id="r_a5195171bbeb3d3f8fbbebd558a557d17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5195171bbeb3d3f8fbbebd558a557d17">beginNode</a> (<a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
-<tr class="memdesc:a5195171bbeb3d3f8fbbebd558a557d17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as with clients and servers.  <br /></td></tr>
+<tr class="memitem:a38512a53e002212d239b5f2f881c6b15" id="r_a38512a53e002212d239b5f2f881c6b15"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38512a53e002212d239b5f2f881c6b15">beginClient</a> (char *device_name)</td></tr>
+<tr class="memdesc:a38512a53e002212d239b5f2f881c6b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as client-only (send commands)  <br /></td></tr>
+<tr class="memitem:a2f599185d0cc9f8820c49754e61e5745" id="r_a2f599185d0cc9f8820c49754e61e5745"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f599185d0cc9f8820c49754e61e5745">beginServer</a> (char *device_name, <a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
+<tr class="memdesc:a2f599185d0cc9f8820c49754e61e5745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as server-only (receive commands and store data)  <br /></td></tr>
+<tr class="memitem:aa1644950f26a065b78e03ed960347f5f" id="r_aa1644950f26a065b78e03ed960347f5f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1644950f26a065b78e03ed960347f5f">beginNode</a> (char *device_name, <a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a> serverCallback)</td></tr>
+<tr class="memdesc:aa1644950f26a065b78e03ed960347f5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize mesh node as with clients and servers.  <br /></td></tr>
 <tr class="memitem:aa7a09d803a117af26f2a3561e5ca10f2" id="r_aa7a09d803a117af26f2a3561e5ca10f2"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7a09d803a117af26f2a3561e5ca10f2">getOnOff</a> (uint16_t addr, uint8_t elemIndex=0)</td></tr>
 <tr class="memdesc:aa7a09d803a117af26f2a3561e5ca10f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Generic OnOff state from another node.  <br /></td></tr>
 <tr class="memitem:af920fb9020e043bd4b1e7ef5295555bc" id="r_af920fb9020e043bd4b1e7ef5295555bc"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af920fb9020e043bd4b1e7ef5295555bc">setOnOff</a> (bool onoff, uint16_t addr, uint8_t elemIndex=0)</td></tr>
@@ -224,6 +224,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Creates an uninitialized mesh instance. Call <a class="el" href="#ae0dd6a93b4adda2dac388f3b73a76ca2">init</a> and one of the begin* methods to start the mesh stack. </p>
 
 </div>
 </div>
@@ -241,12 +242,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Note: This wrapper does not necessarily tear down the underlying BLE stack; lifecycle is typically application-controlled. </p>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a86ea112c6c3fab8382753284296886d5" name="a86ea112c6c3fab8382753284296886d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86ea112c6c3fab8382753284296886d5">&#9670;&#160;</a></span>beginClient()</h2>
+<a id="a38512a53e002212d239b5f2f881c6b15" name="a38512a53e002212d239b5f2f881c6b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38512a53e002212d239b5f2f881c6b15">&#9670;&#160;</a></span>beginClient()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,18 +256,24 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool DeziBotMesh::beginClient </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>This initializes a node that can only send commands to other nodes. Useful for remote controls or sensor nodes that only publish data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_name</td><td>Device name to expose via GAP.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
 
 </div>
 </div>
-<a id="a5195171bbeb3d3f8fbbebd558a557d17" name="a5195171bbeb3d3f8fbbebd558a557d17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5195171bbeb3d3f8fbbebd558a557d17">&#9670;&#160;</a></span>beginNode()</h2>
+<a id="aa1644950f26a065b78e03ed960347f5f" name="aa1644950f26a065b78e03ed960347f5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1644950f26a065b78e03ed960347f5f">&#9670;&#160;</a></span>beginNode()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -273,18 +281,29 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool DeziBotMesh::beginNode </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>serverCallback</em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>serverCallback</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>This initializes a node which can both send commands and receive commands. This is the most common mode for general-purpose nodes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_name</td><td>Device name to expose via GAP. </td></tr>
+    <tr><td class="paramname">serverCallback</td><td>Application callback for incoming server events.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
 
 </div>
 </div>
-<a id="ab4becc3cb51dd4153542f30fed7e66ca" name="ab4becc3cb51dd4153542f30fed7e66ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4becc3cb51dd4153542f30fed7e66ca">&#9670;&#160;</a></span>beginServer()</h2>
+<a id="a2f599185d0cc9f8820c49754e61e5745" name="a2f599185d0cc9f8820c49754e61e5745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f599185d0cc9f8820c49754e61e5745">&#9670;&#160;</a></span>beginServer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,12 +311,23 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">bool DeziBotMesh::beginServer </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>serverCallback</em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="server__events_8h.html#a2702860adde2a69cc71fb876a1f2df08">mesh_server_evt_cb_t</a></td>          <td class="paramname"><span class="paramname"><em>serverCallback</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>This initializes a node that can only receives commands and stores data.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">device_name</td><td>Device name to expose via GAP. </td></tr>
+    <tr><td class="paramname">serverCallback</td><td>Application callback for incoming server events.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>true on success, false on failure </dd></dl>
 
 </div>
@@ -476,7 +506,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">uuid</td><td>Buffer to store UUID (must be 16 bytes) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">uuid</td><td>Buffer to store UUID (must be 16 bytes) </td></tr>
   </table>
   </dd>
 </dl>

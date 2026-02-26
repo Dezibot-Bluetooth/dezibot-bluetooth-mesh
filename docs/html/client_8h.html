@@ -104,8 +104,8 @@ Functions</h2></td></tr>
 <tr class="memdesc:aacc2f2cffec47aa777e5cb8709a7eecb"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Mesh Generic Client callback handler.  <br /></td></tr>
 <tr class="memitem:a098775d3e65d8f4f5272809c7974e0ff" id="r_a098775d3e65d8f4f5272809c7974e0ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a098775d3e65d8f4f5272809c7974e0ff">ble_mesh_client_set_composition</a> (esp_ble_mesh_comp_t *comp)</td></tr>
 <tr class="memdesc:a098775d3e65d8f4f5272809c7974e0ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default composition data.  <br /></td></tr>
-<tr class="memitem:a000984d14109a79f000c1996d1b02336" id="r_a000984d14109a79f000c1996d1b02336"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a000984d14109a79f000c1996d1b02336">ble_mesh_client_init</a> (void)</td></tr>
-<tr class="memdesc:a000984d14109a79f000c1996d1b02336"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh client models.  <br /></td></tr>
+<tr class="memitem:a3569d73a6c48152aaca6dd458f888322" id="r_a3569d73a6c48152aaca6dd458f888322"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3569d73a6c48152aaca6dd458f888322">ble_mesh_client_init</a> (char *device_name)</td></tr>
+<tr class="memdesc:a3569d73a6c48152aaca6dd458f888322"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE Mesh client models.  <br /></td></tr>
 <tr class="memitem:aa2babfb718ce1def01e81bdc1cc60c7d" id="r_aa2babfb718ce1def01e81bdc1cc60c7d"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2babfb718ce1def01e81bdc1cc60c7d">ble_mesh_client_get_onoff</a> (uint16_t addr, uint8_t elem_index)</td></tr>
 <tr class="memdesc:aa2babfb718ce1def01e81bdc1cc60c7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send Generic OnOff Get.  <br /></td></tr>
 <tr class="memitem:a2452fb42d0710f6bbf34e684ca0cd9a0" id="r_a2452fb42d0710f6bbf34e684ca0cd9a0"><td class="memItemLeft" align="right" valign="top">esp_err_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2452fb42d0710f6bbf34e684ca0cd9a0">ble_mesh_client_set_onoff</a> (uint8_t val, uint16_t addr, uint8_t elem_index)</td></tr>
@@ -755,8 +755,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a000984d14109a79f000c1996d1b02336" name="a000984d14109a79f000c1996d1b02336"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a000984d14109a79f000c1996d1b02336">&#9670;&#160;</a></span>ble_mesh_client_init()</h2>
+<a id="a3569d73a6c48152aaca6dd458f888322" name="a3569d73a6c48152aaca6dd458f888322"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3569d73a6c48152aaca6dd458f888322">&#9670;&#160;</a></span>ble_mesh_client_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -764,12 +764,18 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">esp_err_t ble_mesh_client_init </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>device_name</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Registers callbacks and initializes the client-side models.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">device_name</td><td>Device name to expose via GAP.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd><ul>
 <li>ESP_OK on success</li>
 <li>ESP_FAIL / other esp_err_t on failure </li>
@@ -849,7 +855,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Call this before <a class="el" href="#a000984d14109a79f000c1996d1b02336">ble_mesh_client_init</a> if you want to provide a custom element/model composition.</p>
+<p>Call this before <a class="el" href="#a3569d73a6c48152aaca6dd458f888322">ble_mesh_client_init</a> if you want to provide a custom element/model composition.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">comp</td><td>Composition data to use. </td></tr>
