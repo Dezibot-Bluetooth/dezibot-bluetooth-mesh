@@ -39,6 +39,6 @@
  * 
  * @see bluetooth_init()
  */
-esp_err_t pre_init(void);
+esp_err_t pre_init(char *device_name);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_INIT_H

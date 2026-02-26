@@ -19,12 +19,12 @@ DeziBotMesh::~DeziBotMesh() {
     // Cleanup handled by ESP-IDF
 }
 
-bool DeziBotMesh::init() {
+bool DeziBotMesh::init(char *device_name) {
     if (_initialized) {
         return true;
     }
 
-    esp_err_t err = mesh_bridge_pre_init();
+    esp_err_t err = mesh_bridge_pre_init(device_name);
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "pre_init failed: %d", err);
         return false;

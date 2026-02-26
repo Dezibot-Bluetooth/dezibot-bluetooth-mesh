@@ -49,7 +49,7 @@ bool btInUse(void)
  * 
  * @see bluetooth_init()
  */
-esp_err_t pre_init(void)
+esp_err_t pre_init(char *device_name)
 {
     esp_err_t error;
 
@@ -61,7 +61,7 @@ esp_err_t pre_init(void)
     }
     ESP_ERROR_CHECK(error);
 
-    error = bluetooth_init();
+    error = bluetooth_init(device_name);
     if (error)
     {
         ESP_LOGE(TAG, "esp32_bluetooth_init failed (err %d)", error);

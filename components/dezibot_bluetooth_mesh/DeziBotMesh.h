@@ -47,7 +47,7 @@ public:
      * 
      * @return true on success, false on failure
      */
-    bool init();
+    bool init(char *device_name);
 
     /**
      * @brief Initialize mesh node as client-only (send commands)

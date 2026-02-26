@@ -7,9 +7,9 @@
 #include "node/node.h"
 
 // common/init
-esp_err_t mesh_bridge_pre_init(void)
+esp_err_t mesh_bridge_pre_init(char *device_name)
 {
-    return pre_init();
+    return pre_init(device_name);
 }
 
 // common/bluetooth
@@ -18,9 +18,9 @@ void mesh_bridge_get_device_uuid(uint8_t *uuid)
     ble_mesh_get_dev_uuid(uuid);
 }
 
-esp_err_t mesh_bridge_bluetooth_init(void)
+esp_err_t mesh_bridge_bluetooth_init(char *device_name)
 {
-    return bluetooth_init();
+    return bluetooth_init(device_name);
 }
 
 // client/client

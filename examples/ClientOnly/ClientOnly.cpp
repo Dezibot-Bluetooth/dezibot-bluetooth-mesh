@@ -30,7 +30,7 @@ void setup() {
     dezibot.begin();
     ESP_LOGI(TAG, "Dezibot hardware initialized");
 
-    if (!dezimesh.init()) {
+    if (!dezimesh.init("ClientOnly")) {
         ESP_LOGE(TAG, "Mesh init failed");
         while (1) { delay(1000); }
     }

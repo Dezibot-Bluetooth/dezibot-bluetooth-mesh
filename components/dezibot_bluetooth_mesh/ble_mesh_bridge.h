@@ -10,10 +10,10 @@ extern "C" {
 #include <server/server_events.h>
 
 // common/init
-esp_err_t mesh_bridge_pre_init(void);
+    esp_err_t mesh_bridge_pre_init(char *device_name);
 
 // common/bluetooth
-esp_err_t mesh_bridge_bluetooth_init(void);
+esp_err_t mesh_bridge_bluetooth_init(char *device_name);
 
 void mesh_bridge_get_device_uuid(uint8_t *uuid);
 

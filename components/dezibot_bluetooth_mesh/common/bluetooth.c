@@ -156,7 +156,7 @@ void mesh_host_task(void *param)
  * @see mesh_on_sync()
  * @see ble_mesh_get_dev_uuid()
  */
-esp_err_t bluetooth_init(void)
+esp_err_t bluetooth_init(char *device_name)
 {
     esp_err_t error;
 
@@ -169,6 +169,12 @@ esp_err_t bluetooth_init(void)
     error = nimble_port_init();
     if (error != ESP_OK) {
         ESP_LOGE(TAG, "Failed to init nimble %d ", error);
+        return error;
+    }
+
+    error = ble_svc_gap_device_name_set(device_name);
+    if (error != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to name device %d ", error);
         return error;
     }
 
