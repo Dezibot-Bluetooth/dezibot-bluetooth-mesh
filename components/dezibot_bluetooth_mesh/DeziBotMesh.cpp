@@ -19,12 +19,12 @@ DeziBotMesh::~DeziBotMesh() {
     // Cleanup handled by ESP-IDF
 }
 
-bool DeziBotMesh::init(char *device_name) {
+bool DeziBotMesh::init() {
     if (_initialized) {
         return true;
     }
 
-    esp_err_t err = mesh_bridge_pre_init(device_name);
+    esp_err_t err = mesh_bridge_pre_init();
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "pre_init failed: %d", err);
         return false;
@@ -42,7 +42,7 @@ bool DeziBotMesh::init(char *device_name) {
     return true;
 }
 
-bool DeziBotMesh::beginClient() {
+bool DeziBotMesh::beginClient(char *device_name) {
     if (!_initialized) {
         ESP_LOGE("DeziBotMesh", "Must call init() before beginClient()");
         return false;
@@ -56,7 +56,7 @@ bool DeziBotMesh::beginClient() {
     _mode = MODE_CLIENT_ONLY;
     
     // Initialize client only
-    esp_err_t err = mesh_bridge_client_init();
+    esp_err_t err = mesh_bridge_client_init(device_name);
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "ble_mesh_client_init failed: %d", err);
         return false;
@@ -67,7 +67,7 @@ bool DeziBotMesh::beginClient() {
     return true;
 }
 
-bool DeziBotMesh::beginServer(mesh_server_evt_cb_t serverCallback) {
+bool DeziBotMesh::beginServer(char *device_name, mesh_server_evt_cb_t serverCallback) {
     if (!_initialized) {
         ESP_LOGE("DeziBotMesh", "Must call init() before beginServer()");
         return false;
@@ -81,7 +81,7 @@ bool DeziBotMesh::beginServer(mesh_server_evt_cb_t serverCallback) {
     _mode = MODE_SERVER_ONLY;
 
     // Initialize server
-    esp_err_t err = mesh_bridge_server_init(serverCallback);
+    esp_err_t err = mesh_bridge_server_init(device_name, serverCallback);
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "ble_mesh_server_init failed: %d", err);
         return false;
@@ -92,7 +92,7 @@ bool DeziBotMesh::beginServer(mesh_server_evt_cb_t serverCallback) {
     return true;
 }
 
-bool DeziBotMesh::beginNode(mesh_server_evt_cb_t serverCallback) {
+bool DeziBotMesh::beginNode(char *device_name, mesh_server_evt_cb_t serverCallback) {
     if (!_initialized) {
         ESP_LOGE("DeziBotMesh", "Must call init() before beginNode()");
         return false;
@@ -106,7 +106,7 @@ bool DeziBotMesh::beginNode(mesh_server_evt_cb_t serverCallback) {
     _mode = MODE_NODE;
 
     // Initialize node
-    esp_err_t err = mesh_bridge_node_init(serverCallback);
+    esp_err_t err = mesh_bridge_node_init(device_name, serverCallback);
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "mesh_bridge_node_init failed: %d", err);
         return false;

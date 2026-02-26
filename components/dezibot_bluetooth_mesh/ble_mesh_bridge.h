@@ -10,15 +10,15 @@ extern "C" {
 #include <server/server_events.h>
 
 // common/init
-    esp_err_t mesh_bridge_pre_init(char *device_name);
+esp_err_t mesh_bridge_pre_init();
 
 // common/bluetooth
-esp_err_t mesh_bridge_bluetooth_init(char *device_name);
+esp_err_t mesh_bridge_bluetooth_init();
 
 void mesh_bridge_get_device_uuid(uint8_t *uuid);
 
 // client/client
-esp_err_t mesh_bridge_client_init(void);
+esp_err_t mesh_bridge_client_init(char *device_name);
 
 esp_err_t mesh_bridge_client_get_onoff(uint16_t addr, uint8_t elem_index);
 
@@ -86,10 +86,10 @@ esp_err_t mesh_bridge_client_set_manu_property(uint16_t property_id, uint8_t adm
 esp_err_t mesh_bridge_client_get_client_properties(uint16_t property_id, uint16_t addr, uint8_t elem_index);
 
 // server/server
-esp_err_t mesh_bridge_server_init(mesh_server_evt_cb_t cb);
+esp_err_t mesh_bridge_server_init(char *device_name, mesh_server_evt_cb_t cb);
 
 // node/node
-esp_err_t mesh_bridge_node_init(mesh_server_evt_cb_t cb);
+esp_err_t mesh_bridge_node_init(char *device_name, mesh_server_evt_cb_t cb);
 
 #ifdef __cplusplus
 }

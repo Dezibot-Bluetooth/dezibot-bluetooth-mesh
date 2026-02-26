@@ -1599,7 +1599,7 @@ esp_err_t ble_mesh_client_get_client_properties(uint16_t property_id, uint16_t a
     return ESP_OK;
 }
 
-esp_err_t ble_mesh_client_init(void)
+esp_err_t ble_mesh_client_init(char *device_name)
 {
     ESP_LOGI(TAG, "Initializing...");
     esp_err_t err;
@@ -1637,6 +1637,12 @@ esp_err_t ble_mesh_client_init(void)
     err = esp_ble_mesh_init(&prov, composition);
     if (err != ESP_OK) {
         ESP_LOGE(TAG, "BLE Mesh init failed (err %d)", err);
+        return err;
+    }
+
+    err = esp_ble_mesh_set_unprovisioned_device_name(device_name);
+    if (err != ESP_OK) {
+        ESP_LOGE(TAG, "Failed to rename device(err %d)", err);
         return err;
     }
     
