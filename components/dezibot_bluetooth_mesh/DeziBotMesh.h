@@ -99,7 +99,7 @@ public:
      * @param serverCallback Callback for server events
      * @return true on success, false on failure
      */
-    bool begin(mesh_server_evt_cb_t serverCallback);
+    bool beginProvisionerNode(mesh_server_evt_cb_t serverCallback);
 
     /**
      * @brief Get Generic OnOff state from another node

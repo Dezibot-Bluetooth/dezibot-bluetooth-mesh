@@ -142,7 +142,7 @@ bool DeziBotMesh::beginProvisioner() {
     return true;
 }
 
-bool DeziBotMesh::begin(mesh_server_evt_cb_t serverCallback) {
+bool DeziBotMesh::beginProvisionerNode(mesh_server_evt_cb_t serverCallback) {
     if (!_initialized) {
         ESP_LOGE("DeziBotMesh", "Must call init() before begin()");
         return false;

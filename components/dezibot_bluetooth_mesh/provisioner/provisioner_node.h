@@ -20,8 +20,8 @@
 #ifndef DEZIBOT_BLUETOOTH_MESH_PROVISIONER_NODE_H
 #define DEZIBOT_BLUETOOTH_MESH_PROVISIONER_NODE_H
 
-#include "../common/common.h"
-#include "../server/server_events.h"
+#include "common/common.h"
+#include "server/server_events.h"
 
 /**
  * @brief Initialize BLE Mesh as combined provisioner + node
