@@ -28,7 +28,8 @@ public:
         MODE_NODE,         /// full, client + server
         MODE_CLIENT_ONLY,  /// client only
         MODE_SERVER_ONLY,  /// server only
-        MODE_PROVISIONER   /// provisioner
+        MODE_PROVISIONER,      /// provisioner
+        MODE_PROVISIONER_NODE  /// provisioner + node (client + server)
     };
 
     /**
@@ -87,6 +88,18 @@ public:
      * @return true on success, false on failure
      */
     bool beginProvisioner();
+
+    /**
+     * @brief Initialize mesh as combined provisioner and node
+     *
+     * This initializes a device that acts as both a provisioner (can provision
+     * other nodes into the mesh network) and a full node (can send and receive
+     * mesh messages). The device is self-provisioned at address 0x0001.
+     *
+     * @param serverCallback Callback for server events
+     * @return true on success, false on failure
+     */
+    bool begin(mesh_server_evt_cb_t serverCallback);
 
     /**
      * @brief Get Generic OnOff state from another node

@@ -142,6 +142,31 @@ bool DeziBotMesh::beginProvisioner() {
     return true;
 }
 
+bool DeziBotMesh::begin(mesh_server_evt_cb_t serverCallback) {
+    if (!_initialized) {
+        ESP_LOGE("DeziBotMesh", "Must call init() before begin()");
+        return false;
+    }
+
+    if (_meshInitialized) {
+        ESP_LOGW("DeziBotMesh", "Mesh already initialized");
+        return true;
+    }
+
+    _mode = MODE_PROVISIONER_NODE;
+
+    // Initialize combined provisioner + node
+    esp_err_t err = mesh_bridge_provisioner_node_init(serverCallback);
+    if (err != ESP_OK) {
+        ESP_LOGE("DeziBotMesh", "mesh_bridge_provisioner_node_init failed: %d", err);
+        return false;
+    }
+
+    _meshInitialized = true;
+    ESP_LOGI("DeziBotMesh", "Mesh initialized as provisioner+node");
+    return true;
+}
+
 esp_err_t DeziBotMesh::getOnOff(uint16_t addr, uint8_t elemIndex) {
     if (_mode == MODE_SERVER_ONLY) {
         ESP_LOGW("DeziBotMesh", "Cannot get onoff in server-only mode");

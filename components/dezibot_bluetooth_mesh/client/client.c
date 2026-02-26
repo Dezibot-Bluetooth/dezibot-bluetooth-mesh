@@ -15,6 +15,12 @@ static esp_ble_mesh_prov_t prov = {
     .uuid = dev_uuid,
 };
 
+void ble_mesh_client_set_provisioned(bool provisioned)
+{
+    is_provisioned = provisioned;
+    ESP_LOGI(TAG, "Provisioned flag set to %s", provisioned ? "true" : "false");
+}
+
 void ble_mesh_client_set_composition(esp_ble_mesh_comp_t *comp)
 {
     composition = comp;
