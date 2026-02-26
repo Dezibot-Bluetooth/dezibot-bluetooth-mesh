@@ -10,9 +10,6 @@
  * - Binary semaphore synchronization for init completion
  * - Device UUID generation from Bluetooth MAC address
  * - Bluetooth host task management
- * 
- * @author DeziBot Project
- * @date 2026
  */
 
 #ifndef DEZIBOT_BLUETOOTH_MESH_MESH_INIT_H

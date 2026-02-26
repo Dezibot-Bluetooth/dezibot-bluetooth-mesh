@@ -9,18 +9,10 @@
  * Design Pattern: Central Include Pattern
  * This reduces code duplication and ensures consistent API access across
  * all modules. Modules only need to include this single header.
- * 
- * @author DeziBot Project
- * @date 2026
  */
 
 #ifndef DEZIBOT_BLUETOOTH_MESH_COMMON_H
 #define DEZIBOT_BLUETOOTH_MESH_COMMON_H
-
-/**
- * @file common.h
- * @brief Common includes and types for the BLE Mesh modules.
- */
 
 // STD APIs
 #include <stdio.h>
