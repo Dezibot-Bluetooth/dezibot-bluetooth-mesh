@@ -40,87 +40,6 @@ static esp_ble_mesh_node_info_t nodes[CONFIG_BLE_MESH_MAX_PROV_NODES] = {};
 
 static esp_ble_mesh_prov_key_t prov_key = {};
 
-/* --------------- merged composition --------------------------------------- */
-
-/* Config Server + Config Client */
-static esp_ble_mesh_cfg_srv_t config_server = {
-    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .relay = ESP_BLE_MESH_RELAY_DISABLED,
-    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
-    .beacon = ESP_BLE_MESH_BEACON_ENABLED,
-    .gatt_proxy = ESP_BLE_MESH_GATT_PROXY_DISABLED,
-    .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
-    .default_ttl = 7,
-};
-
-static esp_ble_mesh_client_t config_client;
-
-/* Generic clients */
-static esp_ble_mesh_client_t onoff_client;
-static esp_ble_mesh_client_t level_client;
-static esp_ble_mesh_client_t def_trans_time_client;
-static esp_ble_mesh_client_t power_onoff_client;
-static esp_ble_mesh_client_t power_level_client;
-static esp_ble_mesh_client_t battery_client;
-static esp_ble_mesh_client_t location_client;
-static esp_ble_mesh_client_t property_client;
-
-/* Generic servers (wrapped in mesh_server_t for callback dispatch) */
-static mesh_server_t onoff_server_wrapper;
-static esp_ble_mesh_gen_level_srv_t level_server;
-static esp_ble_mesh_gen_def_trans_time_srv_t def_trans_time_server;
-
-/* Publication contexts (one per publishable model, can be shared/NULL) */
-static esp_ble_mesh_model_pub_t onoff_cli_pub;
-static esp_ble_mesh_model_pub_t level_cli_pub;
-static esp_ble_mesh_model_pub_t dtt_cli_pub;
-static esp_ble_mesh_model_pub_t pou_cli_pub;
-static esp_ble_mesh_model_pub_t pl_cli_pub;
-static esp_ble_mesh_model_pub_t bat_cli_pub;
-static esp_ble_mesh_model_pub_t loc_cli_pub;
-static esp_ble_mesh_model_pub_t prop_cli_pub;
-
-static esp_ble_mesh_model_pub_t onoff_srv_pub;
-static esp_ble_mesh_model_pub_t level_srv_pub;
-static esp_ble_mesh_model_pub_t dtt_srv_pub;
-
-/*
- * Combined model array: provisioner models + all generic client + server models.
- * CFG_SRV and CFG_CLI are mandatory for a provisioner.  The remaining models
- * give the device full client+server capability for Generic OnOff, Level,
- * Default Transition Time, and more.
- */
-static esp_ble_mesh_model_t root_models[] = {
-    /* Provisioner foundation models */
-    ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
-    ESP_BLE_MESH_MODEL_CFG_CLI(&config_client),
-
-    /* Generic client models */
-    ESP_BLE_MESH_MODEL_GEN_ONOFF_CLI(&onoff_cli_pub, &onoff_client),
-    ESP_BLE_MESH_MODEL_GEN_LEVEL_CLI(&level_cli_pub, &level_client),
-    ESP_BLE_MESH_MODEL_GEN_DEF_TRANS_TIME_CLI(&dtt_cli_pub, &def_trans_time_client),
-    ESP_BLE_MESH_MODEL_GEN_POWER_ONOFF_CLI(&pou_cli_pub, &power_onoff_client),
-    ESP_BLE_MESH_MODEL_GEN_POWER_LEVEL_CLI(&pl_cli_pub, &power_level_client),
-    ESP_BLE_MESH_MODEL_GEN_BATTERY_CLI(&bat_cli_pub, &battery_client),
-    ESP_BLE_MESH_MODEL_GEN_LOCATION_CLI(&loc_cli_pub, &location_client),
-    ESP_BLE_MESH_MODEL_GEN_PROPERTY_CLI(&prop_cli_pub, &property_client),
-
-    /* Generic server models */
-    ESP_BLE_MESH_MODEL_GEN_ONOFF_SRV(&onoff_srv_pub, &onoff_server_wrapper.srv.onoff),
-    ESP_BLE_MESH_MODEL_GEN_LEVEL_SRV(&level_srv_pub, &level_server),
-    ESP_BLE_MESH_MODEL_GEN_DEF_TRANS_TIME_SRV(&dtt_srv_pub, &def_trans_time_server),
-};
-
-static esp_ble_mesh_elem_t elements[] = {
-    ESP_BLE_MESH_ELEMENT(0, root_models, ESP_BLE_MESH_MODEL_NONE),
-};
-
-static esp_ble_mesh_comp_t composition = {
-    .cid = CID_ESP,
-    .element_count = ARRAY_SIZE(elements),
-    .elements = elements,
-};
-
 static esp_ble_mesh_prov_t provision = {
     .uuid                = dev_uuid,
     .prov_uuid           = dev_uuid,
@@ -134,6 +53,24 @@ static esp_ble_mesh_prov_t provision = {
     .flags               = 0x00,
     .iv_index            = 0x00,
 };
+
+
+static esp_ble_mesh_comp_t *composition = NULL;
+
+void prov_node_set_composition(esp_ble_mesh_comp_t *comp)
+{
+    composition = comp;
+    ESP_LOGI(TAG, "Composition set: element_count=%u", composition->element_count);
+    for (uint8_t i = 0; i < composition->element_count; i++)
+    {
+        esp_ble_mesh_model_t *mod = composition->elements[i].sig_models;
+        for (uint8_t j = 0; j < composition->elements[i].sig_model_count; j++)
+        {
+            ESP_LOGI(TAG, "Model %u: id=0x%04x", j, mod[j].model_id);
+        }
+    }
+}
+
 
 /* --------------- provisioner helpers (from provisioner.c) ----------------- */
 
@@ -250,7 +187,15 @@ static esp_err_t prov_complete(
         return ESP_FAIL;
     }
 
-    ble_mesh_set_msg_common(&common, node, config_client.model, ESP_BLE_MESH_MODEL_OP_COMPOSITION_DATA_GET);
+    esp_ble_mesh_model_t *model = NULL;
+    for (uint8_t i = 0; i < composition->elements[0].sig_model_count; i++) {
+        if (composition->elements[0].sig_models[i].model_id == ESP_BLE_MESH_MODEL_ID_CONFIG_CLI) {
+            model = &composition->elements[0].sig_models[i];
+            break;
+        }
+    }
+
+    ble_mesh_set_msg_common(&common, node, model, ESP_BLE_MESH_MODEL_OP_COMPOSITION_DATA_GET);
     get_state.comp_data_get.page = COMP_DATA_PAGE_0;
     error = esp_ble_mesh_config_client_get_state(&common, &get_state);
     if (error)
@@ -424,6 +369,14 @@ static void ble_mesh_config_client_cb(
         return;
     }
 
+    esp_ble_mesh_model_t *model = NULL;
+    for (uint8_t i = 0; i < composition->elements[0].sig_model_count; i++) {
+        if (composition->elements[0].sig_models[i].model_id == ESP_BLE_MESH_MODEL_ID_CONFIG_CLI) {
+            model = &composition->elements[0].sig_models[i];
+            break;
+        }
+    }
+
     switch (event)
     {
         case ESP_BLE_MESH_CFG_CLIENT_GET_STATE_EVT:
@@ -435,7 +388,7 @@ static void ble_mesh_config_client_cb(
                              bt_hex(param->status_cb.comp_data_status.composition_data->data,
                                     param->status_cb.comp_data_status.composition_data->len));
                     esp_ble_mesh_cfg_client_set_state_t set_state = {};
-                    ble_mesh_set_msg_common(&common, node, config_client.model,
+                    ble_mesh_set_msg_common(&common, node, model,
                                            ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD);
                     set_state.app_key_add.net_idx = prov_key.net_idx;
                     set_state.app_key_add.app_idx = prov_key.app_idx;
@@ -458,7 +411,7 @@ static void ble_mesh_config_client_cb(
                 case ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD:
                 {
                     esp_ble_mesh_cfg_client_set_state_t set_state = {};
-                    ble_mesh_set_msg_common(&common, node, config_client.model,
+                    ble_mesh_set_msg_common(&common, node, model,
                                            ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND);
                     set_state.model_app_bind.element_addr = node->unicast;
                     set_state.model_app_bind.model_app_idx = prov_key.app_idx;
@@ -501,7 +454,7 @@ static void ble_mesh_config_client_cb(
                 case ESP_BLE_MESH_MODEL_OP_COMPOSITION_DATA_GET:
                 {
                     esp_ble_mesh_cfg_client_get_state_t get_state = {};
-                    ble_mesh_set_msg_common(&common, node, config_client.model,
+                    ble_mesh_set_msg_common(&common, node, model,
                                            ESP_BLE_MESH_MODEL_OP_COMPOSITION_DATA_GET);
                     get_state.comp_data_get.page = COMP_DATA_PAGE_0;
                     error = esp_ble_mesh_config_client_get_state(&common, &get_state);
@@ -515,7 +468,7 @@ static void ble_mesh_config_client_cb(
                 case ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD:
                 {
                     esp_ble_mesh_cfg_client_set_state_t set_state = {};
-                    ble_mesh_set_msg_common(&common, node, config_client.model,
+                    ble_mesh_set_msg_common(&common, node, model,
                                            ESP_BLE_MESH_MODEL_OP_APP_KEY_ADD);
                     set_state.app_key_add.net_idx = prov_key.net_idx;
                     set_state.app_key_add.app_idx = prov_key.app_idx;
@@ -531,7 +484,7 @@ static void ble_mesh_config_client_cb(
                 case ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND:
                 {
                     esp_ble_mesh_cfg_client_set_state_t set_state = {};
-                    ble_mesh_set_msg_common(&common, node, config_client.model,
+                    ble_mesh_set_msg_common(&common, node, model,
                                            ESP_BLE_MESH_MODEL_OP_MODEL_APP_BIND);
                     set_state.model_app_bind.element_addr = node->unicast;
                     set_state.model_app_bind.model_app_idx = prov_key.app_idx;
@@ -565,9 +518,9 @@ static esp_err_t bind_app_key_to_local_models(void)
 {
     esp_err_t error;
 
-    for (int e = 0; e < composition.element_count; e++)
+    for (int e = 0; e < composition->element_count; e++)
     {
-        esp_ble_mesh_elem_t *elem = &composition.elements[e];
+        esp_ble_mesh_elem_t *elem = &composition->elements[e];
         for (int m = 0; m < elem->sig_model_count; m++)
         {
             uint16_t model_id = elem->sig_models[m].model_id;
@@ -605,9 +558,9 @@ static esp_err_t bind_app_key_to_local_models(void)
  */
 static void wire_server_callbacks(mesh_server_evt_cb_t cb)
 {
-    for (int e = 0; e < composition.element_count; e++)
+    for (int e = 0; e < composition->element_count; e++)
     {
-        esp_ble_mesh_elem_t *elem = &composition.elements[e];
+        esp_ble_mesh_elem_t *elem = &composition->elements[e];
         if (!elem || !elem->sig_models) continue;
 
         for (int m = 0; m < elem->sig_model_count; m++)
@@ -699,7 +652,7 @@ esp_err_t ble_mesh_provisioner_node_init(mesh_server_evt_cb_t cb)
              dev_uuid[12], dev_uuid[13], dev_uuid[14], dev_uuid[15]);
 
     /* Initialize BLE Mesh stack (ONCE, in provisioner mode) */
-    error = esp_ble_mesh_init(&provision, &composition);
+    error = esp_ble_mesh_init(&provision, composition);
     if (error != ESP_OK)
     {
         ESP_LOGE(TAG, "Failed to initialize mesh stack (err %d)", error);
@@ -744,8 +697,10 @@ esp_err_t ble_mesh_provisioner_node_init(mesh_server_evt_cb_t cb)
      * Tell the client module about our composition and that we are
      * already provisioned, so all client send functions work immediately.
      */
-    ble_mesh_client_set_composition(&composition);
+    ble_mesh_client_set_composition(composition);
     ble_mesh_client_set_provisioned(true);
+
+    ble_mesh_server_set_composition(composition);
 
     ESP_LOGI(TAG, "BLE Mesh Provisioner+Node initialized successfully");
 

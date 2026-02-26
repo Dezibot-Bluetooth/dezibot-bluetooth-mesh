@@ -40,4 +40,6 @@
  */
 esp_err_t ble_mesh_provisioner_node_init(mesh_server_evt_cb_t cb);
 
+void prov_node_set_composition(esp_ble_mesh_comp_t *comp);
+
 #endif // DEZIBOT_BLUETOOTH_MESH_PROVISIONER_NODE_H

@@ -84,7 +84,7 @@ void setup() {
     ESP_LOGI(TAG, "Mesh stack initialized");
 
     // No composition_init() call needed — begin() builds it internally
-    if (!dezimesh.begin(onMeshServerEvent)) {
+    if (!dezimesh.beginProvisionerNode(onMeshServerEvent)) {
         ESP_LOGE(TAG, "Mesh provisioner+node init failed");
         while (1) { delay(1000); }
     }

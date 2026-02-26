@@ -1,6 +1,7 @@
 #include "server_composition.h"
 #include "common/common.h"
 #include "server/server.h"
+#include "server/server_wrapper.h"
 
 static esp_ble_mesh_cfg_srv_t config_server = {
     .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
@@ -12,12 +13,12 @@ static esp_ble_mesh_cfg_srv_t config_server = {
     .default_ttl = 7
 };
 
-static esp_ble_mesh_gen_onoff_srv_t onoff_server;
+static mesh_server_t onoff_server_wrapper;
 static esp_ble_mesh_model_pub_t pub;
 
 static esp_ble_mesh_model_t server_models[] = {
     ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
-    ESP_BLE_MESH_MODEL_GEN_ONOFF_SRV(&pub, &onoff_server),
+    ESP_BLE_MESH_MODEL_GEN_ONOFF_SRV(&pub, &onoff_server_wrapper.srv.onoff),
 };
 
 static esp_ble_mesh_elem_t elements[] = {
