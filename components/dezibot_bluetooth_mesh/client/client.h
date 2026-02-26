@@ -13,7 +13,7 @@ void mesh_generic_client_cb(esp_ble_mesh_generic_client_cb_event_t event, esp_bl
 
 void ble_mesh_client_set_composition(esp_ble_mesh_comp_t *comp);
 
-esp_err_t ble_mesh_client_init(void);
+esp_err_t ble_mesh_client_init(char *device_name);
 
 // Generic OnOff Client
 esp_err_t ble_mesh_client_get_onoff(uint16_t addr, uint8_t elem_index);

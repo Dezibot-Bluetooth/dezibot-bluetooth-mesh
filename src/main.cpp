@@ -39,7 +39,7 @@ void setup() {
     client_composition_init();
     ESP_LOGI(TAG, "Set client composition");
 
-    if (!dezimesh.beginClient()) {
+    if (!dezimesh.beginClient("ClientOnly")) {
         ESP_LOGE(TAG, "Mesh client init failed");
         while (1) { delay(1000); }
     }

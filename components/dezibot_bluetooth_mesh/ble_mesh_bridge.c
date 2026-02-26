@@ -7,7 +7,7 @@
 #include "node/node.h"
 
 // common/init
-esp_err_t mesh_bridge_pre_init(void)
+esp_err_t mesh_bridge_pre_init()
 {
     return pre_init();
 }
@@ -18,15 +18,15 @@ void mesh_bridge_get_device_uuid(uint8_t *uuid)
     ble_mesh_get_dev_uuid(uuid);
 }
 
-esp_err_t mesh_bridge_bluetooth_init(void)
+esp_err_t mesh_bridge_bluetooth_init()
 {
     return bluetooth_init();
 }
 
 // client/client
-esp_err_t mesh_bridge_client_init(void)
+esp_err_t mesh_bridge_client_init(char *device_name)
 {
-    return ble_mesh_client_init();
+    return ble_mesh_client_init(device_name);
 }
 
 esp_err_t mesh_bridge_client_get_onoff(uint16_t addr, uint8_t elem_index)
@@ -188,13 +188,13 @@ esp_err_t mesh_bridge_client_get_client_properties(uint16_t property_id, uint16_
 }
 
 // server/server
-esp_err_t mesh_bridge_server_init(mesh_server_evt_cb_t cb)
+esp_err_t mesh_bridge_server_init(char *device_name, mesh_server_evt_cb_t cb)
 {
-    return ble_mesh_server_init(cb);
+    return ble_mesh_server_init(device_name, cb);
 }
 
 // node/node
-esp_err_t mesh_bridge_node_init(mesh_server_evt_cb_t cb)
+esp_err_t mesh_bridge_node_init(char *device_name, mesh_server_evt_cb_t cb)
 {
-    return ble_mesh_node_init(cb);
+    return ble_mesh_node_init(device_name, cb);
 }

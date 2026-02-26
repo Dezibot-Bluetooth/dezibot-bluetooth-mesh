@@ -10,6 +10,6 @@ void mesh_generic_server_cb(esp_ble_mesh_generic_server_cb_event_t event, esp_bl
 
 void mesh_config_server_cb(esp_ble_mesh_cfg_server_cb_event_t event, esp_ble_mesh_cfg_server_cb_param_t *param);
 
-esp_err_t ble_mesh_server_init(mesh_server_evt_cb_t cb);
+esp_err_t ble_mesh_server_init(char *device_name, mesh_server_evt_cb_t cb);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_SERVER_H

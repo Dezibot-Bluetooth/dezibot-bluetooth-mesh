@@ -156,7 +156,7 @@ void mesh_host_task(void *param)
  * @see mesh_on_sync()
  * @see ble_mesh_get_dev_uuid()
  */
-esp_err_t bluetooth_init(void)
+esp_err_t bluetooth_init()
 {
     esp_err_t error;
 

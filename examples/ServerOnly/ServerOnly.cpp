@@ -56,7 +56,7 @@ void setup() {
     server_composition_init();
     ESP_LOGI(TAG, "Set server composition");
 
-    if (!dezimesh.beginServer(onMeshServerEvent))
+    if (!dezimesh.beginServer("ServerOnly", onMeshServerEvent))
     {
         ESP_LOGE(TAG, "Mesh server init failed");
         while (1) { delay(1000); }

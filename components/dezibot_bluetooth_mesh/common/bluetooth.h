@@ -57,6 +57,6 @@ void ble_mesh_get_dev_uuid(uint8_t *dev_uuid);
  * @note This function must be called before any mesh operations
  * @note Blocks until Bluetooth host is synchronized
  */
-esp_err_t bluetooth_init(void);
+esp_err_t bluetooth_init();
 
 #endif //DEZIBOT_BLUETOOTH_MESH_MESH_INIT_H

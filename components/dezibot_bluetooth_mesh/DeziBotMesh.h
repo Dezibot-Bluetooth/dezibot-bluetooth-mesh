@@ -57,7 +57,7 @@ public:
      * 
      * @return true on success, false on failure
      */
-    bool beginClient();
+    bool beginClient(char *device_name);
 
     /**
      * @brief Initialize mesh node as server-only (receive commands and store data)
@@ -66,7 +66,7 @@ public:
      *
      * @return true on success, false on failure
      */
-    bool beginServer(mesh_server_evt_cb_t serverCallback);
+    bool beginServer(char *device_name, mesh_server_evt_cb_t serverCallback);
 
     /**
      * @brief Initialize mesh node as with clients and servers
@@ -76,7 +76,7 @@ public:
      *
      * @return true on success, false on failure
      */
-    bool beginNode(mesh_server_evt_cb_t serverCallback);
+    bool beginNode(char *device_name, mesh_server_evt_cb_t serverCallback);
 
     /**
      * @brief Get Generic OnOff state from another node

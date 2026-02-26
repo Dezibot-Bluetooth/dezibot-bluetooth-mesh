@@ -4,6 +4,6 @@
 #include "common/common.h"
 #include "server/server_events.h"
 
-esp_err_t ble_mesh_node_init(mesh_server_evt_cb_t cb);
+esp_err_t ble_mesh_node_init(char *device_name, mesh_server_evt_cb_t cb);
 
 #endif //DEZIBOT_BLUETOOTH_MESH_NODE_H

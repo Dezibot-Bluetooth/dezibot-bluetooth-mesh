@@ -49,7 +49,7 @@ bool btInUse(void)
  * 
  * @see bluetooth_init()
  */
-esp_err_t pre_init(void)
+esp_err_t pre_init()
 {
     esp_err_t error;
 

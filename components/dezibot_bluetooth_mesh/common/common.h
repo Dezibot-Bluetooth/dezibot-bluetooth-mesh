@@ -38,6 +38,7 @@
 #include "host/ble_hs.h"
 #include "host/util/util.h"
 #include "console/console.h"
+#include "services/gap/ble_svc_gap.h"
 
 // Bluetooth Mesh APIs
 #include "esp_ble_mesh_defs.h"
