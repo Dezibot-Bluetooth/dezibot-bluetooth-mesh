@@ -32,11 +32,17 @@ public:
 
     /**
      * @brief Constructor
+     *
+     * Creates an uninitialized mesh instance. Call @ref init and one of the
+     * begin* methods to start the mesh stack.
      */
     DeziBotMesh();
 
     /**
      * @brief Destructor
+     *
+     * Note: This wrapper does not necessarily tear down the underlying BLE
+     * stack; lifecycle is typically application-controlled.
      */
     ~DeziBotMesh();
 
@@ -55,6 +61,8 @@ public:
      * This initializes a node that can only send commands to other nodes.
      * Useful for remote controls or sensor nodes that only publish data.
      * 
+     * @param device_name Device name to expose via GAP.
+     *
      * @return true on success, false on failure
      */
     bool beginClient(char *device_name);
@@ -63,6 +71,9 @@ public:
      * @brief Initialize mesh node as server-only (receive commands and store data)
      *
      * This initializes a node that can only receives commands and stores data.
+     *
+     * @param device_name Device name to expose via GAP.
+     * @param serverCallback Application callback for incoming server events.
      *
      * @return true on success, false on failure
      */
@@ -73,6 +84,9 @@ public:
      *
      * This initializes a node which can both send commands and receive commands.
      * This is the most common mode for general-purpose nodes.
+     *
+     * @param device_name Device name to expose via GAP.
+     * @param serverCallback Application callback for incoming server events.
      *
      * @return true on success, false on failure
      */
@@ -441,7 +455,7 @@ public:
     /**
      * @brief Get device UUID
      *
-     * @param uuid Buffer to store UUID (must be 16 bytes)
+     * @param[out] uuid Buffer to store UUID (must be 16 bytes)
      */
     void getDeviceUUID(uint8_t* uuid);
 

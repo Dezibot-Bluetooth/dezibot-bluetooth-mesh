@@ -1,8 +1,3 @@
-/**
- * @file DeziBotMesh.cpp
- * @brief Arduino wrapper implementation for DeziBot Bluetooth Mesh library
- */
-
 #include "DeziBotMesh.h"
 #include "ble_mesh_bridge.h"
 
@@ -30,13 +25,13 @@ bool DeziBotMesh::init() {
         return false;
     }
 
-    /**
+    /*
     err = mesh_bridge_bluetooth_init();
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "bluetooth_init failed: %d", err);
         return false;
     }
-    **/
+    */
 
     _initialized = true;
     return true;

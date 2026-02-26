@@ -9,9 +9,6 @@
  * 1. NVS (Non-Volatile Storage) flash initialization
  * 2. NVS error handling and recovery
  * 3. Bluetooth stack initialization
- * 
- * @author DeziBot Project
- * @date 2026
  */
 
 #ifndef DEZIBOT_BLUETOOTH_MESH_INIT_H

@@ -18,9 +18,6 @@
  * 1. Retrieves composition data
  * 2. Adds application key to the node
  * 3. Binds Generic OnOff Server model
- * 
- * @author DeziBot Project
- * @date 2026
  */
 
 #ifndef DEZIBOT_BLUETOOTH_MESH_PROVISIONER_H
