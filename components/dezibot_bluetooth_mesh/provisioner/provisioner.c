@@ -9,7 +9,7 @@
 #define PROV_OWN_ADDR       0x0001
 
 #define MSG_SEND_TTL        3
-#define MSG_TIMEOUT         0
+#define MSG_TIMEOUT         4000
 #define MSG_ROLE            ROLE_PROVISIONER
 
 #define COMP_DATA_PAGE_0    0x00
@@ -23,9 +23,20 @@ static esp_ble_mesh_node_info_t nodes[CONFIG_BLE_MESH_MAX_PROV_NODES] = {};
 
 static esp_ble_mesh_prov_key_t prov_key = {};
 
+static esp_ble_mesh_cfg_srv_t config_server = {
+    .net_transmit = ESP_BLE_MESH_TRANSMIT(2, 20),
+    .relay = ESP_BLE_MESH_RELAY_DISABLED,
+    .relay_retransmit = ESP_BLE_MESH_TRANSMIT(2, 20),
+    .beacon = ESP_BLE_MESH_BEACON_ENABLED,
+    .gatt_proxy = ESP_BLE_MESH_GATT_PROXY_DISABLED,
+    .friend_state = ESP_BLE_MESH_FRIEND_NOT_SUPPORTED,
+    .default_ttl = 7,
+};
+
 static esp_ble_mesh_client_t config_client;
 
 static esp_ble_mesh_model_t root_models[] = {
+    ESP_BLE_MESH_MODEL_CFG_SRV(&config_server),
     ESP_BLE_MESH_MODEL_CFG_CLI(&config_client),
 };
 
@@ -40,6 +51,7 @@ static esp_ble_mesh_comp_t composition = {
 };
 
 static esp_ble_mesh_prov_t provision = {
+    .uuid                = dev_uuid,
     .prov_uuid           = dev_uuid,
     .prov_unicast_addr   = PROV_OWN_ADDR,
     .prov_start_address  = 0x0005,
@@ -275,15 +287,7 @@ static void ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event, esp_ble
 
             if (param->provisioner_add_app_key_comp.err_code == ESP_OK)
             {
-                esp_err_t err = 0;
                 prov_key.app_idx = param->provisioner_add_app_key_comp.app_idx;
-                err = esp_ble_mesh_provisioner_bind_app_key_to_local_model(PROV_OWN_ADDR, prov_key.app_idx,
-                        ESP_BLE_MESH_MODEL_ID_GEN_ONOFF_CLI, ESP_BLE_MESH_CID_NVAL);
-                if (err != ESP_OK)
-                {
-                    ESP_LOGE(TAG, "Provisioner bind local model appkey failed");
-                    return;
-                }
             }
             break;
         }

@@ -27,7 +27,8 @@ public:
     enum Mode {
         MODE_NODE,         /// full, client + server
         MODE_CLIENT_ONLY,  /// client only
-        MODE_SERVER_ONLY   /// server only
+        MODE_SERVER_ONLY,  /// server only
+        MODE_PROVISIONER   /// provisioner
     };
 
     /**

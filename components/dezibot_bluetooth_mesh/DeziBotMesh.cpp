@@ -128,9 +128,9 @@ bool DeziBotMesh::beginProvisioner() {
         return true;
     }
 
-    _mode = MODE_NODE;
+    _mode = MODE_PROVISIONER;
 
-    // Initialize node
+    // Initialize provisioner
     esp_err_t err = mesh_bridge_provisioner_init();
     if (err != ESP_OK) {
         ESP_LOGE("DeziBotMesh", "mesh_bridge_provisioner_init failed: %d", err);

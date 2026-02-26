@@ -45,6 +45,10 @@ void ble_mesh_get_dev_uuid(uint8_t *dev_uuid)
         return;
     }
 
+    /* Set the UUID prefix to 0xdd,0xdd so the provisioner can match
+     * unprovisioned devices using esp_ble_mesh_provisioner_set_dev_uuid_match(). */
+    dev_uuid[0] = 0xdd;
+    dev_uuid[1] = 0xdd;
     memcpy(dev_uuid + 2, addr_val, BD_ADDR_LEN);
 }
 
