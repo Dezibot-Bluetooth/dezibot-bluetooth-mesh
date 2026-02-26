@@ -6,33 +6,21 @@
 #include "server/server.h"
 #include "node/node.h"
 
-/**
- * @brief Wrapper for pre_init().
- */
 esp_err_t mesh_bridge_pre_init()
 {
     return pre_init();
 }
 
-/**
- * @brief Wrapper for ble_mesh_get_dev_uuid().
- */
 void mesh_bridge_get_device_uuid(uint8_t *uuid)
 {
     ble_mesh_get_dev_uuid(uuid);
 }
 
-/**
- * @brief Wrapper for bluetooth_init().
- */
 esp_err_t mesh_bridge_bluetooth_init()
 {
     return bluetooth_init();
 }
 
-/**
- * @brief Wrapper for ble_mesh_client_init().
- */
 esp_err_t mesh_bridge_client_init(char *device_name)
 {
     return ble_mesh_client_init(device_name);
@@ -196,9 +184,6 @@ esp_err_t mesh_bridge_client_get_client_properties(uint16_t property_id, uint16_
     return ble_mesh_client_get_client_properties(property_id, addr, elem_index);
 }
 
-/**
- * @brief Wrapper for ble_mesh_get_dev_uuid().
- */
 esp_err_t mesh_bridge_server_init(char *device_name, mesh_server_evt_cb_t cb)
 {
     return ble_mesh_server_init(device_name, cb);

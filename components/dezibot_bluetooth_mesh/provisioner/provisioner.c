@@ -62,21 +62,6 @@ static esp_ble_mesh_prov_t provision = {
     .iv_index            = 0x00,
 };
 
-/**
- * @brief Store or update provisioned node information.
- *
- * If the UUID already exists in the node table, the entry is updated.
- * Otherwise the first free slot is used.
- *
- * @param[in] uuid Device UUID (16 bytes)
- * @param[in] unicast Assigned unicast address
- * @param[in] elem_num Number of elements on the node
- *
- * @return
- *   - ESP_OK on success
- *   - ESP_ERR_INVALID_ARG on invalid arguments
- *   - ESP_FAIL when the node table is full
- */
 static esp_err_t ble_mesh_store_node_info(const uint8_t uuid[16], uint16_t unicast, uint8_t elem_num)
 {
     if (!uuid || !ESP_BLE_MESH_ADDR_IS_UNICAST(unicast))
@@ -109,16 +94,6 @@ static esp_err_t ble_mesh_store_node_info(const uint8_t uuid[16], uint16_t unica
     return ESP_FAIL;
 }
 
-/**
- * @brief Find a stored node record by unicast address.
- *
- * Matches a unicast address to a node entry by checking whether the address
- * falls within the node's element address range.
- *
- * @param[in] unicast Unicast address to look up
- *
- * @return Pointer to the node record, or NULL if not found/invalid.
- */
 static esp_ble_mesh_node_info_t *ble_mesh_get_node_info(uint16_t unicast)
 {
     if (!ESP_BLE_MESH_ADDR_IS_UNICAST(unicast))
@@ -137,19 +112,6 @@ static esp_ble_mesh_node_info_t *ble_mesh_get_node_info(uint16_t unicast)
     return NULL;
 }
 
-/**
- * @brief Fill common fields for a mesh client message.
- *
- * Sets opcode, model and context fields (net/app index, destination address,
- * TTL, timeout) for subsequent config/generic client API calls.
- *
- * @param[out] common Common message parameters to fill
- * @param[in] node Target node info (destination derived from node->unicast)
- * @param[in] model Model used to send the message
- * @param[in] opcode Mesh opcode
- *
- * @return ESP_OK on success; ESP_ERR_INVALID_ARG on invalid arguments.
- */
 static esp_err_t ble_mesh_set_msg_common(
     esp_ble_mesh_client_common_param_t *common,
     esp_ble_mesh_node_info_t *node,
@@ -172,20 +134,6 @@ static esp_err_t ble_mesh_set_msg_common(
     return ESP_OK;
 }
 
-/**
- * @brief Handle provisioning completion for a newly provisioned node.
- *
- * Stores node information, assigns a readable name, and triggers an initial
- * configuration step by requesting composition data.
- *
- * @param[in] node_idx Index assigned by the provisioner
- * @param[in] uuid Device UUID
- * @param[in] unicast Unicast address assigned to the node
- * @param[in] elem_num Number of elements
- * @param[in] net_idx Network key index used
- *
- * @return ESP_OK on success; ESP_FAIL / ESP_ERR_INVALID_ARG on errors.
- */
 static esp_err_t prov_complete(
     int node_idx,
     const esp_ble_mesh_octet16_t uuid,
@@ -237,33 +185,16 @@ static esp_err_t prov_complete(
     return ESP_OK;
 }
 
-/**
- * @brief Provisioning link opened callback.
- *
- * @param[in] bearer Provisioning bearer (PB-ADV or PB-GATT)
- */
 static void prov_link_open(esp_ble_mesh_prov_bearer_t bearer)
 {
     ESP_LOGI(TAG, "%s link open", bearer == ESP_BLE_MESH_PROV_ADV ? "PB-ADV" : "PB-GATT");
 }
 
-/**
- * @brief Provisioning link closed callback.
- *
- * @param[in] bearer Provisioning bearer (PB-ADV or PB-GATT)
- * @param[in] reason Link close reason
- */
 static void prov_link_close(esp_ble_mesh_prov_bearer_t bearer, uint8_t reason)
 {
     ESP_LOGI(TAG, "%s link close, reason 0x%02x", bearer == ESP_BLE_MESH_PROV_ADV ? "PB-ADV" : "PB-GATT", reason);
 }
 
-/**
- * @brief Handle received unprovisioned device advertisement.
- *
- * Adds the device to the provisioner queue and optionally starts provisioning
- * immediately.
- */
 static void recv_unprov_adv_pkt(
     uint8_t dev_uuid_param[16],
     uint8_t addr[BD_ADDR_LEN],
@@ -292,12 +223,6 @@ static void recv_unprov_adv_pkt(
     }
 }
 
-/**
- * @brief Provisioning callback dispatcher for provisioner events.
- *
- * Handles device discovery, link open/close, provisioning complete and local
- * key/model binding related callbacks.
- */
 static void ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event, esp_ble_mesh_prov_cb_param_t *param)
 {
     switch (event)
@@ -381,12 +306,6 @@ static void ble_mesh_provisioning_cb(esp_ble_mesh_prov_cb_event_t event, esp_ble
     }
 }
 
-/**
- * @brief Configuration client callback.
- *
- * Drives the post-provisioning configuration state machine (composition data
- * get, app key add, model app bind) and retries on timeouts.
- */
 static void ble_mesh_config_client_cb(
     esp_ble_mesh_cfg_client_cb_event_t event,
     esp_ble_mesh_cfg_client_cb_param_t *param)
@@ -546,15 +465,6 @@ static void ble_mesh_config_client_cb(
     }
 }
 
-/**
- * @brief Initialize BLE Mesh in provisioner role.
- *
- * Configures keys, registers callbacks, initializes the mesh stack and enables
- * provisioning. Also installs a UUID match filter used to decide which devices
- * to automatically provision.
- *
- * @return ESP_OK on success; otherwise an esp_err_t from the BLE Mesh APIs.
- */
 esp_err_t ble_mesh_init(void)
 {
     uint8_t match[2] = {0xdd, 0xdd};
