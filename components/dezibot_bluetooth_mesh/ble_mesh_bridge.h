@@ -94,6 +94,9 @@ esp_err_t mesh_bridge_node_init(mesh_server_evt_cb_t cb);
 // provisioner/provisioner
 esp_err_t mesh_bridge_provisioner_init(void);
 
+// provisioner/provisioner_node
+esp_err_t mesh_bridge_provisioner_node_init(mesh_server_evt_cb_t cb);
+
 #ifdef __cplusplus
 }
 #endif

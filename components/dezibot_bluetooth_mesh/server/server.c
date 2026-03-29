@@ -15,7 +15,9 @@ static esp_ble_mesh_comp_t *composition = NULL;
 static esp_ble_mesh_prov_t prov = {
     .uuid = dev_uuid,
     .output_size = 0,
-    .output_actions = 0
+    .output_actions = 0,
+    .input_size = 0,
+    .input_actions = 0
 };
 
 void ble_mesh_server_set_composition(esp_ble_mesh_comp_t *comp)

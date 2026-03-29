@@ -5,8 +5,13 @@
 #include "esp_ble_mesh_generic_model_api.h"
 
 typedef struct{
-    esp_ble_mesh_model_t *model;
-
+    /**
+     * @note The srv union MUST be the first field so that
+     *       &wrapper.srv.onoff == (void *)&wrapper.
+     *       The ESP-IDF model macros store this address as
+     *       model->user_data, and handle_gen_onoff_msg() casts
+     *       it back to mesh_server_t*.
+     */
     union {
         esp_ble_mesh_gen_onoff_srv_t onoff;
         esp_ble_mesh_gen_level_srv_t level;
@@ -25,6 +30,7 @@ typedef struct{
         esp_ble_mesh_gen_user_prop_srv_t user_prop;
     } srv;
 
+    esp_ble_mesh_model_t *model;
     mesh_server_evt_cb_t cb;
 } mesh_server_t;
 
